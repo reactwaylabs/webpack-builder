@@ -1,5 +1,6 @@
-import { Configuration } from "webpack";
+import { Configuration as WebpackConfiguration } from "webpack";
 
+export type Configuration = WebpackConfiguration;
 export type UpdateHandler = (webpack: Configuration) => Configuration;
 export type Plugin<TConfig = any> = (config: TConfig | undefined, projectDirectory: string) => UpdateHandler;
 
