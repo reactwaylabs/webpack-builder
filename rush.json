@@ -23,6 +23,11 @@
             "packageName": "@reactway/webpack-builder-plugin-typescript",
             "projectFolder": "packages/webpack-builder-plugin-typescript",
             "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-styles",
+            "projectFolder": "packages/webpack-builder-plugin-styles",
+            "shouldPublish": true
         }
     ]
 }

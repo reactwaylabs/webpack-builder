@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adding styles plugin to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          "style-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "./assets/fonts/[name].[ext]",
+          "publicPath": "./",
+        },
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-styles\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with fontsOutputLocation to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          "style-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "../assets/fonts/[name].[ext]",
+          "publicPath": "./",
+        },
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-styles\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          "style-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "./assets/fonts/[name].[ext]",
+          "publicPath": "../plugins",
+        },
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-styles\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`PostCss config do not exist 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          "style-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "./assets/fonts/[name].[ext]",
+          "publicPath": "./",
+        },
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-styles\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
