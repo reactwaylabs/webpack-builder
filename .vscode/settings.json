@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "json.schemas": [
+        {
+            "fileMatch": ["version-policies.json"],
+            "url": "https://developer.microsoft.com/json-schemas/rush/v5/version-policies.schema.json"
+        }
+    ]
+}
