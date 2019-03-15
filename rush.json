@@ -48,6 +48,11 @@
             "packageName": "@reactway/webpack-builder-plugin-write-file",
             "projectFolder": "packages/webpack-builder-plugin-write-file",
             "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-clean",
+            "projectFolder": "packages/webpack-builder-plugin-clean",
+            "shouldPublish": true
         }
     ]
 }
