@@ -1,8 +1,7 @@
 dependencies:
   '@rush-temp/webpack-builder': 'file:projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-example': 'file:projects/webpack-builder-plugin-example.tgz'
-  '@types/fs-extra': 5.0.5
-  '@types/jest': 24.0.11
+  '@rush-temp/webpack-builder-plugin-typescript': 'file:projects/webpack-builder-plugin-typescript.tgz'
   '@types/node': 11.11.3
   '@types/webpack': 4.4.25
   istanbul-azure-reporter: 0.1.4
@@ -351,6 +350,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
+  /@types/jest/22.2.3:
+    dev: false
+    resolution:
+      integrity: sha512-e74sM9W/4qqWB6D4TWV9FQk0WoHtX1X4FJpbjxucMSVJHtFjbQOH3H6yp+xno4br0AKG0wz/kPtaN599GUOvAg==
   /@types/jest/24.0.11:
     dependencies:
       '@types/jest-diff': 20.0.1
@@ -548,14 +551,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sY5AXXVZv4Y1VACTtR11UJCPHHudgY5i26Qj5TypE6DKlIApbwb5uqhXcJ5UUGbvZNRh7EeIoW+LrJumBsKp7w==
-  /acorn-dynamic-import/4.0.0:
-    dev: false
-    peerDependencies:
-      acorn: ^6.0.0
-    resolution:
-      integrity: sha512-d3OEjQV4ROpoflsnUA8HozoIR504TFxNivYEUi6uwz0IYhBkTDXGuWlNdMtybRt3nqVx/L6XqMt0FxkXuWKZhw==
   /acorn-dynamic-import/4.0.0/acorn@6.1.1:
-    dependencies: {}
+    dependencies:
+      acorn: 6.1.1
     dev: false
     id: registry.npmjs.org/acorn-dynamic-import/4.0.0
     peerDependencies:
@@ -598,14 +596,9 @@ packages:
       ajv: '>=5.0.0'
     resolution:
       integrity: sha512-DCRfO/4nQ+89p/RK43i8Ezd41EqdGIU4ld7nGF8OQ14oc/we5rEntLCUa7+jrn3nn83BosfwZA0wb4pon2o8iQ==
-  /ajv-keywords/3.4.0:
-    dev: false
-    peerDependencies:
-      ajv: ^6.9.1
-    resolution:
-      integrity: sha512-aUjdRFISbuFOl0EIZc+9e4FfZp0bDZgAdOOf30bJmw8VM9v84SHyVyxDfbWxpGYbdZD/9XoKxfHVNmxPkhwyGw==
   /ajv-keywords/3.4.0/ajv@6.10.0:
-    dependencies: {}
+    dependencies:
+      ajv: 6.10.0
     dev: false
     id: registry.npmjs.org/ajv-keywords/3.4.0
     peerDependencies:
@@ -2524,7 +2517,7 @@ packages:
       istanbul-lib-report: 2.0.4
       lowlight: 1.12.0
       react: 16.8.4
-      react-dom: 16.8.4
+      react-dom: /react-dom/16.8.4/react@16.8.4
       rehype-react: 3.1.0
       tslib: 1.9.3
       unified: 7.1.0
@@ -4106,8 +4099,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==
-  /react-dom/16.8.4:
+  /react-dom/16.8.4/react@16.8.4:
+    dependencies:
+      react: 16.8.4
     dev: false
+    id: registry.npmjs.org/react-dom/16.8.4
     peerDependencies:
       react: ^16.0.0
     resolution:
@@ -4824,17 +4820,6 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-GOK7q85oAb/5kE12fMuLdn2btOS9OBZn4VsecpHDywoUC/jLhSAKOiYo0ezx7ss2EXPMzyEWFoE0s1WLE+4+oA==
-  /terser-webpack-plugin/1.2.3/webpack@4.29.6:
-    dependencies:
-      webpack: /webpack/4.29.6/webpack@4.29.6
-    dev: false
-    engines:
-      node: '>= 6.9.0'
-    id: registry.npmjs.org/terser-webpack-plugin/1.2.3
-    peerDependencies:
-      webpack: ^4.0.0
-    resolution:
-      integrity: sha512-GOK7q85oAb/5kE12fMuLdn2btOS9OBZn4VsecpHDywoUC/jLhSAKOiYo0ezx7ss2EXPMzyEWFoE0s1WLE+4+oA==
   /terser/3.17.0:
     dependencies:
       commander: 2.19.0
@@ -5021,16 +5006,6 @@ packages:
       mock-require: 2.0.2
       tslint: /tslint/5.14.0/typescript@3.3.3333
       typescript: 3.3.3333
-    dev: false
-    id: registry.npmjs.org/tslint-language-service/0.9.9
-    peerDependencies:
-      tslint: '>= 4 < 6'
-      typescript: '>= 2.3.1 < 3'
-    resolution:
-      integrity: sha1-9UbcOEg5eeb7PPpZWErYUls61No=
-  /tslint-language-service/0.9.9/tslint@5.14.0:
-    dependencies:
-      tslint: 5.14.0
     dev: false
     id: registry.npmjs.org/tslint-language-service/0.9.9
     peerDependencies:
@@ -5385,18 +5360,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-MwBwpiE1BQpMDkbnUUaW6K8RFZjljJHArC6tWQJoFm0oQtfoSebtg4Y7/QHnJ/SddtjYLHaKGX64CFjG5rehJw==
-  /webpack/4.29.6/webpack@4.29.6:
-    dependencies:
-      acorn-dynamic-import: 4.0.0
-      ajv-keywords: 3.4.0
-      terser-webpack-plugin: /terser-webpack-plugin/1.2.3/webpack@4.29.6
-    dev: false
-    engines:
-      node: '>=6.11.5'
-    hasBin: true
-    id: registry.npmjs.org/webpack/4.29.6
-    resolution:
-      integrity: sha512-MwBwpiE1BQpMDkbnUUaW6K8RFZjljJHArC6tWQJoFm0oQtfoSebtg4Y7/QHnJ/SddtjYLHaKGX64CFjG5rehJw==
   /whatwg-encoding/1.0.5:
     dependencies:
       iconv-lite: 0.4.24
@@ -5539,15 +5502,32 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
     dev: false
     name: '@rush-temp/webpack-builder-plugin-example'
     resolution:
       integrity: sha512-s904xGaroaSDRcUzRrJvVKDi0wsJk2K6FNAWEMV52dih5vRrKVY59idCxMX46SEIzk7TggQdK2vXeZP1Yg8xfg==
       tarball: 'file:projects/webpack-builder-plugin-example.tgz'
+    version: 0.0.0
+  'file:projects/webpack-builder-plugin-typescript.tgz':
+    dependencies:
+      '@types/jest': 22.2.3
+      istanbul-azure-reporter: 0.1.4
+      jest: 24.5.0
+      jest-junit: 6.3.0
+      simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
+      typescript: 3.3.3333
+    dev: false
+    name: '@rush-temp/webpack-builder-plugin-typescript'
+    resolution:
+      integrity: sha512-0hYVr6zss99RgRXC+zwP+6FzcL96JYblJFlShmUlxdAWuukTGD4NjYgPr2ZhcU1hSx/F4eVqfF/TGth3IieiFg==
+      tarball: 'file:projects/webpack-builder-plugin-typescript.tgz'
     version: 0.0.0
   'file:projects/webpack-builder.tgz':
     dependencies:
@@ -5564,11 +5544,11 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
-      webpack: /webpack/4.29.6/webpack@4.29.6
+      webpack: 4.29.6
     dev: false
     name: '@rush-temp/webpack-builder'
     resolution:
-      integrity: sha512-v867fNlworwIyyKvlXzq5lRk7ZYVtcngPw+7r8zUx549cOqrjT2e1D1BzJ6sIHP72Wc2/FbBA5kXTu/5ogNrPw==
+      integrity: sha512-LZXYEYCsFSsMOgOq0ll73vMUAhEUpiNwx8ULiNFz34U5xbd5HovqF/u+xkbUiw3PNNGhSrXatuam3wu0uRfgiw==
       tarball: 'file:projects/webpack-builder.tgz'
     version: 0.0.0
 registry: 'https://registry.npmjs.org/'
@@ -5577,8 +5557,7 @@ shrinkwrapVersion: 3
 specifiers:
   '@rush-temp/webpack-builder': 'file:./projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-example': 'file:./projects/webpack-builder-plugin-example.tgz'
-  '@types/fs-extra': ~5.0.5
-  '@types/jest': ~24.0.11
+  '@rush-temp/webpack-builder-plugin-typescript': 'file:./projects/webpack-builder-plugin-typescript.tgz'
   '@types/node': ~11.11.3
   '@types/webpack': ^4.4.25
   istanbul-azure-reporter: ^0.1.4

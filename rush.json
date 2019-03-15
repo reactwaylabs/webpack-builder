@@ -12,10 +12,17 @@
             "projectFolder": "packages/webpack-builder",
             "shouldPublish": true
         },
+        // Plugin example
         {
             "packageName": "@reactway/webpack-builder-plugin-example",
             "projectFolder": "packages/webpack-builder-plugin-example",
             "shouldPublish": false
+        },
+        // Plugins
+        {
+            "packageName": "@reactway/webpack-builder-plugin-typescript",
+            "projectFolder": "packages/webpack-builder-plugin-typescript",
+            "shouldPublish": true
         }
     ]
 }
