@@ -1,16 +1,21 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  "rushVersion": "5.5.4",
-  "pnpmVersion": "2.15.1",
-  "pnpmOptions": {
-    // "strictPeerDependencies": true
-  },
-  "nodeSupportedVersionRange": ">=10.15.0 <11.0.0",
-  "projects": [
-    {
-      "packageName": "@reactway/webpack-builder",
-      "projectFolder": "packages/webpack-builder",
-      "shouldPublish": true
-    }
-  ]
+    "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+    "rushVersion": "5.5.4",
+    "pnpmVersion": "2.15.1",
+    "pnpmOptions": {
+        // "strictPeerDependencies": true
+    },
+    "nodeSupportedVersionRange": ">=10.15.0 <11.0.0",
+    "projects": [
+        {
+            "packageName": "@reactway/webpack-builder",
+            "projectFolder": "packages/webpack-builder",
+            "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-example",
+            "projectFolder": "packages/webpack-builder-plugin-example",
+            "shouldPublish": false
+        }
+    ]
 }
