@@ -28,6 +28,11 @@
             "packageName": "@reactway/webpack-builder-plugin-styles",
             "projectFolder": "packages/webpack-builder-plugin-styles",
             "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-html",
+            "projectFolder": "packages/webpack-builder-plugin-html",
+            "shouldPublish": true
         }
     ]
 }
