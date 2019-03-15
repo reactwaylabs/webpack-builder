@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
+        "baseUrl": "./",
         "module": "commonjs",
         "target": "es5",
+        "jsx": "react",
+        "removeComments": false,
         "outDir": "dist",
         "rootDir": "src",
         "noUnusedLocals": true,
@@ -13,6 +16,9 @@
         "noEmitHelpers": true,
         "importHelpers": true,
         "esModuleInterop": true,
+        "moduleResolution": "node",
+        "types": ["node", "jest"],
+        "typeRoots": ["./node_modules/@types"],
         "plugins": [
             {
                 "name": "tslint-language-service",
@@ -21,5 +27,5 @@
             }
         ]
     },
-    "exclude": ["**/__tests__", "dist"]
+    "exclude": ["node_modules", "dist"]
 }

@@ -16,7 +16,15 @@
     ],
     "license": "MIT",
     "dependencies": {
-        "@reactway/webpack-builder": "1.0.0-alpha"
+        "@reactway/webpack-builder": "1.0.0-alpha",
+        "fork-ts-checker-webpack-plugin": "^1.0.0",
+        "tsconfig-paths-webpack-plugin": "^3.2.0",
+        "fs-extra": "^7.0.1",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.5",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "tslib": "^1.9.3",
+        "tsconfig-paths": "^3.8.0"
     },
     "devDependencies": {
         "istanbul-azure-reporter": "^0.1.4",
@@ -27,14 +35,15 @@
         "tslint": "^5.14.0",
         "tslint-language-service": "^0.9.9",
         "typescript": "^3.3.3333",
-        "@types/jest": "^22.2.3"
+        "@types/jest": "^22.2.3",
+        "@types/fs-extra": "^5.0.5"
     },
     "peerDependencies": {},
     "jest": {
         "verbose": true,
         "preset": "ts-jest",
         "reporters": [
-            "default",
+            "default", 
             "jest-junit"
         ],
         "collectCoverage": true,

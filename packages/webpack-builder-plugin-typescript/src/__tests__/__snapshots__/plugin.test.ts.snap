@@ -1,0 +1,639 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adding typescript plugin to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;
+
+exports[`Adding typescript plugin with fork-ts-checker-webpack-plugin options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;
+
+exports[`Adding typescript plugin with tsconfigPathsPluginOptions to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".js",
+    ],
+    "plugins": Array [
+      TsconfigPathsPlugin {
+        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
+        "baseUrl": "./",
+        "extensions": Array [
+          ".ts",
+          ".tsx",
+        ],
+        "log": Object {
+          "log": [Function],
+          "logError": [Function],
+          "logInfo": [Function],
+          "logWarning": [Function],
+        },
+        "matchPath": [Function],
+        "source": "described-resolve",
+        "target": "resolve",
+      },
+    ],
+  },
+}
+`;
+
+exports[`baseURL exists at tsconfig 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".js",
+    ],
+    "plugins": Array [
+      TsconfigPathsPlugin {
+        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
+        "baseUrl": "./",
+        "extensions": Array [
+          ".ts",
+          ".tsx",
+        ],
+        "log": Object {
+          "log": [Function],
+          "logError": [Function],
+          "logInfo": [Function],
+          "logWarning": [Function],
+        },
+        "matchPath": [Function],
+        "source": "described-resolve",
+        "target": "resolve",
+      },
+    ],
+  },
+}
+`;
+
+exports[`baseURL exists at tsconfig and adding tsconfigPathsPluginOptions 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".js",
+    ],
+    "plugins": Array [
+      TsconfigPathsPlugin {
+        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
+        "baseUrl": "./",
+        "extensions": Array [
+          ".ts",
+          ".tsx",
+        ],
+        "log": Object {
+          "log": [Function],
+          "logError": [Function],
+          "logInfo": [Function],
+          "logWarning": [Function],
+        },
+        "matchPath": [Function],
+        "source": "described-resolve",
+        "target": "resolve",
+      },
+    ],
+  },
+}
+`;
+
+exports[`tsconfig and tslint do not exist 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;
+
+exports[`tsconfig jsx property exist 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".js",
+    ],
+    "plugins": Array [
+      TsconfigPathsPlugin {
+        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-jsx-exist\\\\",
+        "baseUrl": "./",
+        "extensions": Array [
+          ".ts",
+          ".tsx",
+        ],
+        "log": Object {
+          "log": [Function],
+          "logError": [Function],
+          "logInfo": [Function],
+          "logWarning": [Function],
+        },
+        "matchPath": [Function],
+        "source": "described-resolve",
+        "target": "resolve",
+      },
+    ],
+  },
+}
+`;
+
+exports[`tsconfig with single space baseUrl 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;

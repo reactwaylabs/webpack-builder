@@ -5,7 +5,7 @@ import { loadTsconfig, Tsconfig } from "tsconfig-paths/lib/tsconfig-loader";
 import * as path from "path";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
-import { ForkTsCheckerWebpackPluginOptions } from "./simplr-webpack-ts-options";
+import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 
 // Extensions.
 const TS_EXTENSION: string = ".ts";
@@ -15,13 +15,12 @@ const JSX_EXTENSION: string = ".jsx";
 
 // Tsconfig.
 export const TS_CONFIG_NAME: string = "tsconfig.json";
-const DEFAULT_TS_CONFIG_LOCATION: string = path.resolve(__dirname, TS_CONFIG_NAME);
+const DEFAULT_TS_CONFIG_LOCATION: string = path.resolve(__dirname, `../assets/${TS_CONFIG_NAME}`);
 
 // TsLint.
 export const TSLINT_CONFIG_NAME: string = "tslint.json";
-const DEFAULT_TSLINT_CONFIG_LOCATION: string = path.resolve(__dirname, TSLINT_CONFIG_NAME);
+const DEFAULT_TSLINT_CONFIG_LOCATION: string = path.resolve(__dirname, `../assets/${TSLINT_CONFIG_NAME}`);
 
-// TODO: Add more options.
 interface TypeScriptPluginOptions {
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
