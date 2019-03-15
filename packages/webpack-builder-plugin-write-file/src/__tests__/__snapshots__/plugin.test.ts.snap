@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adding write file plugin to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-write-file\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    Object {
+      "apply": [Function],
+    },
+  ],
+}
+`;
+
+exports[`Adding write file plugin to configuration 2`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-write-file\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    Object {
+      "apply": [Function],
+    },
+  ],
+}
+`;
