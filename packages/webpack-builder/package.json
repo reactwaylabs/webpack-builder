@@ -15,18 +15,6 @@
     "**/*.md"
   ],
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "istanbul-azure-reporter": "^0.1.4",
-    "jest": "^24.5.0",
-    "jest-junit": "^6.3.0",
-    "simplr-tslint": "^1.0.0-alpha.14",
-    "ts-jest": "^24.0.0",
-    "tslint": "^5.14.0",
-    "tslint-language-service": "^0.9.9",
-    "typescript": "^3.3.3333"
-  },
-  "peerDependencies": {},
   "jest": {
     "verbose": true,
     "preset": "ts-jest",
@@ -45,5 +33,22 @@
       "cobertura",
       "istanbul-azure-reporter"
     ]
+  },
+  "dependencies": {
+    "@types/webpack": "^4.4.25",
+    "tslib": "^1.9.3",
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "@types/jest": "~24.0.11",
+    "@types/node": "~11.11.3",
+    "istanbul-azure-reporter": "^0.1.4",
+    "jest": "^24.5.0",
+    "jest-junit": "^6.3.0",
+    "simplr-tslint": "^1.0.0-alpha.14",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^3.3.3333"
   }
 }

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Configuration type node 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+  "target": "node",
+}
+`;
+
+exports[`No configuration given 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Simple configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Simple configuration 2`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "loader": "custom-json-loader",
+        "test": /\\\\\\.json\\$/,
+        "type": "javascript/auto",
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Update simple configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "production",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
