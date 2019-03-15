@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adding web dev plugin to configuration 1`] = `
+Object {
+  "devServer": Object {
+    "compress": true,
+    "contentBase": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "historyApiFallback": true,
+    "host": "0.0.0.0",
+    "port": 3000,
+    "quiet": false,
+  },
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Adding web dev plugin with options to configuration 1`] = `
+Object {
+  "devServer": Object {
+    "compress": false,
+  },
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;

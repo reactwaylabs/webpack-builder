@@ -1,0 +1,55 @@
+{
+  "name": "@reactway/webpack-builder-plugin-web-dev",
+  "version": "1.0.0-alpha",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "pretest": "tsc -p . --noEmit && tslint -p .",
+    "test": "jest"
+  },
+  "files": [
+    "dist",
+    "**/*.md"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@reactway/webpack-builder": "1.0.0-alpha",
+    "tslib": "^1.9.3",
+    "webpack-dev-server":"^3.2.1"
+  },
+  "devDependencies": {
+    "istanbul-azure-reporter": "^0.1.4",
+    "jest": "^24.5.0",
+    "jest-junit": "^6.3.0",
+    "simplr-tslint": "^1.0.0-alpha.14",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^3.3.3333",
+    "@types/jest": "^22.2.3",
+    "@types/webpack-dev-server": "^3.1.4"
+  },
+  "peerDependencies": {},
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "collectCoverage": true,
+    "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx)$",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/__tests__/*",
+      "!src/index.ts"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "istanbul-azure-reporter"
+    ]
+  }
+}

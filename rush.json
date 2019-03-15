@@ -33,6 +33,11 @@
             "packageName": "@reactway/webpack-builder-plugin-html",
             "projectFolder": "packages/webpack-builder-plugin-html",
             "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-web-dev",
+            "projectFolder": "packages/webpack-builder-plugin-web-dev",
+            "shouldPublish": true
         }
     ]
 }
