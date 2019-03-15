@@ -38,6 +38,16 @@
             "packageName": "@reactway/webpack-builder-plugin-web-dev",
             "projectFolder": "packages/webpack-builder-plugin-web-dev",
             "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-images",
+            "projectFolder": "packages/webpack-builder-plugin-images",
+            "shouldPublish": true
+        },
+        {
+            "packageName": "@reactway/webpack-builder-plugin-write-file",
+            "projectFolder": "packages/webpack-builder-plugin-write-file",
+            "shouldPublish": true
         }
     ]
 }

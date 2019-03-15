@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Adding image plugin to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "./assets/images/[name].[ext]",
+          "publicPath": "/",
+        },
+        "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-images\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Adding image plugin with imagesOutputLocation option to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": ".//[name].[ext]",
+          "publicPath": "/",
+        },
+        "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-images\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
+
+exports[`Adding image plugin with publicPath option to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 10000,
+          "name": "./assets/images/[name].[ext]",
+          "publicPath": "./",
+        },
+        "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-images\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "publicPath": "./",
+  },
+}
+`;
