@@ -38,7 +38,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -110,7 +110,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -182,7 +182,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -270,7 +270,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -358,7 +358,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -446,7 +446,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -516,7 +516,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -606,7 +606,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "./src/__tests__///./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [

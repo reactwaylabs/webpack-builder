@@ -4,7 +4,7 @@ exports[`Adding web dev plugin to configuration 1`] = `
 Object {
   "devServer": Object {
     "compress": true,
-    "contentBase": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "contentBase": "TEST_PATH//./test-project//./dist",
     "historyApiFallback": true,
     "host": "0.0.0.0",
     "port": 3000,
@@ -20,7 +20,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "TEST_PATH//./test-project//dist",
     "publicPath": "./",
   },
 }
@@ -41,7 +41,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-web-dev\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "TEST_PATH//./test-project//dist",
     "publicPath": "./",
   },
 }

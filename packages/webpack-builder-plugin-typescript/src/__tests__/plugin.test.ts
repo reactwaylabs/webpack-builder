@@ -1,5 +1,5 @@
 jest.mock("fork-ts-checker-webpack-plugin");
-__dirname = "TEST_PATH";
+__dirname = "./src/__tests__/";
 
 jest.mock("upath", () => ({
     ...jest.requireActual("upath"),
@@ -62,7 +62,7 @@ it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration th
 });
 
 it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration", () => {
-    const projectLocation = path.resolve(__dirname, "./tsconfig-baseURL-exist");
+    const projectLocation = upath.resolve(__dirname, "./tsconfig-baseURL-exist");
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION)
         .use(TypeScriptPlugin, {
             tsconfigPathsPluginOptions: {

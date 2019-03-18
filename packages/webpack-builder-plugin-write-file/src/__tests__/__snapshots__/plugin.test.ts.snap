@@ -12,7 +12,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-write-file\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "TEST_PATH//./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
@@ -35,7 +35,7 @@ Object {
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
-    "path": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-write-file\\\\src\\\\__tests__\\\\test-project\\\\dist",
+    "path": "TEST_PATH//./test-project//dist",
     "publicPath": "./",
   },
   "plugins": Array [
