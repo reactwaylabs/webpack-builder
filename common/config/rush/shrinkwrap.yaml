@@ -2,7 +2,6 @@ dependencies:
   '@babel/core': 7.3.4
   '@rush-temp/webpack-builder': 'file:projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-clean': 'file:projects/webpack-builder-plugin-clean.tgz'
-  '@rush-temp/webpack-builder-plugin-example': 'file:projects/webpack-builder-plugin-example.tgz'
   '@rush-temp/webpack-builder-plugin-html': 'file:projects/webpack-builder-plugin-html.tgz'
   '@rush-temp/webpack-builder-plugin-images': 'file:projects/webpack-builder-plugin-images.tgz'
   '@rush-temp/webpack-builder-plugin-styles': 'file:projects/webpack-builder-plugin-styles.tgz'
@@ -7283,22 +7282,6 @@ packages:
       integrity: sha512-fXATiCswyge5/4DWXUPfLiapkvE/dyj0UGRZsemHTdirjXy0p+/2vQwPQ+l6Pa2jnZd+x9nA3RtdIhgVklHLIA==
       tarball: 'file:projects/webpack-builder-plugin-clean.tgz'
     version: 0.0.0
-  'file:projects/webpack-builder-plugin-example.tgz':
-    dependencies:
-      istanbul-azure-reporter: 0.1.4
-      jest: 24.5.0
-      jest-junit: 6.3.0
-      simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
-      typescript: 3.3.3333
-    dev: false
-    name: '@rush-temp/webpack-builder-plugin-example'
-    resolution:
-      integrity: sha512-s904xGaroaSDRcUzRrJvVKDi0wsJk2K6FNAWEMV52dih5vRrKVY59idCxMX46SEIzk7TggQdK2vXeZP1Yg8xfg==
-      tarball: 'file:projects/webpack-builder-plugin-example.tgz'
-    version: 0.0.0
   'file:projects/webpack-builder-plugin-html.tgz':
     dependencies:
       '@types/html-webpack-plugin': 3.2.0
@@ -7463,7 +7446,6 @@ specifiers:
   '@babel/core': ^7.3.4
   '@rush-temp/webpack-builder': 'file:./projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-clean': 'file:./projects/webpack-builder-plugin-clean.tgz'
-  '@rush-temp/webpack-builder-plugin-example': 'file:./projects/webpack-builder-plugin-example.tgz'
   '@rush-temp/webpack-builder-plugin-html': 'file:./projects/webpack-builder-plugin-html.tgz'
   '@rush-temp/webpack-builder-plugin-images': 'file:./projects/webpack-builder-plugin-images.tgz'
   '@rush-temp/webpack-builder-plugin-styles': 'file:./projects/webpack-builder-plugin-styles.tgz'
