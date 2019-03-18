@@ -1,4 +1,5 @@
 jest.mock("fork-ts-checker-webpack-plugin");
+jest.mock("tsconfig-paths-webpack-plugin");
 __dirname = "./src/__tests__/";
 
 jest.mock("upath", () => ({

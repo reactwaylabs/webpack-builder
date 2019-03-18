@@ -211,21 +211,7 @@ Object {
     ],
     "plugins": Array [
       TsconfigPathsPlugin {
-        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
-        "baseUrl": "./",
-        "extensions": Array [
-          ".ts",
-          ".tsx",
-        ],
-        "log": Object {
-          "log": [Function],
-          "logError": [Function],
-          "logInfo": [Function],
-          "logWarning": [Function],
-        },
-        "matchPath": [Function],
-        "source": "described-resolve",
-        "target": "resolve",
+        "apply": [MockFunction],
       },
     ],
   },
@@ -299,21 +285,7 @@ Object {
     ],
     "plugins": Array [
       TsconfigPathsPlugin {
-        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
-        "baseUrl": "./",
-        "extensions": Array [
-          ".ts",
-          ".tsx",
-        ],
-        "log": Object {
-          "log": [Function],
-          "logError": [Function],
-          "logInfo": [Function],
-          "logWarning": [Function],
-        },
-        "matchPath": [Function],
-        "source": "described-resolve",
-        "target": "resolve",
+        "apply": [MockFunction],
       },
     ],
   },
@@ -387,21 +359,7 @@ Object {
     ],
     "plugins": Array [
       TsconfigPathsPlugin {
-        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-baseURL-exist\\\\",
-        "baseUrl": "./",
-        "extensions": Array [
-          ".ts",
-          ".tsx",
-        ],
-        "log": Object {
-          "log": [Function],
-          "logError": [Function],
-          "logInfo": [Function],
-          "logWarning": [Function],
-        },
-        "matchPath": [Function],
-        "source": "described-resolve",
-        "target": "resolve",
+        "apply": [MockFunction],
       },
     ],
   },
@@ -547,21 +505,7 @@ Object {
     ],
     "plugins": Array [
       TsconfigPathsPlugin {
-        "absoluteBaseUrl": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-typescript\\\\src\\\\__tests__\\\\tsconfig-jsx-exist\\\\",
-        "baseUrl": "./",
-        "extensions": Array [
-          ".ts",
-          ".tsx",
-        ],
-        "log": Object {
-          "log": [Function],
-          "logError": [Function],
-          "logInfo": [Function],
-          "logWarning": [Function],
-        },
-        "matchPath": [Function],
-        "source": "described-resolve",
-        "target": "resolve",
+        "apply": [MockFunction],
       },
     ],
   },

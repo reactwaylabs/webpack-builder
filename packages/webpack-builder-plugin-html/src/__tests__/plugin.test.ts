@@ -1,3 +1,5 @@
+jest.mock("html-webpack-template");
+
 __dirname = "TEST_PATH";
 
 jest.mock("upath", () => ({
