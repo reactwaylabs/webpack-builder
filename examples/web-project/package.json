@@ -14,6 +14,7 @@
     "license": "ISC",
     "dependencies": {
         "@reactway/webpack-builder": "1.0.0-alpha",
+        "@reactway/webpack-builder-plugin-typescript": "1.0.0-alpha",
         "@reactway/webpack-builder-plugin-html": "1.0.0-alpha",
         "@reactway/webpack-builder-plugin-web-dev": "1.0.0-alpha",
         "webpack": "^4.29.6"
@@ -25,6 +26,7 @@
         "@types/webpack": "^4.4.25",
         "simplr-tslint": "^1.0.0-alpha.14",
         "tslint-language-service": "^0.9.9",
+        "tslint": "^5.14.0",
         "typescript": "^3.3.3333",
         "webpack-cli": "^3.3.0",
         "webpack-dev-server": "^3.2.1"
