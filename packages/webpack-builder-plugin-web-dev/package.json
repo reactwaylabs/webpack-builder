@@ -17,7 +17,8 @@
     "license": "MIT",
     "dependencies": {
         "@reactway/webpack-builder": "1.0.0-alpha",
-        "tslib": "^1.9.3"
+        "tslib": "^1.9.3",
+        "upath": "^1.1.2"
     },
     "devDependencies": {
         "istanbul-azure-reporter": "^0.1.4",

@@ -2,7 +2,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin/lib";
 import { Options as TsconfigPathsPluginOptions } from "tsconfig-paths-webpack-plugin/lib/options";
 import { loadTsconfig, Tsconfig } from "tsconfig-paths/lib/tsconfig-loader";
-import * as path from "path";
+import upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
@@ -17,11 +17,11 @@ const JSX_EXTENSION: string = ".jsx";
 
 // Tsconfig.
 export const TS_CONFIG_NAME: string = "tsconfig.json";
-const DEFAULT_TS_CONFIG_LOCATION: string = path.resolve(__dirname, `../assets/${TS_CONFIG_NAME}`);
+const DEFAULT_TS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${TS_CONFIG_NAME}`);
 
 // TsLint.
 export const TSLINT_CONFIG_NAME: string = "tslint.json";
-const DEFAULT_TSLINT_CONFIG_LOCATION: string = path.resolve(__dirname, `../assets/${TSLINT_CONFIG_NAME}`);
+const DEFAULT_TSLINT_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${TSLINT_CONFIG_NAME}`);
 
 interface TypeScriptPluginOptions {
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
@@ -29,7 +29,7 @@ interface TypeScriptPluginOptions {
 }
 
 export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projectDirectory) => {
-    const fullTsconfigLocation = path.resolve(projectDirectory, TS_CONFIG_NAME);
+    const fullTsconfigLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
     let baseURLExist: boolean = false;
 
     try {
@@ -156,7 +156,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
 };
 
 export function checkTsConfig(projectDirectory: string): void {
-    const configLocation = path.resolve(projectDirectory, TS_CONFIG_NAME);
+    const configLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
 
     if (!fs.pathExistsSync(configLocation)) {
         console.info(`File "${TS_CONFIG_NAME}" not found at ${configLocation}. Creating...`);
@@ -166,7 +166,7 @@ export function checkTsConfig(projectDirectory: string): void {
 }
 
 export function checkTslintConfig(projectDirectory: string): void {
-    const configLocation = path.resolve(projectDirectory, TSLINT_CONFIG_NAME);
+    const configLocation = upath.resolve(projectDirectory, TSLINT_CONFIG_NAME);
 
     if (!fs.pathExistsSync(configLocation)) {
         console.info(`File "${TSLINT_CONFIG_NAME}" not found at ${configLocation}. Creating...`);

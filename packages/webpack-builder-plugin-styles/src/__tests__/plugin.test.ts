@@ -1,17 +1,17 @@
 import { Builder, Configuration } from "@reactway/webpack-builder";
-import * as path from "path";
+import upath from "upath";
 import * as fs from "fs-extra";
 import { StylesPlugin } from "../plugin";
 
 let SAMPLE_CONFIGURATION: Configuration = {};
-const TEST_PROJECT_LOCATION: string = path.resolve(__dirname, "./test-project");
+const TEST_PROJECT_LOCATION: string = upath.resolve(__dirname, "./test-project");
 
 beforeEach(() => {
     SAMPLE_CONFIGURATION = {
         entry: "./src/index.ts",
         mode: "development",
         output: {
-            path: path.resolve(TEST_PROJECT_LOCATION, "dist"),
+            path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
             filename: "[name].bundle.js",
             chunkFilename: "[name].bundle.js",
             publicPath: "./"
@@ -40,7 +40,7 @@ it("Adding styles plugin with options to configuration", () => {
 });
 
 it("PostCss config do not exist", () => {
-    const projectLocation = path.resolve(__dirname, "./postcss-config-not-exist");
+    const projectLocation = upath.resolve(__dirname, "./postcss-config-not-exist");
     fs.emptyDir(projectLocation);
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
     expect(configuration).toMatchSnapshot();

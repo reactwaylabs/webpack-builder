@@ -1,19 +1,19 @@
 jest.mock("fork-ts-checker-webpack-plugin");
 import { Builder, Configuration } from "@reactway/webpack-builder";
-import * as path from "path";
+import upath from "upath";
 import * as fs from "fs-extra";
 // Plugin
 import { TypeScriptPlugin } from "../plugin";
 
 let SAMPLE_CONFIGURATION: Configuration = {};
-const TEST_PROJECT_LOCATION: string = path.resolve(__dirname, "./test-project");
+const TEST_PROJECT_LOCATION: string = upath.resolve(__dirname, "./test-project");
 
 beforeEach(() => {
     SAMPLE_CONFIGURATION = {
         entry: "./src/index.ts",
         mode: "development",
         output: {
-            path: path.resolve(TEST_PROJECT_LOCATION, "dist"),
+            path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
             filename: "[name].bundle.js",
             chunkFilename: "[name].bundle.js",
             publicPath: "./"
@@ -47,7 +47,7 @@ it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration th
     expect(() =>
         configuration
             .use(TypeScriptPlugin, {
-                tsconfigPathsPluginOptions: { configFile: path.resolve(TEST_PROJECT_LOCATION, "tsconfig.json") }
+                tsconfigPathsPluginOptions: { configFile: upath.resolve(TEST_PROJECT_LOCATION, "tsconfig.json") }
             })
             .toConfig()
     ).toThrowError("Cannot add tsconfigPathsPluginOptions because baseUrl do not exist at tsconfig.json");
@@ -67,37 +67,37 @@ it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration", 
 });
 
 it("baseURL exists at tsconfig", () => {
-    const projectLocation = path.resolve(__dirname, "./tsconfig-baseURL-exist");
+    const projectLocation = upath.resolve(__dirname, "./tsconfig-baseURL-exist");
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(TypeScriptPlugin).toConfig();
     expect(configuration).toMatchSnapshot();
 });
 
 it("baseURL exists at tsconfig and adding tsconfigPathsPluginOptions", () => {
-    const projectLocation = path.resolve(__dirname, "./tsconfig-baseURL-exist");
+    const projectLocation = upath.resolve(__dirname, "./tsconfig-baseURL-exist");
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION)
         .use(TypeScriptPlugin, {
-            tsconfigPathsPluginOptions: { configFile: path.resolve(projectLocation, "tsconfig.json") }
+            tsconfigPathsPluginOptions: { configFile: upath.resolve(projectLocation, "tsconfig.json") }
         })
         .toConfig();
     expect(configuration).toMatchSnapshot();
 });
 
 it("tsconfig with single space baseUrl", () => {
-    const configuration = new Builder(path.resolve(__dirname, "./empty-space-baseURL"), SAMPLE_CONFIGURATION)
+    const configuration = new Builder(upath.resolve(__dirname, "./empty-space-baseURL"), SAMPLE_CONFIGURATION)
         .use(TypeScriptPlugin)
         .toConfig();
     expect(configuration).toMatchSnapshot();
 });
 
 it("tsconfig jsx property exist", () => {
-    const configuration = new Builder(path.resolve(__dirname, "./tsconfig-jsx-exist"), SAMPLE_CONFIGURATION)
+    const configuration = new Builder(upath.resolve(__dirname, "./tsconfig-jsx-exist"), SAMPLE_CONFIGURATION)
         .use(TypeScriptPlugin)
         .toConfig();
     expect(configuration).toMatchSnapshot();
 });
 
 it("tsconfig and tslint do not exist", () => {
-    const projectLocation = path.resolve(__dirname, "./tsconfig-tslint-not-exist");
+    const projectLocation = upath.resolve(__dirname, "./tsconfig-tslint-not-exist");
     fs.emptyDir(projectLocation);
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(TypeScriptPlugin).toConfig();
     expect(configuration).toMatchSnapshot();

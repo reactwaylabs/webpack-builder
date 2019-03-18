@@ -41,6 +41,7 @@ dependencies:
   tslint: 5.14.0
   tslint-language-service: 0.9.9
   typescript: 3.3.3333
+  upath: 1.1.2
   url-loader: 1.1.2
   webpack: 4.29.6
   webpack-dev-server: 3.2.1
@@ -1658,7 +1659,7 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-JQfEOdnI7dASwCuSPWIeVYwc/zMsu/+tRhoUvEfXz2gxOA2DNjmG5vhtFdBlhWPPGo+RdT9S3tgc/uH5qgDiiA==
-  /compression/1.7.3:
+  /compression/1.7.4:
     dependencies:
       accepts: 1.3.5
       bytes: 3.0.0
@@ -1671,7 +1672,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-HSjyBG5N1Nnz7tF2+O7A9XUhyjru71/fwgNb7oIsEVHR0WShfs2tIS/EySLgiTe98aOK18YDlMXpzjCXY/n9mg==
+      integrity: sha512-jaSIDzP9pZVS4ZfQ+TzvtiWhdpFhE2RDHz8QJkpX9SIpLq88VueF5jJw6t+6CUQcAoA6t+x89MLrWAqpfDE8iQ==
   /concat-map/0.0.1:
     dev: false
     resolution:
@@ -5992,7 +5993,7 @@ packages:
   /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0:
     dependencies:
       change-case: 3.1.0
-      tslint: 5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
     dev: false
     id: registry.npmjs.org/simplr-tslint/1.0.0-alpha.14
     peerDependencies:
@@ -6575,6 +6576,27 @@ packages:
       jest: '>=24 <25'
     resolution:
       integrity: sha512-o8BO3TkMREpAATaFTrXkovMsCpBl2z4NDBoLJuWZcJJj1ijI49UnvDMfVpj+iogn/Jl8Pbhuei5nc/Ti+frEHw==
+  /ts-jest/24.0.0/jest@24.5.0:
+    dependencies:
+      bs-logger: 0.2.6
+      buffer-from: 1.1.1
+      fast-json-stable-stringify: 2.0.0
+      jest: 24.5.0
+      json5: 2.1.0
+      make-error: 1.3.5
+      mkdirp: 0.5.1
+      resolve: 1.10.0
+      semver: 5.6.0
+      yargs-parser: 10.1.0
+    dev: false
+    engines:
+      node: '>= 6'
+    hasBin: true
+    id: registry.npmjs.org/ts-jest/24.0.0
+    peerDependencies:
+      jest: '>=24 <25'
+    resolution:
+      integrity: sha512-o8BO3TkMREpAATaFTrXkovMsCpBl2z4NDBoLJuWZcJJj1ijI49UnvDMfVpj+iogn/Jl8Pbhuei5nc/Ti+frEHw==
   /ts-loader/5.3.3:
     dependencies:
       chalk: 2.4.2
@@ -6585,6 +6607,22 @@ packages:
     dev: false
     engines:
       node: '>=6.11.5'
+    peerDependencies:
+      typescript: '*'
+    resolution:
+      integrity: sha512-KwF1SplmOJepnoZ4eRIloH/zXL195F51skt7reEsS6jvDqzgc/YSbz9b8E07GxIUwLXdcD4ssrJu6v8CwaTafA==
+  /ts-loader/5.3.3/typescript@3.3.3333:
+    dependencies:
+      chalk: 2.4.2
+      enhanced-resolve: 4.1.0
+      loader-utils: 1.2.3
+      micromatch: 3.1.10
+      semver: 5.6.0
+      typescript: 3.3.3333
+    dev: false
+    engines:
+      node: '>=6.11.5'
+    id: registry.npmjs.org/ts-loader/5.3.3
     peerDependencies:
       typescript: '*'
     resolution:
@@ -6620,9 +6658,11 @@ packages:
       typescript: '>= 2.3.1 < 3'
     resolution:
       integrity: sha1-9UbcOEg5eeb7PPpZWErYUls61No=
-  /tslint-language-service/0.9.9/tslint@5.14.0:
+  /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652:
     dependencies:
-      tslint: 5.14.0
+      mock-require: 2.0.2
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      typescript: 3.3.3333
     dev: false
     id: registry.npmjs.org/tslint-language-service/0.9.9
     peerDependencies:
@@ -6653,10 +6693,45 @@ packages:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
     resolution:
       integrity: sha512-IUla/ieHVnB8Le7LdQFRGlVJid2T/gaJe5VkjzRVSRR6pA2ODYrnfR1hmxi+5+au9l50jBwpbBL34txgv4NnTQ==
+  /tslint/5.14.0/typescript@3.3.3333:
+    dependencies:
+      babel-code-frame: 6.26.0
+      builtin-modules: 1.1.1
+      chalk: 2.4.2
+      commander: 2.19.0
+      diff: 3.5.0
+      glob: 7.1.3
+      js-yaml: 3.12.2
+      minimatch: 3.0.4
+      mkdirp: 0.5.1
+      resolve: 1.10.0
+      semver: 5.6.0
+      tslib: 1.9.3
+      tsutils: /tsutils/2.29.0/typescript@3.3.3333
+      typescript: 3.3.3333
+    dev: false
+    engines:
+      node: '>=4.8.0'
+    hasBin: true
+    id: registry.npmjs.org/tslint/5.14.0
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >=3.0.0-dev || >= 3.1.0-dev || >= 3.2.0-dev'
+    resolution:
+      integrity: sha512-IUla/ieHVnB8Le7LdQFRGlVJid2T/gaJe5VkjzRVSRR6pA2ODYrnfR1hmxi+5+au9l50jBwpbBL34txgv4NnTQ==
   /tsutils/2.29.0:
     dependencies:
       tslib: 1.9.3
     dev: false
+    peerDependencies:
+      typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
+    resolution:
+      integrity: sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
+  /tsutils/2.29.0/typescript@3.3.3333:
+    dependencies:
+      tslib: 1.9.3
+      typescript: 3.3.3333
+    dev: false
+    id: registry.npmjs.org/tsutils/2.29.0
     peerDependencies:
       typescript: '>=2.1.0 || >=2.1.0-dev || >=2.2.0-dev || >=2.3.0-dev || >=2.4.0-dev || >=2.5.0-dev || >=2.6.0-dev || >=2.7.0-dev || >=2.8.0-dev || >=2.9.0-dev || >= 3.0.0-dev || >= 3.1.0-dev'
     resolution:
@@ -6986,7 +7061,7 @@ packages:
       ansi-html: 0.0.7
       bonjour: 3.5.0
       chokidar: 2.1.2
-      compression: 1.7.3
+      compression: 1.7.4
       connect-history-api-fallback: 1.6.0
       debug: 4.1.1
       del: 3.0.0
@@ -7271,10 +7346,10 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
     dev: false
     name: '@rush-temp/webpack-builder-plugin-clean'
@@ -7293,10 +7368,10 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
     dev: false
     name: '@rush-temp/webpack-builder-plugin-html'
@@ -7311,10 +7386,10 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
       url-loader: 1.1.2
     dev: false
@@ -7336,10 +7411,10 @@ packages:
       sass-loader: 7.1.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
       style-loader: 0.23.1
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
       url-loader: 1.1.2
     dev: false
@@ -7364,13 +7439,13 @@ packages:
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
       tapable: 1.1.1
-      ts-jest: 24.0.0
-      ts-loader: 5.3.3
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
+      ts-loader: /ts-loader/5.3.3/typescript@3.3.3333
       tsconfig-paths: 3.8.0
       tsconfig-paths-webpack-plugin: 3.2.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
     dev: false
     name: '@rush-temp/webpack-builder-plugin-typescript'
@@ -7386,10 +7461,10 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
       webpack-dev-server: 3.2.1
     dev: false
@@ -7405,10 +7480,10 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
       write-file-webpack-plugin: 4.5.0
     dev: false
@@ -7427,16 +7502,17 @@ packages:
       jest: 24.5.0
       jest-junit: 6.3.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.14.0
-      ts-jest: 24.0.0
+      ts-jest: /ts-jest/24.0.0/jest@24.5.0
       tslib: 1.9.3
-      tslint: 5.14.0
-      tslint-language-service: /tslint-language-service/0.9.9/tslint@5.14.0
+      tslint: /tslint/5.14.0/typescript@3.3.3333
+      tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
       webpack: 4.29.6
     dev: false
     name: '@rush-temp/webpack-builder'
     resolution:
-      integrity: sha512-pAuuiRfHbjRrcm0Oa7NTr2/U3bNfu2R9XCLIVU4++UFxnLeBF5S2VzpE/UOoB/3b2tZO03MROeMS+Kev4tXWEg==
+      integrity: sha512-xi5AucvQprL4eUZ1NKedD1561/28PAfggD7LKI6udSbEM431q2NVsVt9sUadLlNDItDe5TV5XptxPRqj6nGKow==
       tarball: 'file:projects/webpack-builder.tgz'
     version: 0.0.0
 registry: 'https://registry.npmjs.org/'
@@ -7485,6 +7561,7 @@ specifiers:
   tslint: ^5.14.0
   tslint-language-service: ^0.9.9
   typescript: ^3.3.3333
+  upath: ^1.1.2
   url-loader: ^1.1.2
   webpack: ^4.29.6
   webpack-dev-server: ^3.2.1

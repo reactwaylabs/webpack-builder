@@ -1,4 +1,4 @@
-import * as path from "path";
+import upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 
@@ -8,7 +8,7 @@ const SCSS_EXTENSION: string = ".scss";
 
 // Postcss.config.js
 const POSTCSS_CONFIG_NAME: string = "postcss.config.js";
-const DEFAULT_POSTCSS_CONFIG_LOCATION: string = path.resolve(__dirname, `../assets/${POSTCSS_CONFIG_NAME}`);
+const DEFAULT_POSTCSS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${POSTCSS_CONFIG_NAME}`);
 
 // Fonts location.
 const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
@@ -89,7 +89,7 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 };
 
 export function checkPostCssConfig(projectDirectory: string): void {
-    const configLocation = path.resolve(projectDirectory, POSTCSS_CONFIG_NAME);
+    const configLocation = upath.resolve(projectDirectory, POSTCSS_CONFIG_NAME);
 
     if (!fs.pathExistsSync(configLocation)) {
         console.info(`File "${POSTCSS_CONFIG_NAME}" not found at ${configLocation}. Creating...`);

@@ -18,7 +18,8 @@
   "dependencies": {
     "@reactway/webpack-builder": "1.0.0-alpha",
     "fs-extra": "^7.0.1",
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "upath": "^1.1.2"
   },
   "devDependencies": {
     "istanbul-azure-reporter": "^0.1.4",

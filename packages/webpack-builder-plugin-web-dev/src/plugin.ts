@@ -1,4 +1,4 @@
-import * as path from "path";
+import upath from "upath";
 import WebpackDevServer from "webpack-dev-server";
 
 import { Plugin, Configuration } from "@reactway/webpack-builder";
@@ -18,7 +18,7 @@ export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirecto
     }
 
     let webDevServer: WebpackDevServer.Configuration | undefined = {
-        contentBase: path.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION),
+        contentBase: upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION),
         compress: true,
         host: HOST,
         quiet: false,

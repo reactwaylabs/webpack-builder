@@ -1,19 +1,19 @@
 import { Configuration } from "webpack";
-import * as path from "path";
+import upath from "upath";
 // Config builder
 import { Builder } from "../builder";
 // Sample plugin
 import { SamplePlugin } from "./sample-plugin/sample-plugin";
 
 let SAMPLE_CONFIGURATION: Configuration = {};
-const TEST_PROJECT_LOCATION: string = path.resolve(__dirname, "./test-project");
+const TEST_PROJECT_LOCATION: string = upath.resolve(__dirname, "./test-project");
 
 beforeEach(() => {
     SAMPLE_CONFIGURATION = {
         entry: "./src/index.ts",
         mode: "development",
         output: {
-            path: path.resolve(TEST_PROJECT_LOCATION, "dist"),
+            path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
             filename: "[name].bundle.js",
             chunkFilename: "[name].bundle.js",
             publicPath: "./"

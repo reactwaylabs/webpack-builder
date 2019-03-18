@@ -36,13 +36,14 @@
   },
   "dependencies": {
     "tslib": "^1.9.3",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "upath": "^1.1.2"
   },
   "devDependencies": {
-    "@types/webpack": "^4.4.25",
     "@babel/core": "^7.3.4",
     "@types/jest": "^22.2.3",
     "@types/node": "^11.11.3",
+    "@types/webpack": "^4.4.25",
     "istanbul-azure-reporter": "^0.1.4",
     "jest": "^24.5.0",
     "jest-junit": "^6.3.0",
