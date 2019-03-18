@@ -53,6 +53,12 @@
             "packageName": "@reactway/webpack-builder-plugin-clean",
             "projectFolder": "packages/webpack-builder-plugin-clean",
             "shouldPublish": true
+        },
+        // Example projects,
+        {
+            "packageName": "web-project",
+            "projectFolder": "examples/web-project",
+            "shouldPublish": false
         }
     ]
 }

@@ -1,1 +1,2 @@
-export * from "./plugin";
+import { WebDevPlugin } from "./plugin";
+export = WebDevPlugin;

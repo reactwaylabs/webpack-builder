@@ -38,7 +38,8 @@
         "typescript": "^3.3.3333",
         "@types/jest": "^22.2.3",
         "@types/fs-extra": "^5.0.5",
-        "@types/tapable": "1.0.4"
+        "@types/tapable": "1.0.4",
+        "@types/node": "^11.11.3"
     },
     "peerDependencies": {},
     "jest": {
