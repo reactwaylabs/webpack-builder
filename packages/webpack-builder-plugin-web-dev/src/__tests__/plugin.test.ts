@@ -1,3 +1,11 @@
+__dirname = "TEST_PATH";
+
+jest.mock("upath", () => ({
+    ...jest.requireActual("upath"),
+    resolve: (...pathSegments: string[]) => pathSegments.join("//"),
+    join: (...pathSegments: string[]) => pathSegments.join("//")
+}));
+
 import { Builder, Configuration } from "@reactway/webpack-builder";
 import upath from "upath";
 import { WebDevPlugin } from "../plugin";

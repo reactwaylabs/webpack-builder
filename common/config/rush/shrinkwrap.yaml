@@ -11,7 +11,7 @@ dependencies:
   '@types/fs-extra': 5.0.5
   '@types/html-webpack-plugin': 3.2.0
   '@types/html-webpack-template': 6.0.3
-  '@types/jest': 22.2.3
+  '@types/jest': 24.0.11
   '@types/node': 11.11.3
   '@types/tapable': 1.0.4
   '@types/webpack': 4.4.25
@@ -448,10 +448,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ohkhb9LehJy+PA40rDtGAji61NCgdtKLAlFoYp4cnuuQEswwdK3vz9SOIkkyc3wrk8dzjphQApNs56yyXLStaQ==
-  /@types/jest/22.2.3:
+  /@types/jest-diff/20.0.1:
     dev: false
     resolution:
-      integrity: sha512-e74sM9W/4qqWB6D4TWV9FQk0WoHtX1X4FJpbjxucMSVJHtFjbQOH3H6yp+xno4br0AKG0wz/kPtaN599GUOvAg==
+      integrity: sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
+  /@types/jest/24.0.11:
+    dependencies:
+      '@types/jest-diff': 20.0.1
+    dev: false
+    resolution:
+      integrity: sha512-2kLuPC5FDnWIDvaJBzsGTBQaBbnDweznicvK7UGYzlIJP4RJR2a4A/ByLUXEyEgag6jz8eHdlWExGDtH3EYUXQ==
   /@types/json5/0.0.29:
     dev: false
     resolution:
@@ -7340,7 +7346,7 @@ packages:
       integrity: sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
   'file:projects/webpack-builder-plugin-clean.tgz':
     dependencies:
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       clean-webpack-plugin: 2.0.1
       istanbul-azure-reporter: 0.1.4
       jest: 24.5.0
@@ -7351,17 +7357,18 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
     dev: false
     name: '@rush-temp/webpack-builder-plugin-clean'
     resolution:
-      integrity: sha512-fXATiCswyge5/4DWXUPfLiapkvE/dyj0UGRZsemHTdirjXy0p+/2vQwPQ+l6Pa2jnZd+x9nA3RtdIhgVklHLIA==
+      integrity: sha512-oChu7z6qxEWCwCWzmvO5Dj2reWtsieEO/Y4qebrqe0WwNpVfTMc8DbFaJmPCzdxgJLVTV0TXDLmdGk9s77wFzA==
       tarball: 'file:projects/webpack-builder-plugin-clean.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-html.tgz':
     dependencies:
       '@types/html-webpack-plugin': 3.2.0
       '@types/html-webpack-template': 6.0.3
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       html-webpack-plugin: 3.2.0
       html-webpack-template: /html-webpack-template/6.2.0/html-webpack-plugin@3.2.0
       istanbul-azure-reporter: 0.1.4
@@ -7373,15 +7380,16 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
     dev: false
     name: '@rush-temp/webpack-builder-plugin-html'
     resolution:
-      integrity: sha512-mrqB7CwLjy4PJsOnfjUQJD1RcPV4UJaXkWofd8z1hfeIbdSgW5axZikzVV2vQGzqAf6DJ2V9XGdIyP5r04A6OQ==
+      integrity: sha512-kFG2DUKNciv0+EckXF1WipSWGM57STUy2SKAENT+wOHDlchxPhfGxK9J9Z8Lhg515yMbxgPQ3uQpvozyR0Ce7w==
       tarball: 'file:projects/webpack-builder-plugin-html.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-images.tgz':
     dependencies:
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       istanbul-azure-reporter: 0.1.4
       jest: 24.5.0
       jest-junit: 6.3.0
@@ -7391,17 +7399,18 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
       url-loader: 1.1.2
     dev: false
     name: '@rush-temp/webpack-builder-plugin-images'
     resolution:
-      integrity: sha512-Eskp2RIbBbdXybRn/SYVcy27DsHDv/6mY2S0K8v3ELHjfy0LUs5Jz8fFRa6i0QYBYGA2VG8Hqp+QDqyp95WIBg==
+      integrity: sha512-tqHLrX/WUBxhoJ7kVNuHfsiTwE4zpEAxqbscqvmpKPGXe7hwrZdfnVEBCh1/r2P8DFPc/RC/nJBYWB0SOsyOzw==
       tarball: 'file:projects/webpack-builder-plugin-images.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-styles.tgz':
     dependencies:
       '@types/fs-extra': 5.0.5
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       css-loader: 2.1.1
       fs-extra: 7.0.1
       istanbul-azure-reporter: 0.1.4
@@ -7416,17 +7425,18 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
       url-loader: 1.1.2
     dev: false
     name: '@rush-temp/webpack-builder-plugin-styles'
     resolution:
-      integrity: sha512-hOBXeUpHMwed9RdQQNk0B6kK2To9lrFfpZuQOP8XaWNLKigYimzDMSOEYCFfMC2c93ovo+l5TdzfmCGoeRZYeA==
+      integrity: sha512-Xt8nKOtYuSNl4CeyS3wxgdA0qtnE2TtXwO552wAKl3nV6PXWkv3bp4DBChqro/hmT7wPgkSloHaeeYeb3a8PbA==
       tarball: 'file:projects/webpack-builder-plugin-styles.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-typescript.tgz':
     dependencies:
       '@types/fs-extra': 5.0.5
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       '@types/node': 11.11.3
       '@types/tapable': 1.0.4
       babel-core: 6.26.3
@@ -7447,15 +7457,16 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
     dev: false
     name: '@rush-temp/webpack-builder-plugin-typescript'
     resolution:
-      integrity: sha512-92E0lsCYXzQLiXShmRTk3TBAewNdmKAfB6E+ql3gh0ZrjUBNS6Qq0psbcGv/NPO6ulZzky78XPyIOk/p2MxBKA==
+      integrity: sha512-IkXY2KRZpHjFjorgD7OpE9OITwSmpy4FVDPEduIBETD0Ae1qyZVNWEZj2En8wMjBCtHPmag5WJ0QtkdqsghYDA==
       tarball: 'file:projects/webpack-builder-plugin-typescript.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-web-dev.tgz':
     dependencies:
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       '@types/webpack-dev-server': 3.1.4
       istanbul-azure-reporter: 0.1.4
       jest: 24.5.0
@@ -7466,16 +7477,17 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
       webpack-dev-server: 3.2.1
     dev: false
     name: '@rush-temp/webpack-builder-plugin-web-dev'
     resolution:
-      integrity: sha512-CSvnS5mAMv15eXUaettVbVZbJvc9aKxUO/pQXBgXGbMiGccSIbGdlye+Vetn6tcFQcjn84oRKzAOw8us2Ml3rg==
+      integrity: sha512-8wQdDgx70J4gwpLdbxkI7bgQcrKa3Md06X/R41TqvNup2EUEmy67+vIwUzeP3nlkl/8jaYIkK9qklIEHFodO3Q==
       tarball: 'file:projects/webpack-builder-plugin-web-dev.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-write-file.tgz':
     dependencies:
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       istanbul-azure-reporter: 0.1.4
       jest: 24.5.0
       jest-junit: 6.3.0
@@ -7485,17 +7497,18 @@ packages:
       tslint: /tslint/5.14.0/typescript@3.3.3333
       tslint-language-service: /tslint-language-service/0.9.9/6921bdfbb1407821bef8c0bfffda7652
       typescript: 3.3.3333
+      upath: 1.1.2
       write-file-webpack-plugin: 4.5.0
     dev: false
     name: '@rush-temp/webpack-builder-plugin-write-file'
     resolution:
-      integrity: sha512-7eFi5mXY1I0fJs624hb8g0DR1KqlPlLoDALPF7lkCJdqDOYMXgYONtSCFyY503allAtOqiB+Ax+ZGTGLlAumgw==
+      integrity: sha512-8mq68Lf5yFnFol6rxjXl+89wO0sLGjSUi+q8YxZwWmet3+I0DkqHLVxR822BwDIBgQ9dKIDqX0mKSyCM3W/55Q==
       tarball: 'file:projects/webpack-builder-plugin-write-file.tgz'
     version: 0.0.0
   'file:projects/webpack-builder.tgz':
     dependencies:
       '@babel/core': 7.3.4
-      '@types/jest': 22.2.3
+      '@types/jest': 24.0.11
       '@types/node': 11.11.3
       '@types/webpack': 4.4.25
       istanbul-azure-reporter: 0.1.4
@@ -7512,7 +7525,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder'
     resolution:
-      integrity: sha512-xi5AucvQprL4eUZ1NKedD1561/28PAfggD7LKI6udSbEM431q2NVsVt9sUadLlNDItDe5TV5XptxPRqj6nGKow==
+      integrity: sha512-mHewaec2WJkiUb6bULNGiK3eXK/avOrHQv5hYvocs62A9za+blAx6TIDln5DbEx1H1kNHfFvjAfrbh5t0W8Haw==
       tarball: 'file:projects/webpack-builder.tgz'
     version: 0.0.0
 registry: 'https://registry.npmjs.org/'
@@ -7531,7 +7544,7 @@ specifiers:
   '@types/fs-extra': ^5.0.5
   '@types/html-webpack-plugin': ^3.2.0
   '@types/html-webpack-template': ^6.0.3
-  '@types/jest': ^22.2.3
+  '@types/jest': ^24.0.11
   '@types/node': ^11.11.3
   '@types/tapable': 1.0.4
   '@types/webpack': ^4.4.25

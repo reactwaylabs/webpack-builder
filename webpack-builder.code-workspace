@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "packages\\webpack-builder"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-clean"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-example"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-html"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-images"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-styles"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-typescript"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-web-dev"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-write-file"
+		}
+	]
+}
