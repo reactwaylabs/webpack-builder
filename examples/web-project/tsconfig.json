@@ -5,6 +5,7 @@
         "removeComments": false,
         "outDir": "dist",
         "rootDir": "src",
+        "jsx": "react",
         "noUnusedLocals": true,
         "inlineSourceMap": true,
         "inlineSources": true,

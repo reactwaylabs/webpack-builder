@@ -7,6 +7,8 @@ import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 
+import "ts-loader";
+
 // Extensions.
 const TS_EXTENSION: string = ".ts";
 const TSX_EXTENSION: string = ".tsx";

@@ -18,12 +18,7 @@
   "dependencies": {
     "@reactway/webpack-builder": "1.0.0-alpha",
     "fs-extra": "^7.0.1",
-    "tslib": "^1.9.3",
-    "style-loader": "^0.23.1",
-    "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "css-loader": "^2.1.1",
-    "url-loader": "^1.1.2"
+    "tslib": "^1.9.3"
   },
   "devDependencies": {
     "istanbul-azure-reporter": "^0.1.4",
@@ -37,7 +32,13 @@
     "@types/jest": "^22.2.3",
     "@types/fs-extra": "^5.0.5"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "style-loader": "^0.23.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "css-loader": "^2.1.1",
+    "url-loader": "^1.1.2"
+  },
   "jest": {
     "verbose": true,
     "preset": "ts-jest",

@@ -5,33 +5,28 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "tsc -p .",
+        "build": "webpack --config webpack.config.js",
         "watch": "tsc -p . -w",
-        "webpack-build": "webpack --config webpack.config.js",
-        "start:dev": "npm run webpack-build && webpack-dev-server --config webpack.config.js"
+        "start:dev": "npm run build && webpack-dev-server --config webpack.config.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@reactway/webpack-builder": "1.0.0-alpha",
+        "@reactway/webpack-builder-plugin-html": "1.0.0-alpha",
+        "@reactway/webpack-builder-plugin-web-dev": "1.0.0-alpha",
+        "webpack": "^4.29.6"
     },
     "devDependencies": {
+        "@types/node": "^11.11.3",
+        "@types/react": "^16.8.8",
+        "@types/react-dom": "^16.8.2",
         "@types/webpack": "^4.4.25",
         "simplr-tslint": "^1.0.0-alpha.14",
-        "tslint": "^5.12.1",
         "tslint-language-service": "^0.9.9",
         "typescript": "^3.3.3333",
         "webpack-cli": "^3.3.0",
         "webpack-dev-server": "^3.2.1"
-    },
-    "dependencies": {
-        "@types/node":"^11.11.3",
-        "webpack": "^4.29.6",
-        "@reactway/webpack-builder": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-clean": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-html": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-images": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-styles": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-typescript": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-web-dev": "1.0.0-alpha",
-        "@reactway/webpack-builder-plugin-write-file": "1.0.0-alpha"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+    }
 }
