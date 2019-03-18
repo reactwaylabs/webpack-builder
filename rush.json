@@ -55,10 +55,10 @@
             "shouldPublish": true
         },
         // Example projects,
-        {
-            "packageName": "web-project",
-            "projectFolder": "examples/web-project",
-            "shouldPublish": false
-        }
+        // {
+        //     "packageName": "web-project",
+        //     "projectFolder": "examples/web-project",
+        //     "shouldPublish": false
+        // }
     ]
 }
