@@ -2,9 +2,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackTemplate from "html-webpack-template";
 import { Plugin } from "@reactway/webpack-builder";
 
-interface HtmlPluginOptions {
-    options?: HtmlWebpackPlugin.Options;
-}
+interface HtmlPluginOptions extends HtmlWebpackPlugin.Options {}
 
 export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config, projectDirectory) => webpack => {
     if (webpack.plugins == null) {
@@ -25,7 +23,7 @@ export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config, projectDirectory) 
     };
 
     if (config != null) {
-        htmlPluginOptions = config.options;
+        htmlPluginOptions = config;
     }
 
     // ts-jest: Throws error when it cannot resolve project root, because we are using Rush/pnpm.

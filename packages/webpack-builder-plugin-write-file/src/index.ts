@@ -1,1 +1,2 @@
-export * from "./plugin";
+import { WriteFilePlugin } from "./plugin";
+export = WriteFilePlugin;

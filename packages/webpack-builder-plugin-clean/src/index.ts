@@ -1,1 +1,2 @@
-export * from "./plugin";
+import { CleanPlugin } from "./plugin";
+export = CleanPlugin;

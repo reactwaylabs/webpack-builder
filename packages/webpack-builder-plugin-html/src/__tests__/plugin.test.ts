@@ -37,9 +37,7 @@ it("Adding html plugin with options to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
 
         .use(HtmlPlugin, {
-            options: {
-                chunks: "all"
-            }
+            chunks: "all"
         })
         .toConfig();
 

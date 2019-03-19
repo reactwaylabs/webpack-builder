@@ -2,9 +2,7 @@ import CleanWebpackPlugin from "clean-webpack-plugin";
 import { Plugin } from "@reactway/webpack-builder";
 import { Options } from "./plugin-options";
 
-interface CleanPluginOptions {
-    options?: Partial<Options>;
-}
+interface CleanPluginOptions extends Partial<Options> {}
 
 export const CleanPlugin: Plugin<CleanPluginOptions> = (config, projectDirectory) => webpack => {
     if (webpack.plugins == null) {
@@ -12,8 +10,8 @@ export const CleanPlugin: Plugin<CleanPluginOptions> = (config, projectDirectory
     }
 
     let cleanPluginConfig: Partial<Options> = {};
-    if (config != null && config.options != null) {
-        cleanPluginConfig = config.options;
+    if (config != null) {
+        cleanPluginConfig = config;
     }
 
     webpack.plugins.push(new CleanWebpackPlugin({ ...cleanPluginConfig }));
