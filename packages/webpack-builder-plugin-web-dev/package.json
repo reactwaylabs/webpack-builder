@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-web-dev",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.3",
+    "@reactway/webpack-builder": "1.0.0-alpha.4",
     "tslib": "^1.9.3",
     "upath": "^1.1.2"
   },
