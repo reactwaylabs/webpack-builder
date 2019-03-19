@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-write-file",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.4",
+    "@reactway/webpack-builder": "1.0.0-alpha.5",
     "tslib": "^1.9.3",
     "write-file-webpack-plugin": "^4.5.0",
     "upath": "^1.1.2"
