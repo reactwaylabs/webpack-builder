@@ -10,6 +10,7 @@
         {
             "packageName": "@reactway/webpack-builder",
             "projectFolder": "packages/webpack-builder",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         // Plugin example
@@ -22,36 +23,43 @@
         {
             "packageName": "@reactway/webpack-builder-plugin-typescript",
             "projectFolder": "packages/webpack-builder-plugin-typescript",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-styles",
             "projectFolder": "packages/webpack-builder-plugin-styles",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-html",
             "projectFolder": "packages/webpack-builder-plugin-html",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-web-dev",
             "projectFolder": "packages/webpack-builder-plugin-web-dev",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-images",
             "projectFolder": "packages/webpack-builder-plugin-images",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-write-file",
             "projectFolder": "packages/webpack-builder-plugin-write-file",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         {
             "packageName": "@reactway/webpack-builder-plugin-clean",
             "projectFolder": "packages/webpack-builder-plugin-clean",
+            "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
         // Example projects,
