@@ -7,9 +7,7 @@ const HOST: string = "0.0.0.0";
 const DEFAULT_PORT: number = 3000;
 const DEFAULT_OUTPUT_LOCATION: string = "./dist";
 
-interface WebDevServerOptions {
-    devServer?: WebpackDevServer.Configuration;
-}
+interface WebDevServerOptions extends WebpackDevServer.Configuration {}
 
 export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirectory) => _webpack => {
     const webpackWithDevServer: Configuration & { devServer?: WebpackDevServer.Configuration } = _webpack;
@@ -27,7 +25,7 @@ export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirecto
     };
 
     if (config != null) {
-        webDevServer = config.devServer;
+        webDevServer = config;
     }
 
     webpackWithDevServer.devServer = webDevServer;

@@ -6,7 +6,6 @@ jest.mock("upath", () => ({
     join: (...pathSegments: string[]) => pathSegments.join("//")
 }));
 
-
 import { Builder, Configuration } from "@reactway/webpack-builder";
 import upath from "upath";
 import { CleanPlugin } from "../plugin";
@@ -33,6 +32,6 @@ it("Adding clean plugin to configuration", () => {
 });
 
 it("Adding clean plugin with options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(CleanPlugin, { options: { dry: true } }).toConfig();
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(CleanPlugin, { dry: true }).toConfig();
     expect(configuration).toMatchSnapshot();
 });

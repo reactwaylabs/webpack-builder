@@ -1,4 +1,4 @@
-__dirname = "TEST_PATH";
+__dirname = "./src/__tests__/";
 
 jest.mock("upath", () => ({
     ...jest.requireActual("upath"),

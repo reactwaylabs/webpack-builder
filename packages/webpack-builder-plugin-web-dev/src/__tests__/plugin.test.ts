@@ -34,9 +34,7 @@ it("Adding web dev plugin to configuration", () => {
 it("Adding web dev plugin with options to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
         .use(WebDevPlugin, {
-            devServer: {
-                compress: false
-            }
+            compress: false
         })
         .toConfig();
 
