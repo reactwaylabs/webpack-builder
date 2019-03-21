@@ -15,9 +15,17 @@ const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
 // Public path
 const PUBLIC_PATH: string = "./";
 
+// tslint:disable-next-line no-any
+type OptionsDictionary = { [key: string]: any };
+
 interface StylesPluginOptions {
     fontsOutputLocation?: string;
     fontsPublicPath?: string;
+    urlLoaderOptions?: OptionsDictionary;
+    styleLoaderOptions?: OptionsDictionary;
+    cssLoaderOptions?: OptionsDictionary;
+    postcssLoaderOptions?: OptionsDictionary;
+    sassLoaderOptions?: OptionsDictionary;
 }
 
 export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
@@ -39,32 +47,74 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 
         const fontsPublicPath: string = config != null && config.fontsPublicPath != null ? config.fontsPublicPath : PUBLIC_PATH;
 
+        let urlLoaderOptions: OptionsDictionary = {};
+        if (config != null && config.urlLoaderOptions != null) {
+            urlLoaderOptions = config.urlLoaderOptions;
+        }
+
+        let styleLoaderOptions: OptionsDictionary = {};
+        if (config != null && config.styleLoaderOptions != null) {
+            styleLoaderOptions = config.styleLoaderOptions;
+        }
+
+        let cssLoaderOptions: OptionsDictionary = {};
+        if (config != null && config.cssLoaderOptions != null) {
+            cssLoaderOptions = config.cssLoaderOptions;
+        }
+
+        let postcssLoaderOptions: OptionsDictionary = {};
+        if (config != null && config.postcssLoaderOptions != null) {
+            postcssLoaderOptions = config.postcssLoaderOptions;
+        }
+
+        let sassLoaderOptions: OptionsDictionary = {};
+        if (config != null && config.sassLoaderOptions != null) {
+            sassLoaderOptions = config.sassLoaderOptions;
+        }
+
+        // TODO: Make options pass from user.
         webpack.module.rules.push(
             {
                 test: /\.scss$/,
                 use: [
-                    // Creates style nodes from JS strings.
-                    "style-loader",
+                    {
+                        // Creates style nodes from JS strings.
+                        loader: "style-loader",
+                        options: { ...styleLoaderOptions }
+                    },
                     // // Translates CSS into CommonJS.
                     // "css-loader",
                     // Autoprefixer
-                    "postcss-loader",
+                    { loader: "postcss-loader", options: { ...postcssLoaderOptions } },
                     // Compiles Sass to CSS.
-                    "sass-loader"
+                    {
+                        loader: "sass-loader",
+                        options: { ...sassLoaderOptions }
+                    }
                 ]
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: [
+                    {
+                        loader: "style-loader",
+                        options: { ...styleLoaderOptions }
+                    },
+                    {
+                        loader: "css-loader",
+                        options: { ...cssLoaderOptions }
+                    }
+                ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: "url-loader",
                 options: {
                     name: `${fontsOutputLocation}/[name].[ext]`,
                     publicPath: fontsPublicPath,
-                    limit: 10000
-                },
-                loader: "url-loader"
+                    limit: 10000,
+                    ...urlLoaderOptions
+                }
             }
         );
 
