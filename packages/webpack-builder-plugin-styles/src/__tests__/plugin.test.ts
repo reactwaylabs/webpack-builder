@@ -6,7 +6,6 @@ jest.mock("upath", () => ({
     join: (...pathSegments: string[]) => pathSegments.join("//")
 }));
 
-
 import { Builder, Configuration } from "@reactway/webpack-builder";
 import upath from "upath";
 import * as fs from "fs-extra";
@@ -45,6 +44,71 @@ it("Adding styles plugin with options to configuration", () => {
         .use(StylesPlugin, { fontsPublicPath: "../plugins" })
         .toConfig();
 
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with url options as object to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            urlLoaderOptions: {
+                options: {
+                    limit: 8192
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with style options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            styleLoaderOptions: {
+                options: {
+                    hmr: false
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with css options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            cssLoaderOptions: {
+                options: {
+                    url: true
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with post css options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            postcssLoaderOptions: {
+                options: {
+                    url: true
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with post sass options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            sassLoaderOptions: {
+                options: {
+                    includePaths: ["absolute/path/a", "absolute/path/b"]
+                }
+            }
+        })
+        .toConfig();
     expect(configuration).toMatchSnapshot();
 });
 

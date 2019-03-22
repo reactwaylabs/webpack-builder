@@ -1,3 +1,4 @@
+import Webpack from "webpack";
 import upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
@@ -15,17 +16,17 @@ const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
 // Public path
 const PUBLIC_PATH: string = "./";
 
-// tslint:disable-next-line no-any
-type OptionsDictionary = { [key: string]: any };
+type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
+type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
 
 interface StylesPluginOptions {
     fontsOutputLocation?: string;
     fontsPublicPath?: string;
-    urlLoaderOptions?: OptionsDictionary;
-    styleLoaderOptions?: OptionsDictionary;
-    cssLoaderOptions?: OptionsDictionary;
-    postcssLoaderOptions?: OptionsDictionary;
-    sassLoaderOptions?: OptionsDictionary;
+    urlLoaderOptions?: LoaderOptions;
+    styleLoaderOptions?: LoaderOptions;
+    cssLoaderOptions?: LoaderOptions;
+    postcssLoaderOptions?: LoaderOptions;
+    sassLoaderOptions?: LoaderOptions;
 }
 
 export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
@@ -47,32 +48,53 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 
         const fontsPublicPath: string = config != null && config.fontsPublicPath != null ? config.fontsPublicPath : PUBLIC_PATH;
 
-        let urlLoaderOptions: OptionsDictionary = {};
+        const baseUrlLoaderOptions = {
+            name: `${fontsOutputLocation}/[name].[ext]`,
+            publicPath: fontsPublicPath,
+            limit: 10000
+        };
+
+        const urlLoaderOptions: LoaderOptions = {
+            options: {
+                ...baseUrlLoaderOptions
+            }
+        };
+
         if (config != null && config.urlLoaderOptions != null) {
-            urlLoaderOptions = config.urlLoaderOptions;
+            const urlOptions = urlLoaderOptions.options;
+            if (urlOptions != null && typeof urlOptions !== "string") {
+                urlLoaderOptions.options = {
+                    ...baseUrlLoaderOptions,
+                    ...urlOptions
+                };
+            } else {
+                urlLoaderOptions.options = urlOptions;
+            }
+
+            urlLoaderOptions.ident = config.urlLoaderOptions.ident;
+            urlLoaderOptions.query = config.urlLoaderOptions.query;
         }
 
-        let styleLoaderOptions: OptionsDictionary = {};
+        let styleLoaderOptions: LoaderOptions = {};
         if (config != null && config.styleLoaderOptions != null) {
             styleLoaderOptions = config.styleLoaderOptions;
         }
 
-        let cssLoaderOptions: OptionsDictionary = {};
+        let cssLoaderOptions: LoaderOptions = {};
         if (config != null && config.cssLoaderOptions != null) {
             cssLoaderOptions = config.cssLoaderOptions;
         }
 
-        let postcssLoaderOptions: OptionsDictionary = {};
+        let postcssLoaderOptions: LoaderOptions = {};
         if (config != null && config.postcssLoaderOptions != null) {
             postcssLoaderOptions = config.postcssLoaderOptions;
         }
 
-        let sassLoaderOptions: OptionsDictionary = {};
+        let sassLoaderOptions: LoaderOptions = {};
         if (config != null && config.sassLoaderOptions != null) {
             sassLoaderOptions = config.sassLoaderOptions;
         }
 
-        // TODO: Make options pass from user.
         webpack.module.rules.push(
             {
                 test: /\.scss$/,
@@ -80,16 +102,16 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
                     {
                         // Creates style nodes from JS strings.
                         loader: "style-loader",
-                        options: { ...styleLoaderOptions }
+                        ...styleLoaderOptions
                     },
                     // // Translates CSS into CommonJS.
                     // "css-loader",
                     // Autoprefixer
-                    { loader: "postcss-loader", options: { ...postcssLoaderOptions } },
+                    { loader: "postcss-loader", ...postcssLoaderOptions },
                     // Compiles Sass to CSS.
                     {
                         loader: "sass-loader",
-                        options: { ...sassLoaderOptions }
+                        ...sassLoaderOptions
                     }
                 ]
             },
@@ -98,23 +120,22 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
                 use: [
                     {
                         loader: "style-loader",
-                        options: { ...styleLoaderOptions }
+                        ...styleLoaderOptions
                     },
                     {
                         loader: "css-loader",
-                        options: { ...cssLoaderOptions }
+                        ...cssLoaderOptions
                     }
                 ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                loader: "url-loader",
-                options: {
-                    name: `${fontsOutputLocation}/[name].[ext]`,
-                    publicPath: fontsPublicPath,
-                    limit: 10000,
-                    ...urlLoaderOptions
-                }
+                use: [
+                    {
+                        loader: "url-loader",
+                        ...urlLoaderOptions
+                    }
+                ]
             }
         );
 

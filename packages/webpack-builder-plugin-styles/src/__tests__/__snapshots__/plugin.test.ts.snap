@@ -9,26 +9,109 @@ Object {
       Object {
         "test": /\\\\\\.scss\\$/,
         "use": Array [
-          "style-loader",
-          "postcss-loader",
-          "sass-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
         ],
       },
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          "style-loader",
-          "css-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
         ],
       },
       Object {
-        "loader": "url-loader",
-        "options": Object {
-          "limit": 10000,
-          "name": "./assets/fonts/[name].[ext]",
-          "publicPath": "./",
-        },
         "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with css options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+            "options": Object {
+              "url": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
       },
     ],
   },
@@ -61,26 +144,40 @@ Object {
       Object {
         "test": /\\\\\\.scss\\$/,
         "use": Array [
-          "style-loader",
-          "postcss-loader",
-          "sass-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
         ],
       },
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          "style-loader",
-          "css-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
         ],
       },
       Object {
-        "loader": "url-loader",
-        "options": Object {
-          "limit": 10000,
-          "name": "../assets/fonts/[name].[ext]",
-          "publicPath": "./",
-        },
         "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "../assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
       },
     ],
   },
@@ -113,26 +210,321 @@ Object {
       Object {
         "test": /\\\\\\.scss\\$/,
         "use": Array [
-          "style-loader",
-          "postcss-loader",
-          "sass-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
         ],
       },
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          "style-loader",
-          "css-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
         ],
       },
       Object {
-        "loader": "url-loader",
-        "options": Object {
-          "limit": 10000,
-          "name": "./assets/fonts/[name].[ext]",
-          "publicPath": "../plugins",
-        },
         "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "../plugins",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with post css options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+            "options": Object {
+              "url": true,
+            },
+          },
+          Object {
+            "loader": "sass-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with post sass options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+            "options": Object {
+              "includePaths": Array [
+                "absolute/path/a",
+                "absolute/path/b",
+              ],
+            },
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with style options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+            "options": Object {
+              "hmr": false,
+            },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+            "options": Object {
+              "hmr": false,
+            },
+          },
+          Object {
+            "loader": "css-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "resolve": Object {
+    "extensions": Array [
+      ".css",
+      ".scss",
+    ],
+  },
+}
+`;
+
+exports[`Adding styles plugin with url options as object to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "test": /\\\\\\.scss\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.css\\$/,
+        "use": Array [
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
+        ],
+      },
+      Object {
+        "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "ident": undefined,
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+            "query": undefined,
+          },
+        ],
       },
     ],
   },
@@ -165,26 +557,40 @@ Object {
       Object {
         "test": /\\\\\\.scss\\$/,
         "use": Array [
-          "style-loader",
-          "postcss-loader",
-          "sass-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
+          },
         ],
       },
       Object {
         "test": /\\\\\\.css\\$/,
         "use": Array [
-          "style-loader",
-          "css-loader",
+          Object {
+            "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
+          },
         ],
       },
       Object {
-        "loader": "url-loader",
-        "options": Object {
-          "limit": 10000,
-          "name": "./assets/fonts/[name].[ext]",
-          "publicPath": "./",
-        },
         "test": /\\\\\\.\\(woff\\|woff2\\|eot\\|ttf\\|otf\\)\\$/,
+        "use": Array [
+          Object {
+            "loader": "url-loader",
+            "options": Object {
+              "limit": 10000,
+              "name": "./assets/fonts/[name].[ext]",
+              "publicPath": "./",
+            },
+          },
+        ],
       },
     ],
   },

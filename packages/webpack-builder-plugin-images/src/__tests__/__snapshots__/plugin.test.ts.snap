@@ -62,6 +62,37 @@ Object {
 }
 `;
 
+exports[`Adding image plugin with loader options to configuration 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "loader": "url-loader",
+        "options": Object {
+          "limit": 8192,
+          "name": "./assets/images/[name].[ext]",
+          "publicPath": "/",
+        },
+        "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "TEST_PATH//./test-project//dist",
+    "publicPath": "./",
+  },
+}
+`;
+
 exports[`Adding image plugin with publicPath option to configuration 1`] = `
 Object {
   "entry": "./src/index.ts",

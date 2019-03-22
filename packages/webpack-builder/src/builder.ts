@@ -2,6 +2,7 @@ import { Configuration as WebpackConfiguration } from "webpack";
 
 export type Configuration = WebpackConfiguration;
 export type UpdateHandler = (webpack: Configuration) => Configuration;
+// tslint:disable-next-line no-any
 export type Plugin<TConfig = any> = (config: TConfig | undefined, projectDirectory: string) => UpdateHandler;
 
 export class Builder {
