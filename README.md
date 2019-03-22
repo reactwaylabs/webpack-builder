@@ -1,6 +1,6 @@
 # @reactway/webpack-builder
 
-A tool to create webpack config easier using @reactway plugins.
+A tool to create webpack config easier using @reactway/webpack-builder plugins.
 
 ## Packages
 
@@ -19,3 +19,9 @@ A tool to create webpack config easier using @reactway plugins.
 [webpack-builder-plugin-images](/packages/webpack-builder-plugin-images)
 
 [webpack-builder-plugin-html](/packages/webpack-builder-plugin-html)
+
+## License
+
+---
+
+Released under the [MIT license](LICENSE).
