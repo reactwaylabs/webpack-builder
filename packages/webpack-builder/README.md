@@ -10,7 +10,7 @@ $ npm i @reactway/webpack-builder
 
 To create a webpack config with builder first you have to create `webpack.congif.js` and add import to it. You must define **workspace directory** and base configuration with **`entry`** and **`output`** fields to able use.
 
-## Example
+## Example config
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
@@ -27,8 +27,6 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 ## API
 
 `use()` - Insert plugin to config.
-
-### Example
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
@@ -48,8 +46,6 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 ---
 
 `update()` - Update webpack config fields.
-
-### Example
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
@@ -73,7 +69,5 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 `toConfig()` - Returns `webpack` config to use. **Required to generate configuration.**
 
 ## License
-
----
 
 Released under the [MIT license](LICENSE).

@@ -22,6 +22,4 @@ A tool to create webpack config easier using @reactway/webpack-builder plugins.
 
 ## License
 
----
-
 Released under the [MIT license](LICENSE).
