@@ -20,6 +20,10 @@ A tool to create webpack config easier using @reactway/webpack-builder plugins.
 
 [webpack-builder-plugin-html](/packages/webpack-builder-plugin-html)
 
+## Documentation
+
+WIP
+
 ## License
 
 Released under the [MIT license](LICENSE).

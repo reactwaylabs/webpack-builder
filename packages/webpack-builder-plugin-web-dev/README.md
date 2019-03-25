@@ -63,6 +63,10 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 
 Suggest using `@reactway/webpack-builder-plugin-web-dev` together with `@reactway/webpack-builder-plugin-html`.
 
+## Documentation
+
+WIP
+
 ## License
 
 Released under the [MIT license](LICENSE).

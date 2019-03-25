@@ -70,6 +70,10 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 
 `toConfig()` - Returns `webpack` config to use. **Required to generate configuration.**
 
+## Documentation
+
+WIP
+
 ## License
 
 Released under the [MIT license](LICENSE).

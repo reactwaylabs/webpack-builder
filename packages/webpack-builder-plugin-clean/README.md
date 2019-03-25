@@ -48,6 +48,10 @@ module.exports = new webpackBuilder.Builder(__dirname, {
     .toConfig();
 ```
 
+## Documentation
+
+WIP
+
 ## License
 
 Released under the [MIT license](LICENSE).
