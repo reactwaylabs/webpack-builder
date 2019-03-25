@@ -352,7 +352,7 @@
     },
     "@rush-temp/webpack-builder-plugin-clean": {
       "version": "file:projects/webpack-builder-plugin-clean.tgz",
-      "integrity": "sha512-8Qlx/4j9zM+t2mMdJDJJJuhEEEZNI+aoF06oPOJ1y8QcMJG2zr8mMux8Bt1dIu73qm/26RQ1skn+zjtyQh0Ypg==",
+      "integrity": "sha512-J1pQcbqwDI9SX0GL7jCOOy4VsmCjSN05Z7KI5RzP5nOZfCBz8s1ypm9wCkMf8nBuHEBPN5e6H4s7EQ1mkvzk/A==",
       "requires": {
         "@types/jest": "^24.0.11",
         "@types/webpack": "^4.4.26",
@@ -371,7 +371,7 @@
     },
     "@rush-temp/webpack-builder-plugin-html": {
       "version": "file:projects/webpack-builder-plugin-html.tgz",
-      "integrity": "sha512-KG0/JvJexKFkhTuU1NTNeo77zqoLdFVWTcMbeFqCfqG9/cuBJ25dWU00eDAM22LCqt6ONcq9OlgoZ0voISKTBw==",
+      "integrity": "sha512-deF+0hm73Mad2U7lm+qGD6PrOuRyQsGNJc2Zm1x8uRCDrMiPwdm5WlP0HJGg8otafKZTVIe902XOTMKgeB2DHw==",
       "requires": {
         "@types/html-webpack-plugin": "^3.2.0",
         "@types/html-webpack-template": "^6.0.3",
@@ -392,7 +392,7 @@
     },
     "@rush-temp/webpack-builder-plugin-images": {
       "version": "file:projects/webpack-builder-plugin-images.tgz",
-      "integrity": "sha512-4eaUnS4rlhjwI4QNxgaeTIan6qoelJaILLAh4IKM9IWutA0i9gu8eDpFblpL9htKl9Gt30H0AGNc4fainwVisw==",
+      "integrity": "sha512-0pynBKNy+gHYFlr3xj6pTJZJulAqV1uKA9WAcq1Quz0nAwb+0dn5Nze1PGotW1sVZmQ5Lq+77u0jqBOsbbaQuQ==",
       "requires": {
         "@types/jest": "^24.0.11",
         "istanbul-azure-reporter": "^0.1.4",
@@ -410,7 +410,7 @@
     },
     "@rush-temp/webpack-builder-plugin-styles": {
       "version": "file:projects/webpack-builder-plugin-styles.tgz",
-      "integrity": "sha512-8FxlNYcGiXP//Ftec9WI8p77mVbUaZYp1qQI8sczTfcIb3iQU1/O81JgeAmP9ax8VYFLc3nTzWDp7PxlIU12vQ==",
+      "integrity": "sha512-JMhTbqFMbvnBUZaFAPxIEwZwHGQKDi7n/4RoDgepIgIXyJ7lYBhEfWD4byI7TIqKtkhirr0LxgrJZqneK0yGuw==",
       "requires": {
         "@types/fs-extra": "^5.0.5",
         "@types/jest": "^24.0.11",
@@ -438,7 +438,7 @@
     },
     "@rush-temp/webpack-builder-plugin-typescript": {
       "version": "file:projects/webpack-builder-plugin-typescript.tgz",
-      "integrity": "sha512-gqx0E1FgbRzKgFh4sfjK9EpIibbBMvRN79cWQlHCkc+9T1qJUxelMp7im0XT5h6zqmTPbhMfKa/PqQqmWqpEOw==",
+      "integrity": "sha512-bdIWPDVsQXjZOrb4EI8XLHrnu7kq+6lPu1ud82AZbWXBrMYCa5oQ2YoMfrgcdPGUCqEQqxGb6S21RA8FA5Pe/A==",
       "requires": {
         "@babel/core": "^7.3.4",
         "@types/fs-extra": "^5.0.5",
@@ -467,7 +467,7 @@
     },
     "@rush-temp/webpack-builder-plugin-web-dev": {
       "version": "file:projects/webpack-builder-plugin-web-dev.tgz",
-      "integrity": "sha512-XflokeZ3ZrtcAUJOAP7ZCb5RWeaeGzK83XJK1PpFd5xbojVxmwmCvmgLhKPQmYUHfjuXfi8hD0fKxvXID/uJ2A==",
+      "integrity": "sha512-9vIci/ng8PzppHop16eh6KD3Gm3ie/D60MYHITP4vluB7k8WJOXa2+riRsPqWJbnW5qzWT420oANbiZTVNvt2A==",
       "requires": {
         "@types/jest": "^24.0.11",
         "@types/webpack-dev-server": "^3.1.4",
@@ -486,7 +486,7 @@
     },
     "@rush-temp/webpack-builder-plugin-write-file": {
       "version": "file:projects/webpack-builder-plugin-write-file.tgz",
-      "integrity": "sha512-acs9xXcDRUCeKLzC44Q5NG+PFgPUjlfJTJddHgQJtG/iFRun4BfA/73bL5m+/yvyell9ndV32f7ietpx6XnoJA==",
+      "integrity": "sha512-mVgl1ZvRTY//ekWBvdE5gnTMZ3mGO7hcz0lhp1qg1gJX152naxbIkmwmyr5dYGBKcuny4T+AVzytDHrVuvc5Gg==",
       "requires": {
         "@types/jest": "^24.0.11",
         "istanbul-azure-reporter": "^0.1.4",
