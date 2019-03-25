@@ -27,5 +27,8 @@
 		{
 			"path": "packages\\webpack-builder-plugin-write-file"
 		}
-	]
+	],
+	"settings": {
+		"typescript.tsdk": "webpack-builder\\node_modules\\typescript\\lib"
+	}
 }
