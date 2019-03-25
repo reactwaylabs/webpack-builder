@@ -8,11 +8,11 @@ A plugin made for webpack-builder.
 $ npm i @reactway/webpack-builder-plugin-clean
 ```
 
+Add plugin into webpack config by using `use()` builder function.
+
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
 const clean = require("@reactway/webpack-builder-plugin-clean");
-
-Add plugin into webpack config by using `use()` builder function.
 
 module.exports = new webpackBuilder.Builder(__dirname, {
     entry: "./src/app.js",
