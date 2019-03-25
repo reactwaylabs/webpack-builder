@@ -8,7 +8,7 @@ A tool to create webpack config easier using @reactway plugins.
 $ npm i @reactway/webpack-builder
 ```
 
-To create a webpack config with builder first you have to create `webpack.congif.js` and add import to it. You must define **workspace directory** and base configuration with **`entry`** and **`output`** fields to able use.
+To create a webpack config with builder first you have to create `webpack.config.js` and add import to it. You must define **workspace directory** and base configuration with **`entry`** and **`output`** fields to able use.
 
 ## Example config
 
@@ -26,11 +26,12 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 
 ## API
 
-`use()` - Insert plugin to config.
+`use()` - Insert plugin to config. Possible to use more than one plugin.
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
 const examplePlugin = require("@reactway/webpack-builder-example-plugin");
+const examplePluginOther = require("@reactway/webpack-builder-example-plugin-other");
 
 module.exports = new webpackBuilder.Builder(__dirname, {
     entry: "./src/app.js",
@@ -40,6 +41,7 @@ module.exports = new webpackBuilder.Builder(__dirname, {
     }
 })
     .use(examplePlugin)
+    .use(examplePluginOther)
     .toConfig();
 ```
 
