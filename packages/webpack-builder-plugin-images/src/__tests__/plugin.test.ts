@@ -6,7 +6,6 @@ jest.mock("upath", () => ({
     join: (...pathSegments: string[]) => pathSegments.join("//")
 }));
 
-
 import { Builder, Configuration } from "@reactway/webpack-builder";
 import upath from "upath";
 import { ImagesPlugin } from "../plugin";
@@ -32,6 +31,17 @@ it("Adding image plugin to configuration", () => {
     expect(configuration).toMatchSnapshot();
 });
 
+it("Adding image plugin with loader options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(ImagesPlugin, {
+            urlLoaderOptions: {
+                limit: 8192
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
 it("Adding image plugin with imagesOutputLocation option to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
         .use(ImagesPlugin, { imagesOutputLocation: "./" })
@@ -40,8 +50,6 @@ it("Adding image plugin with imagesOutputLocation option to configuration", () =
 });
 
 it("Adding image plugin with publicPath option to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(ImagesPlugin, { publicPath: "./" })
-        .toConfig();
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(ImagesPlugin, { publicPath: "./" }).toConfig();
     expect(configuration).toMatchSnapshot();
 });

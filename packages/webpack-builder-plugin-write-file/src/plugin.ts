@@ -2,6 +2,7 @@ import WriteFileWebpackPlugin from "write-file-webpack-plugin";
 import { Plugin } from "@reactway/webpack-builder";
 
 interface WriteFilePluginOptions {
+    // tslint:disable-next-line no-any
     [key: string]: any;
 }
 

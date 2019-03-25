@@ -1,4 +1,5 @@
-import upath from "upath";
+import Webpack from "webpack";
+import * as upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 
@@ -15,9 +16,17 @@ const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
 // Public path
 const PUBLIC_PATH: string = "./";
 
+type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
+type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
+
 interface StylesPluginOptions {
     fontsOutputLocation?: string;
     fontsPublicPath?: string;
+    urlLoaderOptions?: LoaderOptions;
+    styleLoaderOptions?: LoaderOptions;
+    cssLoaderOptions?: LoaderOptions;
+    postcssLoaderOptions?: LoaderOptions;
+    sassLoaderOptions?: LoaderOptions;
 }
 
 export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
@@ -39,32 +48,94 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 
         const fontsPublicPath: string = config != null && config.fontsPublicPath != null ? config.fontsPublicPath : PUBLIC_PATH;
 
+        const baseUrlLoaderOptions = {
+            name: `${fontsOutputLocation}/[name].[ext]`,
+            publicPath: fontsPublicPath,
+            limit: 10000
+        };
+
+        const urlLoaderOptions: LoaderOptions = {
+            options: {
+                ...baseUrlLoaderOptions
+            }
+        };
+
+        if (config != null && config.urlLoaderOptions != null) {
+            const urlOptions = urlLoaderOptions.options;
+            if (urlOptions != null && typeof urlOptions !== "string") {
+                urlLoaderOptions.options = {
+                    ...baseUrlLoaderOptions,
+                    ...urlOptions
+                };
+            } else {
+                urlLoaderOptions.options = urlOptions;
+            }
+
+            urlLoaderOptions.ident = config.urlLoaderOptions.ident;
+            urlLoaderOptions.query = config.urlLoaderOptions.query;
+        }
+
+        let styleLoaderOptions: LoaderOptions = {};
+        if (config != null && config.styleLoaderOptions != null) {
+            styleLoaderOptions = config.styleLoaderOptions;
+        }
+
+        let cssLoaderOptions: LoaderOptions = {};
+        if (config != null && config.cssLoaderOptions != null) {
+            cssLoaderOptions = config.cssLoaderOptions;
+        }
+
+        let postcssLoaderOptions: LoaderOptions = {};
+        if (config != null && config.postcssLoaderOptions != null) {
+            postcssLoaderOptions = config.postcssLoaderOptions;
+        }
+
+        let sassLoaderOptions: LoaderOptions = {};
+        if (config != null && config.sassLoaderOptions != null) {
+            sassLoaderOptions = config.sassLoaderOptions;
+        }
+
         webpack.module.rules.push(
             {
                 test: /\.scss$/,
                 use: [
-                    // Creates style nodes from JS strings.
-                    "style-loader",
+                    {
+                        // Creates style nodes from JS strings.
+                        loader: "style-loader",
+                        ...styleLoaderOptions
+                    },
                     // // Translates CSS into CommonJS.
                     // "css-loader",
                     // Autoprefixer
-                    "postcss-loader",
+                    { loader: "postcss-loader", ...postcssLoaderOptions },
                     // Compiles Sass to CSS.
-                    "sass-loader"
+                    {
+                        loader: "sass-loader",
+                        ...sassLoaderOptions
+                    }
                 ]
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: [
+                    {
+                        loader: "style-loader",
+                        ...styleLoaderOptions
+                    },
+                    {
+                        loader: "css-loader",
+                        ...cssLoaderOptions
+                    }
+                ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                options: {
-                    name: `${fontsOutputLocation}/[name].[ext]`,
-                    publicPath: fontsPublicPath,
-                    limit: 10000
-                },
-                loader: "url-loader"
+                use: [
+                    {
+                        loader: "url-loader",
+                        ...urlLoaderOptions
+                    }
+                ]
             }
         );
 

@@ -1,19 +1,17 @@
-__dirname = "./src/__tests__/";
-
 jest.mock("upath", () => ({
     ...jest.requireActual("upath"),
     resolve: (...pathSegments: string[]) => pathSegments.join("//"),
     join: (...pathSegments: string[]) => pathSegments.join("//")
 }));
 
-
 import { Builder, Configuration } from "@reactway/webpack-builder";
-import upath from "upath";
+import * as upath from "upath";
 import * as fs from "fs-extra";
 import { StylesPlugin } from "../plugin";
 
+const path = "./src/__tests__/";
 let SAMPLE_CONFIGURATION: Configuration = {};
-const TEST_PROJECT_LOCATION: string = upath.resolve(__dirname, "./test-project");
+const TEST_PROJECT_LOCATION: string = upath.resolve(path, "./test-project");
 
 beforeEach(() => {
     SAMPLE_CONFIGURATION = {
@@ -48,8 +46,73 @@ it("Adding styles plugin with options to configuration", () => {
     expect(configuration).toMatchSnapshot();
 });
 
+it("Adding styles plugin with url options as object to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            urlLoaderOptions: {
+                options: {
+                    limit: 8192
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with style options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            styleLoaderOptions: {
+                options: {
+                    hmr: false
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with css options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            cssLoaderOptions: {
+                options: {
+                    url: true
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with post css options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            postcssLoaderOptions: {
+                options: {
+                    url: true
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Adding styles plugin with post sass options to configuration", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+        .use(StylesPlugin, {
+            sassLoaderOptions: {
+                options: {
+                    includePaths: ["absolute/path/a", "absolute/path/b"]
+                }
+            }
+        })
+        .toConfig();
+    expect(configuration).toMatchSnapshot();
+});
+
 it("PostCss config do not exist", () => {
-    const projectLocation = upath.resolve(__dirname, "./postcss-config-not-exist");
+    const projectLocation = upath.resolve(path, "./postcss-config-not-exist");
     fs.emptyDir(projectLocation);
     const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
     expect(configuration).toMatchSnapshot();
