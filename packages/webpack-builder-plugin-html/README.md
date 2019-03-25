@@ -27,7 +27,7 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 
 ## Passing options
 
-Default [webpack-builder-plugin-html](/packages/webpack-builder-plugin-html) options:
+Default [webpack-builder-plugin-html](/packages/webpack-builder-plugin-html) options and we are also using base[html-webpack-template](https://www.npmjs.com/package/html-webpack-template) template (`HtmlWebpackTemplate` named value):
 
 ```ts
 let htmlPluginOptions: HtmlWebpackPlugin.Options | undefined = {
@@ -59,7 +59,8 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 })
     .use(html, {
         title: 'Custom template',
-        template: 'index.html'
+        template: 'index.html',
+        ...
     }})
     .toConfig();
 ```
