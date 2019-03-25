@@ -10,6 +10,21 @@ $ npm i @reactway/webpack-builder-plugin-web-dev
 
 Add plugin into webpack config by using `use()` builder method.
 
+```js
+const webpackBuilder = require("@reactway/webpack-builder");
+const webpackDevServer = require("@reactway/webpack-builder-plugin-web-dev");
+
+module.exports = new webpackBuilder.Builder(__dirname, {
+    entry: "./src/app.js",
+    output: {
+        path: "./dist",
+        filename: "[name].bundle.js"
+    }
+})
+    .use(webpackDevServer)
+    .toConfig();
+```
+
 ## Passing options
 
 By giving any option it will fully override default options.
@@ -42,11 +57,11 @@ module.exports = new webpackBuilder.Builder(__dirname, {
         port: 3001,
         quiet: true,
         ...
-    }})
+    })
     .toConfig();
 ```
 
-Suggest using `@reactway/webpack-builder-plugin-web-dev` together `with @reactway/webpack-builder-plugin-html`.
+Suggest using `@reactway/webpack-builder-plugin-web-dev` together with `@reactway/webpack-builder-plugin-html`.
 
 ## License
 
