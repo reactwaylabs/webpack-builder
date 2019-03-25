@@ -4,12 +4,10 @@
     "description": "A plugin made for webpack-builder.",
     "keywords": [
         "webpack",
-        "builder",
+        "webpack-builder",
         "reactway",
         "plugin",
-        "styles",
-        "styles-plugin",
-        "styles-loader"
+        "styles"
     ],
     "authors": [
         "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",

@@ -5,7 +5,7 @@ jest.mock("upath", () => ({
 }));
 
 import { Builder, Configuration } from "@reactway/webpack-builder";
-import upath from "upath";
+import * as upath from "upath";
 import * as fs from "fs-extra";
 import { StylesPlugin } from "../plugin";
 
