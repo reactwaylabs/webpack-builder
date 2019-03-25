@@ -1,5 +1,5 @@
 import Webpack from "webpack";
-import upath from "upath";
+import * as upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 
