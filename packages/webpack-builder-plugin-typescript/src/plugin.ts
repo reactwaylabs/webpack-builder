@@ -69,7 +69,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 rules: []
             };
         }
-
+        
         webpack.module.rules.push({
             test: /\.tsx?$/,
             use: [
@@ -91,6 +91,19 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 }
             ],
             exclude: /node_modules/
+        });
+
+        webpack.module.rules.push({
+            test: /\.jsx?$/,
+            use: [
+                {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
+            ],
+            include: /node_modules/
         });
 
         if (webpack.resolve == null) {
