@@ -51,6 +51,8 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
             webpack.plugins = [];
         }
 
+        webpack.devtool = "inline-source-map";
+
         let forkTsConfig: Partial<ForkTsCheckerWebpackPluginOptions> = {};
         if (config != null && config.forkTsCheckerOptions != null) {
             forkTsConfig = config.forkTsCheckerOptions;
@@ -69,7 +71,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 rules: []
             };
         }
-        
+
         webpack.module.rules.push({
             test: /\.tsx?$/,
             use: [
