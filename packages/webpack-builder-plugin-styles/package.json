@@ -1,6 +1,6 @@
 {
     "name": "@reactway/webpack-builder-plugin-styles",
-    "version": "1.0.0-alpha.6",
+    "version": "1.0.0-alpha.7",
     "description": "A plugin made for webpack-builder.",
     "keywords": [
         "webpack",
@@ -30,7 +30,7 @@
         "**/*.md"
     ],
     "dependencies": {
-        "@reactway/webpack-builder": "1.0.0-alpha.6",
+        "@reactway/webpack-builder": "1.0.0-alpha.7",
         "fs-extra": "^7.0.1",
         "tslib": "^1.9.3",
         "upath": "^1.1.2",

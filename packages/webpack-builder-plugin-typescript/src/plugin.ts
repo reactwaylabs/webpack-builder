@@ -51,6 +51,8 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
             webpack.plugins = [];
         }
 
+        webpack.devtool = "inline-source-map";
+
         let forkTsConfig: Partial<ForkTsCheckerWebpackPluginOptions> = {};
         if (config != null && config.forkTsCheckerOptions != null) {
             forkTsConfig = config.forkTsCheckerOptions;
@@ -91,6 +93,19 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 }
             ],
             exclude: /node_modules/
+        });
+
+        webpack.module.rules.push({
+            test: /\.jsx?$/,
+            use: [
+                {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
+            ],
+            include: /node_modules/
         });
 
         if (webpack.resolve == null) {
@@ -135,7 +150,8 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
         }
 
         if (tsConfig != null && tsConfig.compilerOptions != null) {
-            // Hack to get other compiler options properties.
+            // HACK: To get other compiler options properties.
+            // tslint:disable-next-line:no-any
             const tsConfigCompilerOptions = tsConfig.compilerOptions as any;
             if (tsConfigCompilerOptions.jsx != null) {
                 if (webpack.resolve.extensions.indexOf(TSX_EXTENSION) === -1) {

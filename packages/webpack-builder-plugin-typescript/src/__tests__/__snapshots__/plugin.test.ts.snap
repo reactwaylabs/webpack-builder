@@ -2,6 +2,7 @@
 
 exports[`Adding typescript plugin to configuration 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -24,6 +25,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -74,6 +89,7 @@ Object {
 
 exports[`Adding typescript plugin with fork-ts-checker-webpack-plugin options to configuration 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -96,6 +112,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -146,6 +176,7 @@ Object {
 
 exports[`Adding typescript plugin with tsconfigPathsPluginOptions to configuration 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -168,6 +199,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -220,6 +265,7 @@ Object {
 
 exports[`baseURL exists at tsconfig 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -242,6 +288,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -294,6 +354,7 @@ Object {
 
 exports[`baseURL exists at tsconfig and adding tsconfigPathsPluginOptions 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -316,6 +377,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -368,6 +443,7 @@ Object {
 
 exports[`tsconfig and tslint do not exist 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -390,6 +466,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -438,6 +528,7 @@ Object {
 
 exports[`tsconfig jsx property exist 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -460,6 +551,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
@@ -514,6 +619,7 @@ Object {
 
 exports[`tsconfig with single space baseUrl 1`] = `
 Object {
+  "devtool": "inline-source-map",
   "entry": "./src/index.ts",
   "mode": "development",
   "module": Object {
@@ -536,6 +642,20 @@ Object {
             "options": Object {
               "happyPackMode": true,
               "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
         ],
