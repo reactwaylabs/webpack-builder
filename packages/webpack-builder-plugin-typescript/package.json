@@ -41,6 +41,7 @@
         "ts-loader": "^5.3.3",
         "tsconfig-paths": "^3.8.0",
         "tsconfig-paths-webpack-plugin": "^3.2.0",
+        "terser-webpack-plugin": "^1.2.3",
         "tslib": "^1.9.3",
         "upath": "^1.1.2"
     },
@@ -49,6 +50,7 @@
         "@types/jest": "^24.0.11",
         "@types/node": "^11.11.6",
         "@types/tapable": "1.0.4",
+        "@types/terser-webpack-plugin": "^1.2.1",
         "istanbul-azure-reporter": "^0.1.4",
         "jest": "^24.5.0",
         "jest-junit": "^6.3.0",
