@@ -1,3 +1,8 @@
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+MiniCssExtractPlugin.loader = "";
+
+jest.mock("optimize-css-assets-webpack-plugin");
 jest.mock("upath", () => ({
     ...jest.requireActual("upath"),
     resolve: (...pathSegments: string[]) => pathSegments.join("//"),

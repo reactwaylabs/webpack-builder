@@ -557,7 +557,7 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\common\\\\temp\\\\node_modules\\\\.registry.npmjs.org\\\\mini-css-extract-plugin\\\\0.6.0\\\\node_modules\\\\mini-css-extract-plugin\\\\dist\\\\loader.js",
+          "",
           Object {
             "loader": "style-loader",
           },
@@ -595,35 +595,16 @@ Object {
   "optimization": Object {
     "minimizer": Array [
       OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\$/g,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": [Function],
-          "cssProcessorOptions": Object {},
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
-        },
+        "apply": [MockFunction],
+        "buildPluginDescriptor": [MockFunction],
+        "createAsset": [MockFunction],
+        "deleteAssets": [MockFunction],
+        "getAssetsAndProcessors": [MockFunction],
+        "print": [MockFunction],
+        "process": [MockFunction],
+        "processCss": [MockFunction],
+        "resetInternalState": [MockFunction],
+        "setAsset": [MockFunction],
       },
     ],
   },
@@ -659,7 +640,7 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\common\\\\temp\\\\node_modules\\\\.registry.npmjs.org\\\\mini-css-extract-plugin\\\\0.6.0\\\\node_modules\\\\mini-css-extract-plugin\\\\dist\\\\loader.js",
+          "",
           Object {
             "loader": "style-loader",
           },
@@ -697,35 +678,16 @@ Object {
   "optimization": Object {
     "minimizer": Array [
       OptimizeCssAssetsWebpackPlugin {
-        "deleteAssetsMap": Object {},
-        "options": Object {
-          "assetNameRegExp": /\\\\\\.css\\$/g,
-          "assetProcessors": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
-            },
-          ],
-          "canPrint": undefined,
-          "cssProcessor": [Function],
-          "cssProcessorOptions": Object {},
-          "cssProcessorPluginOptions": Object {},
-        },
-        "phaseAssetProcessors": Object {
-          "compilation.optimize-assets": Array [],
-          "compilation.optimize-chunk-assets": Array [
-            Object {
-              "phase": "compilation.optimize-chunk-assets",
-              "processor": [Function],
-              "regExp": /\\\\\\.css\\$/g,
-            },
-          ],
-          "emit": Array [],
-        },
-        "pluginDescriptor": Object {
-          "name": "OptimizeCssAssetsWebpackPlugin",
-        },
+        "apply": [MockFunction],
+        "buildPluginDescriptor": [MockFunction],
+        "createAsset": [MockFunction],
+        "deleteAssets": [MockFunction],
+        "getAssetsAndProcessors": [MockFunction],
+        "print": [MockFunction],
+        "process": [MockFunction],
+        "processCss": [MockFunction],
+        "resetInternalState": [MockFunction],
+        "setAsset": [MockFunction],
       },
     ],
   },
