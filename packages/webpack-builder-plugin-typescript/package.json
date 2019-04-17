@@ -1,81 +1,83 @@
 {
-    "name": "@reactway/webpack-builder-plugin-typescript",
-    "version": "1.0.0-alpha.7",
-    "description": "A plugin made for webpack-builder.",
-    "keywords": [
-        "webpack",
-        "webpack-builder",
-        "reactway",
-        "plugin",
-        "typescript"
+  "name": "@reactway/webpack-builder-plugin-typescript",
+  "version": "1.0.0-alpha.8",
+  "description": "A plugin made for webpack-builder.",
+  "keywords": [
+    "webpack",
+    "webpack-builder",
+    "reactway",
+    "plugin",
+    "typescript"
+  ],
+  "authors": [
+    "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",
+    "Dovydas Navickas <dovydas@quatrodev.com> (https://github.com/DovydasNavickas)",
+    "Eimantas Dumšė <eimantas@quatrodev.com> (https://github.com/EimantasDumse)"
+  ],
+  "repository": "github:reactway/webpack-builder",
+  "bugs": "https://github.com/reactway/webpack-builder/issues",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w",
+    "pretest": "tsc -p . --noEmit && tslint -p .",
+    "test": "jest"
+  },
+  "files": [
+    "dist",
+    "**/*.md"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.4.3",
+    "@reactway/webpack-builder": "1.0.0-alpha.8",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "fork-ts-checker-webpack-plugin": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "tapable": "^1.1.1",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths": "^3.8.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "terser-webpack-plugin": "^1.2.3",
+    "tslib": "^1.9.3",
+    "upath": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.6",
+    "@types/tapable": "1.0.4",
+    "@types/terser-webpack-plugin": "^1.2.1",
+    "istanbul-azure-reporter": "^0.1.4",
+    "jest": "^24.5.0",
+    "jest-junit": "^6.3.0",
+    "simplr-tslint": "^1.0.0-alpha.14",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.14.0",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^3.3.3333"
+  },
+  "peerDependencies": {},
+  "jest": {
+    "verbose": true,
+    "preset": "ts-jest",
+    "reporters": [
+      "default",
+      "jest-junit"
     ],
-    "authors": [
-        "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",
-        "Dovydas Navickas <dovydas@quatrodev.com> (https://github.com/DovydasNavickas)",
-        "Eimantas Dumšė <eimantas@quatrodev.com> (https://github.com/EimantasDumse)"
+    "collectCoverage": true,
+    "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx)$",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/__tests__/*",
+      "!src/index.ts"
     ],
-    "repository": "github:reactway/webpack-builder",
-    "bugs": "https://github.com/reactway/webpack-builder/issues",
-    "license": "MIT",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "scripts": {
-        "build": "tsc -p .",
-        "watch": "tsc -p . -w",
-        "pretest": "tsc -p . --noEmit && tslint -p .",
-        "test": "jest"
-    },
-    "files": [
-        "dist",
-        "**/*.md"
-    ],
-    "dependencies": {
-        "@babel/core": "^7.3.4",
-        "@babel/preset-env": "^7.4.3",
-        "@reactway/webpack-builder": "1.0.0-alpha.7",
-        "babel-loader": "^8.0.5",
-        "babel-plugin-syntax-dynamic-import": "^6.18.0",
-        "fork-ts-checker-webpack-plugin": "^1.0.0",
-        "fs-extra": "^7.0.1",
-        "tapable": "^1.1.1",
-        "ts-loader": "^5.3.3",
-        "tsconfig-paths": "^3.8.0",
-        "tsconfig-paths-webpack-plugin": "^3.2.0",
-        "tslib": "^1.9.3",
-        "upath": "^1.1.2"
-    },
-    "devDependencies": {
-        "@types/fs-extra": "^5.0.5",
-        "@types/jest": "^24.0.11",
-        "@types/node": "^11.11.6",
-        "@types/tapable": "1.0.4",
-        "istanbul-azure-reporter": "^0.1.4",
-        "jest": "^24.5.0",
-        "jest-junit": "^6.3.0",
-        "simplr-tslint": "^1.0.0-alpha.14",
-        "ts-jest": "^24.0.0",
-        "tslint": "^5.14.0",
-        "tslint-language-service": "^0.9.9",
-        "typescript": "^3.3.3333"
-    },
-    "peerDependencies": {},
-    "jest": {
-        "verbose": true,
-        "preset": "ts-jest",
-        "reporters": [
-            "default",
-            "jest-junit"
-        ],
-        "collectCoverage": true,
-        "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx)$",
-        "collectCoverageFrom": [
-            "src/**/*.{ts,tsx}",
-            "!src/**/__tests__/*",
-            "!src/index.ts"
-        ],
-        "coverageReporters": [
-            "cobertura",
-            "istanbul-azure-reporter"
-        ]
-    }
+    "coverageReporters": [
+      "cobertura",
+      "istanbul-azure-reporter"
+    ]
+  }
 }

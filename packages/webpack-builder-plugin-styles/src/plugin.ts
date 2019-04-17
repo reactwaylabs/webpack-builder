@@ -2,6 +2,8 @@ import Webpack from "webpack";
 import * as upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
+import MiniCssExtractPlugin, { PluginOptions as MiniCssExtractPluginOptions } from "mini-css-extract-plugin";
+import OptimizeCSSAssetsPlugin, { Options as OptimizeCSSOptions } from "optimize-css-assets-webpack-plugin";
 
 // Extensions.
 const CSS_EXTENSION: string = ".css";
@@ -27,6 +29,8 @@ interface StylesPluginOptions {
     cssLoaderOptions?: LoaderOptions;
     postcssLoaderOptions?: LoaderOptions;
     sassLoaderOptions?: LoaderOptions;
+    optimizeCssAssetsPlugin?: OptimizeCSSOptions;
+    miniCssExtractPluginOptions?: MiniCssExtractPluginOptions;
 }
 
 export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
@@ -37,6 +41,14 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
     }
 
     return webpack => {
+        if (webpack.mode === "production") {
+            if (webpack.plugins == null) {
+                webpack.plugins = [];
+            }
+
+            webpack.plugins.push(new MiniCssExtractPlugin(config == null ? undefined : config.miniCssExtractPluginOptions));
+        }
+
         if (webpack.module == null) {
             webpack.module = {
                 rules: []
@@ -95,10 +107,13 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             sassLoaderOptions = config.sassLoaderOptions;
         }
 
+        const miniCssExtractPlugin = webpack.mode === "production" ? MiniCssExtractPlugin.loader : {};
+
         webpack.module.rules.push(
             {
-                test: /\.scss$/,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
+                    miniCssExtractPlugin,
                     {
                         // Creates style nodes from JS strings.
                         loader: "style-loader",
@@ -112,15 +127,6 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
                     {
                         loader: "sass-loader",
                         ...sassLoaderOptions
-                    }
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: "style-loader",
-                        ...styleLoaderOptions
                     },
                     {
                         loader: "css-loader",
@@ -153,6 +159,18 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 
         if (webpack.resolve.extensions.indexOf(SCSS_EXTENSION) === -1) {
             webpack.resolve.extensions.push(SCSS_EXTENSION);
+        }
+
+        if (webpack.mode === "production") {
+            if (webpack.optimization == null) {
+                webpack.optimization = {};
+            }
+
+            if (webpack.optimization.minimizer == null) {
+                webpack.optimization.minimizer = [];
+            }
+
+            webpack.optimization.minimizer.push(new OptimizeCSSAssetsPlugin(config == null ? undefined : config.optimizeCssAssetsPlugin));
         }
 
         return webpack;

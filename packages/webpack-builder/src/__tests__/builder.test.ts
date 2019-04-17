@@ -66,7 +66,7 @@ it("No entry file given to configuration", () => {
     noEntryFileDefined.entry = undefined;
     const configuration = new Builder(TEST_PROJECT_LOCATION, noEntryFileDefined);
 
-    expect(() => configuration.toConfig()).toThrowError("[Webpack Builder] Entry file is undefined.");
+    expect(() => configuration.toConfig()).toThrowError("[Webpack Builder] Entry file is not defined.");
 });
 
 it("No configuration output given", () => {
@@ -74,7 +74,7 @@ it("No configuration output given", () => {
     noOutputDefined.output = undefined;
     const configuration = new Builder(TEST_PROJECT_LOCATION, noOutputDefined);
 
-    expect(() => configuration.toConfig()).toThrowError("[Webpack Builder] Output directory is undefined.");
+    expect(() => configuration.toConfig()).toThrowError("[Webpack Builder] Output directory is not defined.");
 });
 
 it("Configuration type node", () => {
@@ -85,5 +85,10 @@ it("Configuration type node", () => {
         })
         .toConfig();
 
+    expect(configuration).toMatchSnapshot();
+});
+
+it("Simple configuration with optimization", () => {
+    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).toConfig(true);
     expect(configuration).toMatchSnapshot();
 });

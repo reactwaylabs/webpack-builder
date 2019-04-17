@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Adding typescript plugin to configuration 1`] = `
+exports[`development Adding typescript plugin to configuration 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -87,7 +87,7 @@ Object {
 }
 `;
 
-exports[`Adding typescript plugin with fork-ts-checker-webpack-plugin options to configuration 1`] = `
+exports[`development Adding typescript plugin with fork-ts-checker-webpack-plugin options to configuration 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -174,7 +174,7 @@ Object {
 }
 `;
 
-exports[`Adding typescript plugin with tsconfigPathsPluginOptions to configuration 1`] = `
+exports[`development Adding typescript plugin with tsconfigPathsPluginOptions to configuration 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -263,7 +263,7 @@ Object {
 }
 `;
 
-exports[`baseURL exists at tsconfig 1`] = `
+exports[`development baseURL exists at tsconfig 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -352,7 +352,7 @@ Object {
 }
 `;
 
-exports[`baseURL exists at tsconfig and adding tsconfigPathsPluginOptions 1`] = `
+exports[`development baseURL exists at tsconfig and adding tsconfigPathsPluginOptions 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -441,7 +441,7 @@ Object {
 }
 `;
 
-exports[`tsconfig and tslint do not exist 1`] = `
+exports[`development tsconfig and tslint do not exist 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -526,7 +526,7 @@ Object {
 }
 `;
 
-exports[`tsconfig jsx property exist 1`] = `
+exports[`development tsconfig jsx property exist 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -617,7 +617,7 @@ Object {
 }
 `;
 
-exports[`tsconfig with single space baseUrl 1`] = `
+exports[`development tsconfig with single space baseUrl 1`] = `
 Object {
   "devtool": "inline-source-map",
   "entry": "./src/index.ts",
@@ -695,6 +695,194 @@ Object {
   "resolve": Object {
     "extensions": Array [
       ".ts",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;
+
+exports[`production Adding typescript plugin to configuration in production mode 1`] = `
+Object {
+  "devtool": "inline-source-map",
+  "entry": "./src/index.ts",
+  "mode": "production",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".js",
+    ],
+    "plugins": Array [],
+  },
+}
+`;
+
+exports[`production Adding typescript plugin to configuration in production mode and passsing terser options 1`] = `
+Object {
+  "devtool": "inline-source-map",
+  "entry": "./src/index.ts",
+  "mode": "production",
+  "module": Object {
+    "rules": Array [
+      Object {
+        "exclude": /node_modules/,
+        "test": /\\\\\\.tsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "babelrc": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
+            },
+          },
+          Object {
+            "loader": "ts-loader",
+            "options": Object {
+              "happyPackMode": true,
+              "transpileOnly": true,
+            },
+          },
+        ],
+      },
+      Object {
+        "include": /node_modules/,
+        "test": /\\\\\\.jsx\\?\\$/,
+        "use": Array [
+          Object {
+            "loader": "babel-loader",
+            "options": Object {
+              "presets": Array [
+                "@babel/preset-env",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "optimization": Object {
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "./src/__tests__///./test-project//dist",
+    "publicPath": "./",
+  },
+  "plugins": Array [
+    ForkTsCheckerWebpackPlugin {
+      "apply": [MockFunction],
+      "createDoneCallback": [MockFunction],
+      "createEmitCallback": [MockFunction],
+      "createNoopEmitCallback": [MockFunction],
+      "handleServiceExit": [MockFunction],
+      "handleServiceMessage": [MockFunction],
+      "killService": [MockFunction],
+      "pluginCompile": [MockFunction],
+      "pluginDone": [MockFunction],
+      "pluginEmit": [MockFunction],
+      "pluginStart": [MockFunction],
+      "pluginStop": [MockFunction],
+      "printLoggerMessage": [MockFunction],
+      "spawnService": [MockFunction],
+      "validateVersions": [MockFunction],
+    },
+  ],
+  "resolve": Object {
+    "extensions": Array [
+      ".ts",
+      ".tsx",
+      ".jsx",
       ".js",
     ],
     "plugins": Array [],

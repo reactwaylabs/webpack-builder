@@ -6,6 +6,7 @@ import upath from "upath";
 import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
+import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
 import "ts-loader";
 
@@ -26,6 +27,7 @@ const DEFAULT_TSLINT_CONFIG_LOCATION: string = upath.resolve(__dirname, `../asse
 interface TypeScriptPluginOptions {
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
+    terserPluginOptions?: TerserPluginOptions;
 }
 
 export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projectDirectory) => {
@@ -165,6 +167,18 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
 
         if (webpack.resolve.extensions.indexOf(JS_EXTENSION) === -1) {
             webpack.resolve.extensions.push(JS_EXTENSION);
+        }
+
+        if (webpack.mode === "production") {
+            if (webpack.optimization == null) {
+                webpack.optimization = {};
+            }
+
+            if (webpack.optimization.minimizer == null) {
+                webpack.optimization.minimizer = [];
+            }
+
+            webpack.optimization.minimizer.push(new TerserPlugin(config == null ? undefined : config.terserPluginOptions) as Plugin);
         }
 
         return webpack;

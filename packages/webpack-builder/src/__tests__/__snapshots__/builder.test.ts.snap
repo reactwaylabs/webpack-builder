@@ -76,6 +76,35 @@ Object {
 }
 `;
 
+exports[`Simple configuration with optimization 1`] = `
+Object {
+  "entry": "./src/index.ts",
+  "mode": "development",
+  "node": Object {
+    "fs": "empty",
+    "net": "empty",
+    "tls": "empty",
+  },
+  "optimization": Object {
+    "splitChunks": Object {
+      "cacheGroups": Object {
+        "vendors": Object {
+          "chunks": "all",
+          "name": "vendor",
+          "test": /\\[\\\\\\\\\\\\/\\]node_modules\\[\\\\\\\\\\\\/\\]/,
+        },
+      },
+    },
+  },
+  "output": Object {
+    "chunkFilename": "[name].bundle.js",
+    "filename": "[name].bundle.js",
+    "path": "TEST_PATH//./test-project//dist",
+    "publicPath": "./",
+  },
+}
+`;
+
 exports[`Update simple configuration 1`] = `
 Object {
   "entry": "./src/index.ts",
