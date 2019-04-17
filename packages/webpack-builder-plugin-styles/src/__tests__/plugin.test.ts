@@ -13,107 +13,141 @@ const path = "./src/__tests__/";
 let SAMPLE_CONFIGURATION: Configuration = {};
 const TEST_PROJECT_LOCATION: string = upath.resolve(path, "./test-project");
 
-beforeEach(() => {
-    SAMPLE_CONFIGURATION = {
-        entry: "./src/index.ts",
-        mode: "development",
-        output: {
-            path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
-            filename: "[name].bundle.js",
-            chunkFilename: "[name].bundle.js",
-            publicPath: "./"
-        }
-    };
-});
-
-it("Adding styles plugin to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding styles plugin with fontsOutputLocation to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, { fontsOutputLocation: "../assets/fonts" })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding styles plugin with options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, { fontsPublicPath: "../plugins" })
-        .toConfig();
-
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding styles plugin with url options as object to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, {
-            urlLoaderOptions: {
-                options: {
-                    limit: 8192
-                }
+describe("development", () => {
+    beforeEach(() => {
+        SAMPLE_CONFIGURATION = {
+            entry: "./src/index.ts",
+            mode: "development",
+            output: {
+                path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
+                filename: "[name].bundle.js",
+                chunkFilename: "[name].bundle.js",
+                publicPath: "./"
             }
-        })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
+        };
+    });
 
-it("Adding styles plugin with style options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, {
-            styleLoaderOptions: {
-                options: {
-                    hmr: false
+    it("Adding styles plugin to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("Adding styles plugin with fontsOutputLocation to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, { fontsOutputLocation: "../assets/fonts" })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("Adding styles plugin with options to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, { fontsPublicPath: "../plugins" })
+            .toConfig();
+
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("Adding styles plugin with url options as object to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                urlLoaderOptions: {
+                    options: {
+                        limit: 8192
+                    }
                 }
-            }
-        })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
 
-it("Adding styles plugin with css options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, {
-            cssLoaderOptions: {
-                options: {
-                    url: true
+    it("Adding styles plugin with style options to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                styleLoaderOptions: {
+                    options: {
+                        hmr: false
+                    }
                 }
-            }
-        })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
 
-it("Adding styles plugin with post css options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, {
-            postcssLoaderOptions: {
-                options: {
-                    url: true
+    it("Adding styles plugin with css options to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                cssLoaderOptions: {
+                    options: {
+                        url: true
+                    }
                 }
-            }
-        })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
 
-it("Adding styles plugin with post sass options to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(StylesPlugin, {
-            sassLoaderOptions: {
-                options: {
-                    includePaths: ["absolute/path/a", "absolute/path/b"]
+    it("Adding styles plugin with post css options to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                postcssLoaderOptions: {
+                    options: {
+                        url: true
+                    }
                 }
-            }
-        })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("Adding styles plugin with post sass options to configuration", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                sassLoaderOptions: {
+                    options: {
+                        includePaths: ["absolute/path/a", "absolute/path/b"]
+                    }
+                }
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("PostCss config do not exist", () => {
+        const projectLocation = upath.resolve(path, "./postcss-config-not-exist");
+        fs.emptyDir(projectLocation);
+        const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
 });
 
-it("PostCss config do not exist", () => {
-    const projectLocation = upath.resolve(path, "./postcss-config-not-exist");
-    fs.emptyDir(projectLocation);
-    const configuration = new Builder(projectLocation, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
-    expect(configuration).toMatchSnapshot();
+describe("production", () => {
+    beforeEach(() => {
+        SAMPLE_CONFIGURATION = {
+            entry: "./src/index.ts",
+            mode: "production",
+            output: {
+                path: upath.resolve(TEST_PROJECT_LOCATION, "dist"),
+                filename: "[name].bundle.js",
+                chunkFilename: "[name].bundle.js",
+                publicPath: "./"
+            }
+        };
+    });
+
+    it("Adding styles plugin to configuration in production mode", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(StylesPlugin).toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
+
+    it("Adding styles plugin to configuration with mini css options", () => {
+        const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
+            .use(StylesPlugin, {
+                miniCssExtractPluginOptions: {
+                    filename: "[name].[chunkhash].css",
+                    chunkFilename: "[name].[contenthash].css"
+                }
+            })
+            .toConfig();
+        expect(configuration).toMatchSnapshot();
+    });
 });
