@@ -20,13 +20,13 @@ export class Builder {
         return this;
     }
 
-    public toConfig(): Configuration {
+    public toConfig(enableOptimization?: boolean): Configuration {
         if (this.configuration.entry == null) {
-            throw new Error("[Webpack Builder] Entry file is undefined.");
+            throw new Error("[Webpack Builder] Entry file is not defined.");
         }
 
         if (this.configuration.output == null) {
-            throw new Error("[Webpack Builder] Output directory is undefined.");
+            throw new Error("[Webpack Builder] Output directory is not defined.");
         }
 
         if (this.configuration.target !== "node" && this.configuration.node == null) {
@@ -34,6 +34,21 @@ export class Builder {
                 fs: "empty",
                 net: "empty",
                 tls: "empty"
+            };
+        }
+
+        if (enableOptimization === true) {
+            this.configuration.optimization = {
+                splitChunks: {
+                    cacheGroups: {
+                        vendors: {
+                            test: /[\\/]node_modules[\\/]/,
+                            name: "vendor",
+                            chunks: "all"
+                        }
+                    }
+                },
+                ...this.configuration.optimization
             };
         }
 
