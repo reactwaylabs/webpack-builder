@@ -9,18 +9,17 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -68,21 +67,20 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
-          },
-          Object {
-            "loader": "postcss-loader",
-          },
-          Object {
-            "loader": "sass-loader",
           },
           Object {
             "loader": "css-loader",
             "options": Object {
               "url": true,
             },
+          },
+          Object {
+            "loader": "postcss-loader",
+          },
+          Object {
+            "loader": "sass-loader",
           },
         ],
       },
@@ -130,18 +128,17 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -189,18 +186,17 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -248,9 +244,11 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
@@ -260,9 +258,6 @@ Object {
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -310,9 +305,11 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
@@ -325,9 +322,6 @@ Object {
                 "absolute/path/b",
               ],
             },
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -375,7 +369,6 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
             "options": Object {
@@ -383,13 +376,13 @@ Object {
             },
           },
           Object {
+            "loader": "css-loader",
+          },
+          Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -437,18 +430,17 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -498,18 +490,17 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          Object {},
           Object {
             "loader": "style-loader",
+          },
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -557,18 +548,18 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          "",
           Object {
             "loader": "style-loader",
+          },
+          "",
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },
@@ -640,18 +631,18 @@ Object {
       Object {
         "test": /\\\\\\.\\(sa\\|sc\\|c\\)ss\\$/,
         "use": Array [
-          "",
           Object {
             "loader": "style-loader",
+          },
+          "",
+          Object {
+            "loader": "css-loader",
           },
           Object {
             "loader": "postcss-loader",
           },
           Object {
             "loader": "sass-loader",
-          },
-          Object {
-            "loader": "css-loader",
           },
         ],
       },

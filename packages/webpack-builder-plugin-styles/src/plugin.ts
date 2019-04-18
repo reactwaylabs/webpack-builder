@@ -107,32 +107,37 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             sassLoaderOptions = config.sassLoaderOptions;
         }
 
-        const miniCssExtractPlugin = webpack.mode === "production" ? MiniCssExtractPlugin.loader : {};
+        const webpackRulesSet: Webpack.RuleSetUse = [
+            {
+                // Creates style nodes from JS strings.
+                loader: "style-loader",
+                ...styleLoaderOptions
+            },
+            {
+                // "css-loader",
+                loader: "css-loader",
+                ...cssLoaderOptions
+            },
+            // // Translates CSS into CommonJS.
+            // Autoprefixer
+            { loader: "postcss-loader", ...postcssLoaderOptions },
+            // Compiles Sass to CSS.
+            {
+                loader: "sass-loader",
+                ...sassLoaderOptions
+            }
+        ];
+
+        // If it is a `production` mode webpack then we need `MiniCssExtractPlugin` add after `styles` loader (it crashes if we put before).
+        if (webpack.mode === "production") {
+            webpackRulesSet.splice(1, 0, MiniCssExtractPlugin.loader);
+        }
 
         webpack.module.rules.push(
             {
                 test: /\.(sa|sc|c)ss$/,
-                use: [
-                    miniCssExtractPlugin,
-                    {
-                        // Creates style nodes from JS strings.
-                        loader: "style-loader",
-                        ...styleLoaderOptions
-                    },
-                    // // Translates CSS into CommonJS.
-                    // "css-loader",
-                    // Autoprefixer
-                    { loader: "postcss-loader", ...postcssLoaderOptions },
-                    // Compiles Sass to CSS.
-                    {
-                        loader: "sass-loader",
-                        ...sassLoaderOptions
-                    },
-                    {
-                        loader: "css-loader",
-                        ...cssLoaderOptions
-                    }
-                ]
+                // TODO: Fix problem with styles in production.
+                use: [...webpackRulesSet]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
