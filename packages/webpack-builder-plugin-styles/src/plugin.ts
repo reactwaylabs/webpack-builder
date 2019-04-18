@@ -136,7 +136,6 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         webpack.module.rules.push(
             {
                 test: /\.(sa|sc|c)ss$/,
-                // TODO: Fix problem with styles in production.
                 use: [...webpackRulesSet]
             },
             {
