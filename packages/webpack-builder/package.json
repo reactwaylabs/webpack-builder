@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.0-alpha.9",
   "description": "A tool to create webpack config easier using plugins.",
   "keywords": [
     "webpack",

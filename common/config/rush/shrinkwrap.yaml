@@ -1,6 +1,7 @@
 dependencies:
   '@babel/core': 7.4.0
   '@babel/preset-env': 7.4.3
+  '@reactway/webpack-builder': 1.0.0-alpha.8
   '@rush-temp/webpack-builder': 'file:projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-clean': 'file:projects/webpack-builder-plugin-clean.tgz'
   '@rush-temp/webpack-builder-plugin-html': 'file:projects/webpack-builder-plugin-html.tgz'
@@ -1373,6 +1374,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-QsEsh5YaDvHoMQ2YHdvZy2iDnU3GgKVBTcHf6cILyoWDZtPSdlG444pL/ioPYO/GpXSfODBb9sefEetfC4v9oA==
+  /@reactway/webpack-builder/1.0.0-alpha.8:
+    dependencies:
+      tslib: 1.9.3
+      upath: 1.1.2
+      webpack: /webpack/4.30.0/webpack@4.30.0
+    dev: false
+    resolution:
+      integrity: sha512-4s0v4xFN0VkGkZT+HKWpp1ku/Ks6MH1Z0bgbeDRPtJ4LxKPbPPLcOksul4jgGgOmsqTvuFrD9PhwR3QQ+u4Kbw==
   /@types/anymatch/1.3.1:
     dev: false
     resolution:
@@ -8703,6 +8712,12 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-9I2ydhj8Z9veORCw5PRm4u9uebCn0mcCa6scWoNcbZ6dAtoo2618u9UUzxgmsCOreJpqDDuv61LvwofW7hLcBA==
+  /tapable/1.1.3:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==
   /tar/2.2.1:
     dependencies:
       block-stream: 0.0.9
@@ -8724,6 +8739,25 @@ packages:
     dev: false
     engines:
       node: '>= 6.9.0'
+    peerDependencies:
+      webpack: ^4.0.0
+    resolution:
+      integrity: sha512-GOK7q85oAb/5kE12fMuLdn2btOS9OBZn4VsecpHDywoUC/jLhSAKOiYo0ezx7ss2EXPMzyEWFoE0s1WLE+4+oA==
+  /terser-webpack-plugin/1.2.3/webpack@4.30.0:
+    dependencies:
+      cacache: 11.3.2
+      find-cache-dir: 2.1.0
+      schema-utils: 1.0.0
+      serialize-javascript: 1.6.1
+      source-map: 0.6.1
+      terser: 3.17.0
+      webpack: /webpack/4.30.0/webpack@4.30.0
+      webpack-sources: 1.3.0
+      worker-farm: 1.6.0
+    dev: false
+    engines:
+      node: '>= 6.9.0'
+    id: registry.npmjs.org/terser-webpack-plugin/1.2.3
     peerDependencies:
       webpack: ^4.0.0
     resolution:
@@ -9517,6 +9551,39 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-MwBwpiE1BQpMDkbnUUaW6K8RFZjljJHArC6tWQJoFm0oQtfoSebtg4Y7/QHnJ/SddtjYLHaKGX64CFjG5rehJw==
+  /webpack/4.30.0/webpack@4.30.0:
+    dependencies:
+      '@webassemblyjs/ast': 1.8.5
+      '@webassemblyjs/helper-module-context': 1.8.5
+      '@webassemblyjs/wasm-edit': 1.8.5
+      '@webassemblyjs/wasm-parser': 1.8.5
+      acorn: 6.1.1
+      acorn-dynamic-import: /acorn-dynamic-import/4.0.0/acorn@6.1.1
+      ajv: 6.10.0
+      ajv-keywords: /ajv-keywords/3.4.0/ajv@6.10.0
+      chrome-trace-event: 1.0.0
+      enhanced-resolve: 4.1.0
+      eslint-scope: 4.0.3
+      json-parse-better-errors: 1.0.2
+      loader-runner: 2.4.0
+      loader-utils: 1.2.3
+      memory-fs: 0.4.1
+      micromatch: 3.1.10
+      mkdirp: 0.5.1
+      neo-async: 2.6.0
+      node-libs-browser: 2.2.0
+      schema-utils: 1.0.0
+      tapable: 1.1.3
+      terser-webpack-plugin: /terser-webpack-plugin/1.2.3/webpack@4.30.0
+      watchpack: 1.6.0
+      webpack-sources: 1.3.0
+    dev: false
+    engines:
+      node: '>=6.11.5'
+    hasBin: true
+    id: registry.npmjs.org/webpack/4.30.0
+    resolution:
+      integrity: sha512-4hgvO2YbAFUhyTdlR4FNyt2+YaYBYHavyzjCMbZzgglo02rlKi/pcsEzwCuCpsn1ryzIl1cq/u8ArIKu8JBYMg==
   /websocket-driver/0.7.0:
     dependencies:
       http-parser-js: 0.5.0
@@ -9772,7 +9839,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-clean'
     resolution:
-      integrity: sha512-AmFYXmvENSCV9ZGXwAxx0H6MQOciCAzD3vi1oBNe6A6ER6ntj7Kab/xgKttXlofW4gpY0LtdltWYYZoqoMXY7w==
+      integrity: sha512-a937RSQavI/2XO7UUEMmj6wrPQLS9n7cn287FPZv8QwjkPDXEIHgqbNlqQdvXDA22ahkLBaMtPOv73ztLJGbag==
       tarball: 'file:projects/webpack-builder-plugin-clean.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-html.tgz':
@@ -9795,7 +9862,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-html'
     resolution:
-      integrity: sha512-hBslGDxJ7Ids8IhyBZMgo4zaUKmJm0qZUfF2efc9TG7v0tsKo1LIygsdGImGskHTbhBbMGaSP+C9wzjhbeQUcQ==
+      integrity: sha512-EB81cCLxwrRMP63bSpWMTvcT9hWWH2glmS0MsUTS4s0SxF/0cEhTzzXOY8cWU+MrmKvOyZENJsb59NjX09RvqA==
       tarball: 'file:projects/webpack-builder-plugin-html.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-images.tgz':
@@ -9815,11 +9882,12 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-images'
     resolution:
-      integrity: sha512-8tCCznU2e/lYzfZb7pvailzXUZtSF2AFku2QdoG2BJY/7nFfXiQA6efkriLAovEVczJIyxVNkIEgfuleL7ty0w==
+      integrity: sha512-WT6wCXVsnXOGzFke7vH1HCnWMj8nvLm85iKOAcQV8ahhFnHdOC/+RSCyFrN8AYyiMPQsubVmCwrbLqWZNDpgVw==
       tarball: 'file:projects/webpack-builder-plugin-images.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-styles.tgz':
     dependencies:
+      '@reactway/webpack-builder': 1.0.0-alpha.8
       '@types/fs-extra': 5.0.5
       '@types/jest': 24.0.11
       '@types/mini-css-extract-plugin': 0.2.0
@@ -9850,7 +9918,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-styles'
     resolution:
-      integrity: sha512-X+EvV6ATBL4dHzKKlYRwSNdsgRt4yUkypRGVYjj8sVeY8aOrTD87hq4dhq5Qkoeooq0DkMlkhtwVD7lxEGMNvA==
+      integrity: sha512-HIWe1wA2t1eZK+hlnUTi8xigbyX/ycWXRib+6ClLvzac0BGUfP5eXo/T+zc9rUdzNilelKCEX59dTyrRz7yEwA==
       tarball: 'file:projects/webpack-builder-plugin-styles.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-typescript.tgz':
@@ -9884,7 +9952,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-typescript'
     resolution:
-      integrity: sha512-La8hpJCosGQC0+OvvcJJbixIxB1LQ+CKbUi6jtayi024e7lHJ+sNXNqa0lJZldKEZXcLAZvxUOzS6HuZiSRBhg==
+      integrity: sha512-0l0r8gxn4rDM7Ac10dsIcVHdei130GUVeXxyE/vZbAd7bJTIqKkHt+gFm6bAYPly3q/kcjbAuotTqKtoDahhyA==
       tarball: 'file:projects/webpack-builder-plugin-typescript.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-web-dev.tgz':
@@ -9905,7 +9973,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-web-dev'
     resolution:
-      integrity: sha512-qo3gQF4/BPcT5ipSAXLlub3QGcrFon/oS0F78EK4VxUWOuDmApiLZ0NUBoF9/XSmKpfmEZuy9O3tljBEFOp4fA==
+      integrity: sha512-KZWmYQRdg1MsBoz7/4LH3lizx4XobZrnctmxo/HLQ3AURrvg41+b19zsWDxSVUzqtwwqC62+fPVB6mhMb+IrwA==
       tarball: 'file:projects/webpack-builder-plugin-web-dev.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-write-file.tgz':
@@ -9925,7 +9993,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-write-file'
     resolution:
-      integrity: sha512-Wa2AxKcCI/u2ebIu0NQl0G35j7MyqfF+iHF88gRHP/IQV4S9obT+2d4+mensmZ0qIbw5K0Ljk704yxawSNNL9A==
+      integrity: sha512-ebCofIL3mBGiFJ1k7mw6aldU28C4p1j6pGf+4N+v/mcPpfTFYJ0A56kZZiTPtxRr71ntRs+yoHKWDanymwkggQ==
       tarball: 'file:projects/webpack-builder-plugin-write-file.tgz'
     version: 0.0.0
   'file:projects/webpack-builder.tgz':
@@ -9957,6 +10025,7 @@ shrinkwrapVersion: 3
 specifiers:
   '@babel/core': ^7.3.4
   '@babel/preset-env': ^7.4.3
+  '@reactway/webpack-builder': 1.0.0-alpha.8
   '@rush-temp/webpack-builder': 'file:./projects/webpack-builder.tgz'
   '@rush-temp/webpack-builder-plugin-clean': 'file:./projects/webpack-builder-plugin-clean.tgz'
   '@rush-temp/webpack-builder-plugin-html': 'file:./projects/webpack-builder-plugin-html.tgz'
