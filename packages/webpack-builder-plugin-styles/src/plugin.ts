@@ -46,7 +46,16 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
                 webpack.plugins = [];
             }
 
-            webpack.plugins.push(new MiniCssExtractPlugin(config == null ? undefined : config.miniCssExtractPluginOptions));
+            let miniCssExtractPluginOptions: MiniCssExtractPluginOptions = {
+                filename: "[name].[chunkhash].css",
+                chunkFilename: "[name].[contenthash].css"
+            };
+
+            if (config != null && config.miniCssExtractPluginOptions != null) {
+                miniCssExtractPluginOptions = config.miniCssExtractPluginOptions;
+            }
+
+            webpack.plugins.push(new MiniCssExtractPlugin(miniCssExtractPluginOptions));
         }
 
         if (webpack.module == null) {
