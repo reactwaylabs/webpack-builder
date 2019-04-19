@@ -608,8 +608,8 @@ Object {
   "plugins": Array [
     MiniCssExtractPlugin {
       "options": Object {
-        "chunkFilename": "[name].css",
-        "filename": "[name].css",
+        "chunkFilename": "[name].[contenthash].css",
+        "filename": "[name].[chunkhash].css",
       },
     },
   ],

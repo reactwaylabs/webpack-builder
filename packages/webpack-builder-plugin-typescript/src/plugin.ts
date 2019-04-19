@@ -178,7 +178,28 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 webpack.optimization.minimizer = [];
             }
 
-            webpack.optimization.minimizer.push(new TerserPlugin(config == null ? undefined : config.terserPluginOptions) as Plugin);
+            let terserOptions: TerserPluginOptions = {
+                cache: true,
+                parallel: true,
+                terserOptions: {
+                    compress: {
+                        dead_code: true,
+                        conditionals: true,
+                        booleans: true
+                    },
+                    module: false,
+                    output: {
+                        comments: false,
+                        beautify: false
+                    }
+                }
+            };
+
+            if (config != null && config.terserPluginOptions != null) {
+                terserOptions = config.terserPluginOptions;
+            }
+
+            webpack.optimization.minimizer.push(new TerserPlugin(terserOptions) as Plugin);
         }
 
         return webpack;
