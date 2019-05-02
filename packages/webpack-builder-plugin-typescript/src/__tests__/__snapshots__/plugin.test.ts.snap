@@ -18,6 +18,9 @@ Object {
               "plugins": Array [
                 "syntax-dynamic-import",
               ],
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
           Object {
@@ -105,6 +108,9 @@ Object {
               "plugins": Array [
                 "syntax-dynamic-import",
               ],
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
           Object {
@@ -191,6 +197,9 @@ Object {
               "babelrc": true,
               "plugins": Array [
                 "syntax-dynamic-import",
+              ],
+              "presets": Array [
+                "@babel/preset-env",
               ],
             },
           },
@@ -281,6 +290,9 @@ Object {
               "plugins": Array [
                 "syntax-dynamic-import",
               ],
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
           Object {
@@ -369,6 +381,9 @@ Object {
               "babelrc": true,
               "plugins": Array [
                 "syntax-dynamic-import",
+              ],
+              "presets": Array [
+                "@babel/preset-env",
               ],
             },
           },
@@ -459,6 +474,9 @@ Object {
               "plugins": Array [
                 "syntax-dynamic-import",
               ],
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
           Object {
@@ -543,6 +561,9 @@ Object {
               "babelrc": true,
               "plugins": Array [
                 "syntax-dynamic-import",
+              ],
+              "presets": Array [
+                "@babel/preset-env",
               ],
             },
           },
@@ -635,6 +656,9 @@ Object {
               "plugins": Array [
                 "syntax-dynamic-import",
               ],
+              "presets": Array [
+                "@babel/preset-env",
+              ],
             },
           },
           Object {
@@ -719,6 +743,9 @@ Object {
               "babelrc": true,
               "plugins": Array [
                 "syntax-dynamic-import",
+              ],
+              "presets": Array [
+                "@babel/preset-env",
               ],
             },
           },
@@ -813,6 +840,9 @@ Object {
               "babelrc": true,
               "plugins": Array [
                 "syntax-dynamic-import",
+              ],
+              "presets": Array [
+                "@babel/preset-env",
               ],
             },
           },
