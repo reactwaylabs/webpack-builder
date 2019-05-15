@@ -1,4 +1,4 @@
-# @reactway/image-loader"
+# @reactway/image-loader
 
 A plugin made for a webpack to load, optimize and resize images.
 
