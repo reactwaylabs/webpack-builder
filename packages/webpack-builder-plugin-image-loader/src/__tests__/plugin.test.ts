@@ -155,17 +155,6 @@ describe("ReactwayImagePlugin loader", () => {
                         loader: ReactwayImagePlugin.loader,
                         options: {
                             optimizeInDev: true
-                            // output: "images/[fileOriginalHash].[query].[name].[ext]",
-                            // optimization: {
-                            //     mozjpeg: { quality: 75 },
-                            //     gifsicle: { colors: 144 },
-                            //     svgo: {
-                            //         plugins: [{ removeViewBox: false }]
-                            //     },
-                            //     pngquant: {
-                            //         quality: [0.8, 1]
-                            //     }
-                            // }
                         }
                     }
                 ]
@@ -185,16 +174,6 @@ describe("ReactwayImagePlugin loader", () => {
                         loader: ReactwayImagePlugin.loader,
                         options: {
                             output: "images/[fileOriginalHash].[name].[ext]"
-                            // optimization: {
-                            //     mozjpeg: { quality: 75 },
-                            //     gifsicle: { colors: 144 },
-                            //     svgo: {
-                            //         plugins: [{ removeViewBox: false }]
-                            //     },
-                            //     pngquant: {
-                            //         quality: [0.8, 1]
-                            //     }
-                            // }
                         }
                     }
                 ]
@@ -205,21 +184,48 @@ describe("ReactwayImagePlugin loader", () => {
 
         expect(source).toMatchSnapshot();
     });
-    // fit("test", async () => {
-    //     const loader: webpack.RuleSetRule[] = [
-    //         {
-    //             test: /\.(png|jpg|gif|svg)$/,
-    //             use: [
-    //                 {
-    //                     loader: ReactwayImagePlugin.loader
-    //                 }
-    //             ]
-    //         }
-    //     ];
-    //     // const stats = ;
-    //     // const [{ source }] = stats.toJson().modules;
+    it("Running webpack in production mode", async () => {
+        const loader: webpack.RuleSetRule[] = [
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: ReactwayImagePlugin.loader
+                    }
+                ]
+            }
+        ];
+        const stats = await webpackCompiler("fixture.js", loader, true);
+        const [{ source }] = stats.toJson().modules;
 
-    //     // expect(source).toMatchSnapshot();
-    //     expect(() => webpackCompiler("fixture.js", loader)).toThrowError();
-    // });
+        expect(source).toMatchSnapshot();
+    });
+    it("Optimizing images in production mode", async () => {
+        const loader: webpack.RuleSetRule[] = [
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: ReactwayImagePlugin.loader,
+                        options: {
+                            optimization: {
+                                mozjpeg: { quality: 75 },
+                                gifsicle: { colors: 144 },
+                                svgo: {
+                                    plugins: [{ removeViewBox: false }]
+                                },
+                                pngquant: {
+                                    quality: [0.8, 1]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ];
+        const stats = await webpackCompiler("fixture.js", loader, true);
+        const [{ source }] = stats.toJson().modules;
+
+        expect(source).toMatchSnapshot();
+    });
 });

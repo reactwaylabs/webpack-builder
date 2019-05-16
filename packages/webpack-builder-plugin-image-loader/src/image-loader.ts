@@ -34,27 +34,27 @@ interface ImagesOptimization {
     /**
      * Check https://github.com/imagemin/imagemin-mozjpeg#imageminmozjpegoptionsbuffer for types.
      */
-    mozjpeg: { [key: string]: any };
+    mozjpeg?: { [key: string]: any };
     /**
      * https://www.npmjs.com/package/imagemin-optipng#imageminoptipngoptionsbuffer for types.
      */
-    optipng: { [key: string]: any };
+    optipng?: { [key: string]: any };
     /**
      * https://www.npmjs.com/package/imagemin-pngquant#imageminpngquantoptionsinput for types.
      */
-    pngquant: { [key: string]: any };
+    pngquant?: { [key: string]: any };
     /**
      * Check https://github.com/imagemin/imagemin-gifsicle#imagemingifsicleoptionsbuffer for types.
      */
-    gifsicle: { [key: string]: any };
+    gifsicle?: { [key: string]: any };
     /**
      * https://www.npmjs.com/package/imagemin-svgo#imageminsvgooptionsbuffer for types.
      */
-    svgo: { [key: string]: any };
+    svgo?: { [key: string]: any };
     /**
      * https://www.npmjs.com/package/imagemin-webp#imageminwebpoptionsbuffer for types.
      */
-    webp: { [key: string]: any };
+    webp?: { [key: string]: any };
 }
 
 interface FileNameQuery {
@@ -109,28 +109,29 @@ class ImageLoader {
         if (options.optimization == null) {
             return;
         }
+        console.log(options.optimization.pngquant);
 
-        if (options.optimization.mozjpeg) {
+        if (options.optimization.mozjpeg != null) {
             plugins.push(imageminMozjpeg(options.optimization.mozjpeg));
         }
 
-        if (options.optimization.gifsicle) {
+        if (options.optimization.gifsicle != null) {
             plugins.push(imageminGifsicle(options.optimization.gifsicle));
         }
 
-        if (options.optimization.optipng) {
+        if (options.optimization.optipng != null) {
             plugins.push(imageminOptipng(options.optimization.optipng));
         }
 
-        if (options.optimization.pngquant) {
+        if (options.optimization.pngquant != null) {
             plugins.push(imageminPngquant(options.optimization.pngquant));
         }
 
-        if (options.optimization.svgo) {
+        if (options.optimization.svgo != null) {
             plugins.push(imageminSvgo(options.optimization.svgo));
         }
 
-        if (options.optimization.webp) {
+        if (options.optimization.webp != null) {
             plugins.push(imageminWebp(options.optimization.webp));
         }
 
