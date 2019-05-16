@@ -176,6 +176,7 @@ class ImageLoader {
     public static async load(this: loader.LoaderContext, contentBuffer: string | Buffer): Promise<string> {
         if (typeof contentBuffer === "string") {
             throw new Error(
+                // tslint:disable-next-line:max-line-length
                 `Loader got a string instead of a Buffer, even though a static property 'raw' is set to true. This should never have happened.`
             );
         }
@@ -214,10 +215,8 @@ class ImageLoader {
         const query = ImageLoader.generateFileNameQuery(parsedResourceQuery);
 
         // TODO: Make default path or give from options.
-        let outputPath: string = "";
-        if (options.output == null) {
-            outputPath = `assets/images/${fileOriginalHash}-[name]${query == null ? "" : `${query.textQuery}`}.[ext]`;
-        } else {
+        let outputPath: string = `assets/images/${fileOriginalHash}-[name]${query == null ? "" : `${query.textQuery}`}.[ext]`;
+        if (options.output != null) {
             /**
              * If in output exists [fileOriginalHash], [query]
              * then replace with created content hash and query.

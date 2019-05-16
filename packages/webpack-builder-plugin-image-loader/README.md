@@ -14,6 +14,10 @@ WIP
 
 WIP
 
+## Images
+
+All images generated from https://placeholder.com/
+
 ## License
 
 Released under the [MIT license](LICENSE).

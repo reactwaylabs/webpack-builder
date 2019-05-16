@@ -52,6 +52,7 @@ export class ReactwayImagePlugin implements WebpackPlugin {
 
                 console.info(
                     blueBright(
+                        // tslint:disable-next-line:max-line-length
                         `Compared original image size(${originalSize}) with optimized/resized size(${reducedSize}) reduced by ${displayPercentage}`
                     )
                 );
