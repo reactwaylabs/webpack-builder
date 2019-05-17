@@ -1,2 +1,2 @@
-import { ReactwayImageLoaderPlugin } from "./plugin";
-export = ReactwayImageLoaderPlugin;
+export * from "./contracts";
+export * from "./plugin";

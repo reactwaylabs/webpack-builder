@@ -1,5 +1,5 @@
 import { Plugin } from "@reactway/webpack-builder";
-import ReactwayImageLoaderPlugin from "@reactway/image-loader";
+import ReactwayImageLoaderPlugin from "@reactway/image-loader"
 
 const IMAGES_OUTPUT_LOCATION: string = "./assets/images";
 const PUBLIC_PATH: string = "/";
@@ -31,13 +31,13 @@ export const ImagesPlugin: Plugin<ImagesPluginOptions> = (config, projectDirecto
 
     webpack.module.rules.push({
         test: /\.(png|jpg|gif|svg)$/,
-        loader: ReactwayImageLoaderPlugin.loader,
         options: {
             name: `${imagesOutputLocation}/[name].[ext]`,
             publicPath: publicPath,
             limit: 10000,
             ...urlLoaderOptions
-        }
+        },
+        loader: "url-loader"
     });
     return webpack;
 };
