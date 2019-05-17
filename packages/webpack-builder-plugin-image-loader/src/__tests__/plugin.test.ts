@@ -2,6 +2,46 @@ import webpack from "webpack";
 import webpackCompiler from "./compiler/compiler";
 import ReactwayImagePlugin from "../index";
 
+describe("ReactwayImagePlugin displaying stats", () => {
+    it("Adding plugin to config", async () => {
+        const loader: webpack.RuleSetRule[] = [
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: ReactwayImagePlugin.loader
+                    }
+                ]
+            }
+        ];
+
+        const plugins: webpack.Plugin[] = [new ReactwayImagePlugin()];
+        const stats = await webpackCompiler("fixture-no-images.js", loader, false, plugins);
+        const [{ source }] = stats.toJson().modules;
+
+        expect(source).toMatchSnapshot();
+    });
+
+    it("Adding plugin to config", async () => {
+        const loader: webpack.RuleSetRule[] = [
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: ReactwayImagePlugin.loader
+                    }
+                ]
+            }
+        ];
+
+        const plugins: webpack.Plugin[] = [new ReactwayImagePlugin()];
+        const stats = await webpackCompiler("fixture.js", loader, false, plugins);
+        const [{ source }] = stats.toJson().modules;
+
+        expect(source).toMatchSnapshot();
+    });
+});
+
 describe("ReactwayImagePlugin loader", () => {
     it("Initial loader load", async () => {
         const loader: webpack.RuleSetRule[] = [
@@ -49,26 +89,6 @@ describe("ReactwayImagePlugin loader", () => {
                         loader: ReactwayImagePlugin.loader,
                         options: {
                             limit: "10000"
-                        }
-                    }
-                ]
-            }
-        ];
-        const stats = await webpackCompiler("fixture.js", loader);
-        const [{ source }] = stats.toJson().modules;
-
-        expect(source).toMatchSnapshot();
-    });
-
-    it("Image loader with limit for base64 with current images", async () => {
-        const loader: webpack.RuleSetRule[] = [
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [
-                    {
-                        loader: ReactwayImagePlugin.loader,
-                        options: {
-                            limit: 0.001
                         }
                     }
                 ]
@@ -173,7 +193,7 @@ describe("ReactwayImagePlugin loader", () => {
                     {
                         loader: ReactwayImagePlugin.loader,
                         options: {
-                            output: "images/[fileOriginalHash].[name].[ext]"
+                            outputFolder: "images/"
                         }
                     }
                 ]
@@ -200,10 +220,11 @@ describe("ReactwayImagePlugin loader", () => {
 
         expect(source).toMatchSnapshot();
     });
+
     it("Optimizing images in production mode", async () => {
         const loader: webpack.RuleSetRule[] = [
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|webp)$/,
                 use: [
                     {
                         loader: ReactwayImagePlugin.loader,
@@ -214,9 +235,11 @@ describe("ReactwayImagePlugin loader", () => {
                                 svgo: {
                                     plugins: [{ removeViewBox: false }]
                                 },
+                                optipng: { optimizationLevel: 5 },
                                 pngquant: {
                                     quality: [0.8, 1]
-                                }
+                                },
+                                webp: { quality: 85 }
                             }
                         }
                     }

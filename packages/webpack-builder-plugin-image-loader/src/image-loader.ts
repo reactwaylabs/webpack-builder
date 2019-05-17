@@ -27,7 +27,7 @@ interface ImageLoaderOptions {
     sourceMap: boolean;
     optimizeInDev: boolean;
     optimization: ImagesOptimization;
-    output: string;
+    outputFolder: string;
 }
 
 interface ImagesOptimization {
@@ -109,7 +109,6 @@ class ImageLoader {
         if (options.optimization == null) {
             return;
         }
-        console.log(options.optimization.pngquant);
 
         if (options.optimization.mozjpeg != null) {
             plugins.push(imageminMozjpeg(options.optimization.mozjpeg));
@@ -208,29 +207,29 @@ class ImageLoader {
         }
 
         // Creates hash using file content (buffer).
-        // TODO: Ask about the what length it should return.
-        const fileOriginalHash = getHashDigest(contentBuffer, "sha256", "hex", 20);
+        const fileOriginalHash = getHashDigest(contentBuffer, "md5", "hex", 16);
 
         // Resizing images.
         const parsedResourceQuery = this.resourceQuery ? parseQuery(this.resourceQuery) : null;
         const query = ImageLoader.generateFileNameQuery(parsedResourceQuery);
 
-        // TODO: Make default path or give from options.
-        let outputPath: string = `assets/images/${fileOriginalHash}-[name]${query == null ? "" : `${query.textQuery}`}.[ext]`;
-        if (options.output != null) {
-            /**
-             * If in output exists [fileOriginalHash], [query]
-             * then replace with created content hash and query.
-             */
-            outputPath = options.output
-                .replace("[fileOriginalHash]", fileOriginalHash)
-                .replace("[query]", query == null ? "" : `${query.textQuery}`);
+        const defaultOutputFileFormat = `${fileOriginalHash}-[name]${query == null ? "" : `${query.textQuery}`}.[ext]`;
+        const defaultOutput: string = `assets/images/${defaultOutputFileFormat}`;
+
+        let output = defaultOutput;
+        if (options.outputFolder != null) {
+            output = options.outputFolder.endsWith("/")
+                ? `${options.outputFolder}${defaultOutputFileFormat}`
+                : `${options.outputFolder}/${defaultOutputFileFormat}`;
         }
+
         // With interpolate you need to add a folder path to export properly.
-        const url = interpolateName(this, outputPath, {
+        const url = interpolateName(this, output, {
             context: this.rootContext,
             content: contentBuffer
         });
+        console.log("pitout", url);
+
         const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
 
         // TODO: Ask about this code part below.
@@ -277,6 +276,8 @@ class ImageLoader {
 }
 
 const imageLoader: loader.Loader = function(content) {
+    this.cacheable && this.cacheable();
+
     const callback = this.async();
     if (callback == null) {
         return;

@@ -1,6 +1,11 @@
 import { Plugin as WebpackPlugin, Compiler } from "webpack";
+import debug from "debug";
 import chalk from "chalk";
 import { ImageSizeData } from "./contracts";
+
+const log = debug("rw-image-plugin");
+
+log.enabled = true;
 
 export class ReactwayImagePlugin implements WebpackPlugin {
     public static loader: string;
@@ -15,28 +20,26 @@ export class ReactwayImagePlugin implements WebpackPlugin {
 
         compiler.hooks.done.tap("reactway-image-plugin", () => {
             const imagesSizeData = ReactwayImagePlugin.imagesSizeArray;
-
             if (imagesSizeData.length === 0) {
-                console.warn("No files found to compare.");
                 return;
             }
 
-            console.info();
-            console.info(green("RWIP | Images stats:".toLocaleUpperCase()));
-            console.info(green("-".repeat(50)));
+            log("");
+            log(green("RWIP | Images stats:".toLocaleUpperCase()));
+            log(green("-".repeat(50)));
 
             imagesSizeData.forEach(image => {
-                console.info();
-                console.info(`Raw image request: ${yellow(`${image.rawRequest}`)}`);
-                console.info(`Image file path: ${yellow(`${image.filePath}`)}`);
-                console.info(`Requested source file path: ${yellow(`${image.requestedFilePath}`)}`);
+                log("=".repeat(10));
+                log(`| Raw image request: ${yellow(`${image.rawRequest}`)}`);
+                log(`| Image file path: ${yellow(`${image.filePath}`)}`);
+                log(`| Requested source file path: ${yellow(`${image.requestedFilePath}`)}`);
                 if (image.isBase64 === true) {
-                    console.info(blueBright("Image converted to Base64."));
+                    log(blueBright("|Image converted to Base64."));
                     return;
                 }
 
                 if (image.reducedSize == null || image.originalSize.length === image.reducedSize.length) {
-                    console.info(blueBright("Reduced image size haven't changed compare to original image size."));
+                    log(blueBright("| Reduced image size haven't changed compare to original image size."));
                     return;
                 }
 
@@ -50,15 +53,16 @@ export class ReactwayImagePlugin implements WebpackPlugin {
                         ? chalk.greenBright(`${reducedImagePercentage.toFixed(2)}%`)
                         : chalk.redBright(`${reducedImagePercentage.toFixed(2)}%`);
 
-                console.info(
+                log(
                     blueBright(
                         // tslint:disable-next-line:max-line-length
-                        `Compared original image size(${originalSize}) with optimized/resized size(${reducedSize}) reduced by ${displayPercentage}`
+                        `| Compared original image size(${originalSize}) with optimized/resized size(${reducedSize}) reduced by ${displayPercentage}`
                     )
                 );
             });
-            console.info(green("-".repeat(50)));
-            console.info();
+            log("=".repeat(10));
+            log(green("-".repeat(50)));
+            log("");
         });
     }
 }

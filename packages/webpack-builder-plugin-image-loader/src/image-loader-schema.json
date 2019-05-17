@@ -1,7 +1,7 @@
 {
     "type": "object",
     "properties": {
-        "output": {
+        "outputFolder": {
             "type": "string"
         },
         "limit": {
