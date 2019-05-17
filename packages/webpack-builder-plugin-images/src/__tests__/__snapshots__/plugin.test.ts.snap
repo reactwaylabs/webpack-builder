@@ -7,7 +7,7 @@ Object {
   "module": Object {
     "rules": Array [
       Object {
-        "loader": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-image-loader\\\\dist\\\\image-loader.js",
+        "loader": "./path/to/link",
         "options": Object {},
         "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
       },
@@ -34,7 +34,7 @@ Object {
   "module": Object {
     "rules": Array [
       Object {
-        "loader": "E:\\\\Projects\\\\ReactWay\\\\webpack-builder\\\\packages\\\\webpack-builder-plugin-image-loader\\\\dist\\\\image-loader.js",
+        "loader": "./path/to/link",
         "options": Object {
           "limit": 10000,
         },
