@@ -30,7 +30,8 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.11",
+    "@reactway/webpack-builder": "^1.0.0-alpha.11",
+    "@reactway/image-loader": "^1.0.0-alpha.11",
     "tslib": "^1.9.3",
     "url-loader": "^1.1.2",
     "upath": "^1.1.2"

@@ -21,8 +21,7 @@ exports[`ReactwayImagePlugin loader Initial loader load 1`] = `"module.exports =
 exports[`ReactwayImagePlugin loader Optimize images in dev 1`] = `"module.exports = {src: __webpack_public_path__ + \\"assets/images/a1036f6e96c70017-1000jpg-600h.jpg\\",toString:function(){return __webpack_public_path__ + \\"assets/images/a1036f6e96c70017-1000jpg-600h.jpg\\"}};"`;
 
 exports[`ReactwayImagePlugin loader Optimizing images in production mode 1`] = `
-"// TODO: Split imports for certain tests
-import jpg from \\"./150x150jpg.jpg\\";
+"import jpg from \\"./150x150jpg.jpg\\";
 import png from \\"./100png.png\\";
 const queryImage = require(\\"./1000jpg.jpg?width=200&height=600\\");
 const textQueryImage = require(\\"./1000jpg.jpg?width=test&height=test\\");
@@ -32,8 +31,7 @@ const queryImageWidth = require(\\"./1000jpg.jpg?width=200\\");
 `;
 
 exports[`ReactwayImagePlugin loader Running webpack in production mode 1`] = `
-"// TODO: Split imports for certain tests
-import jpg from \\"./150x150jpg.jpg\\";
+"import jpg from \\"./150x150jpg.jpg\\";
 import png from \\"./100png.png\\";
 const queryImage = require(\\"./1000jpg.jpg?width=200&height=600\\");
 const textQueryImage = require(\\"./1000jpg.jpg?width=test&height=test\\");

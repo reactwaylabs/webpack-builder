@@ -19,49 +19,7 @@ import mime from "mime";
 import sharp from "sharp";
 // Local imports
 import { ReactwayImageLoaderPlugin } from "./plugin";
-import { ImageSizeData } from "./contracts.js";
-
-interface ImageLoaderOptions {
-    name: string;
-    limit: string | number;
-    sourceMap: boolean;
-    optimizeInDev: boolean;
-    optimization: ImagesOptimization;
-    outputFolder: string;
-}
-
-interface ImagesOptimization {
-    /**
-     * Check https://github.com/imagemin/imagemin-mozjpeg#imageminmozjpegoptionsbuffer for types.
-     */
-    mozjpeg?: { [key: string]: any };
-    /**
-     * https://www.npmjs.com/package/imagemin-optipng#imageminoptipngoptionsbuffer for types.
-     */
-    optipng?: { [key: string]: any };
-    /**
-     * https://www.npmjs.com/package/imagemin-pngquant#imageminpngquantoptionsinput for types.
-     */
-    pngquant?: { [key: string]: any };
-    /**
-     * Check https://github.com/imagemin/imagemin-gifsicle#imagemingifsicleoptionsbuffer for types.
-     */
-    gifsicle?: { [key: string]: any };
-    /**
-     * https://www.npmjs.com/package/imagemin-svgo#imageminsvgooptionsbuffer for types.
-     */
-    svgo?: { [key: string]: any };
-    /**
-     * https://www.npmjs.com/package/imagemin-webp#imageminwebpoptionsbuffer for types.
-     */
-    webp?: { [key: string]: any };
-}
-
-interface FileNameQuery {
-    textQuery: string;
-    width?: number;
-    height?: number;
-}
+import { ImageSizeData, ImageLoaderOptions, FileNameQuery } from "./contracts";
 
 class ImageLoader {
     protected static generateFileNameQuery(parsedResourceQuery: OptionObject | null): FileNameQuery | null {
@@ -155,7 +113,7 @@ class ImageLoader {
         imageSizeData: ImageSizeData
     ): string | undefined {
         if (limit == null) {
-            return;
+            return undefined;
         }
 
         const mimeType = mime.getType(resourcePath);
@@ -165,7 +123,7 @@ class ImageLoader {
         }
 
         if (content.length > limit) {
-            return;
+            return undefined;
         }
 
         ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, isBase64: true });
@@ -239,8 +197,7 @@ class ImageLoader {
                 const fileContent = fs.readFileSync(existentFilePath);
                 ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: fileContent });
 
-                const exportPath = `module.exports = {src: ${path},toString:function(){return ${path}}};`;
-                return exportPath;
+                return `module.exports = {src: ${path},toString:function(){return ${path}}};`;
             }
         }
 
@@ -268,12 +225,11 @@ class ImageLoader {
             this.emitFile(`${url}`, contentBuffer, options.sourceMap);
         }
 
-        const exportPath = `module.exports = {src: ${path},toString:function(){return ${path}}};`;
-        return exportPath;
+        return `module.exports = {src: ${path},toString:function(){return ${path}}};`;
     }
 }
 
-const imageLoader: loader.Loader = function(content) {
+const imageLoader: loader.Loader = function(content: string | Buffer): void {
     this.cacheable && this.cacheable();
 
     const callback = this.async();

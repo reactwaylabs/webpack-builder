@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import webpackCompiler from "./compiler/compiler";
-import ReactwayImageLoaderPlugin from "../index";
+import { ReactwayImageLoaderPlugin } from "../plugin";
 
 describe("ReactwayImagePlugin displaying stats", () => {
     it("Adding plugin to config", async () => {

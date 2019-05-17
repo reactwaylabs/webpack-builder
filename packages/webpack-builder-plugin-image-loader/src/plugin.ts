@@ -39,7 +39,7 @@ export class ReactwayImageLoaderPlugin implements WebpackPlugin {
                 }
 
                 if (image.reducedSize == null || image.originalSize.length === image.reducedSize.length) {
-                    log(blueBright("| Reduced image size haven't changed compare to original image size."));
+                    log(blueBright("| Reduced image size hasn't changed compare to original image size."));
                     return;
                 }
 
