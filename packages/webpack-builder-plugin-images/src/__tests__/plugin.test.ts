@@ -34,22 +34,8 @@ it("Adding image plugin to configuration", () => {
 it("Adding image plugin with loader options to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
         .use(ImagesPlugin, {
-            urlLoaderOptions: {
-                limit: 8192
-            }
+            limit: 10000
         })
         .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding image plugin with imagesOutputLocation option to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(ImagesPlugin, { imagesOutputLocation: "./" })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding image plugin with publicPath option to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(ImagesPlugin, { publicPath: "./" }).toConfig();
     expect(configuration).toMatchSnapshot();
 });
