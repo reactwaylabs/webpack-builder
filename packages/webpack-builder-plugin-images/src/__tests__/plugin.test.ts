@@ -1,3 +1,4 @@
+jest.mock("@reactway/image-loader");
 __dirname = "TEST_PATH";
 
 jest.mock("upath", () => ({
