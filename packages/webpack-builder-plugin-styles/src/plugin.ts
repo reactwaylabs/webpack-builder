@@ -55,7 +55,7 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
                 miniCssExtractPluginOptions = config.miniCssExtractPluginOptions;
             }
 
-            webpack.plugins.push(new MiniCssExtractPlugin(miniCssExtractPluginOptions));
+            webpack.plugins.push(new MiniCssExtractPlugin(miniCssExtractPluginOptions) as Plugin);
         }
 
         if (webpack.module == null) {

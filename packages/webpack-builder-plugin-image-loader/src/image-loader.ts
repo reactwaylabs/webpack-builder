@@ -18,7 +18,7 @@ import mime from "mime";
 // Sharp
 import sharp from "sharp";
 // Local imports
-import { ReactwayImagePlugin } from "./plugin";
+import { ReactwayImageLoaderPlugin } from "./plugin";
 import { ImageSizeData } from "./contracts.js";
 
 interface ImageLoaderOptions {
@@ -139,7 +139,7 @@ class ImageLoader {
             // Outputting file to 'url' location.
             this.emitFile(`${url}`, newContent, options.sourceMap);
 
-            ReactwayImagePlugin.imagesSizeArray.push({
+            ReactwayImageLoaderPlugin.imagesSizeArray.push({
                 ...imageSizeData,
                 reducedSize: newContent
             });
@@ -168,7 +168,7 @@ class ImageLoader {
             return;
         }
 
-        ReactwayImagePlugin.imagesSizeArray.push({ ...imageSizeData, isBase64: true });
+        ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, isBase64: true });
 
         return `module.exports = ${JSON.stringify(`data:${mimeType || ""};base64,${content.toString("base64")}`)}`;
     }
@@ -228,8 +228,6 @@ class ImageLoader {
             context: this.rootContext,
             content: contentBuffer
         });
-        console.log("pitout", url);
-
         const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
 
         // TODO: Ask about this code part below.
@@ -239,7 +237,7 @@ class ImageLoader {
             const existentFilePath = `${replacedOutputPath}/${url}`;
             if (fs.existsSync(existentFilePath)) {
                 const fileContent = fs.readFileSync(existentFilePath);
-                ReactwayImagePlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: fileContent });
+                ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: fileContent });
 
                 const exportPath = `module.exports = {src: ${path},toString:function(){return ${path}}};`;
                 return exportPath;
@@ -266,7 +264,7 @@ class ImageLoader {
         if (this._compiler.options.mode === "production" || options.optimizeInDev === true) {
             ImageLoader.optimizeImage.bind(this)(options, contentBuffer, url, imageSizeData);
         } else {
-            ReactwayImagePlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: contentBuffer });
+            ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: contentBuffer });
             this.emitFile(`${url}`, contentBuffer, options.sourceMap);
         }
 

@@ -7,7 +7,7 @@ const log = debug("rw-image-plugin");
 
 log.enabled = true;
 
-export class ReactwayImagePlugin implements WebpackPlugin {
+export class ReactwayImageLoaderPlugin implements WebpackPlugin {
     public static loader: string;
     public static imagesSizeArray: ImageSizeData[] = [];
 
@@ -19,7 +19,7 @@ export class ReactwayImagePlugin implements WebpackPlugin {
         const blueBright = chalk.blueBright;
 
         compiler.hooks.done.tap("reactway-image-plugin", () => {
-            const imagesSizeData = ReactwayImagePlugin.imagesSizeArray;
+            const imagesSizeData = ReactwayImageLoaderPlugin.imagesSizeArray;
             if (imagesSizeData.length === 0) {
                 return;
             }
@@ -67,4 +67,4 @@ export class ReactwayImagePlugin implements WebpackPlugin {
     }
 }
 
-ReactwayImagePlugin.loader = require.resolve("./image-loader");
+ReactwayImageLoaderPlugin.loader = require.resolve("./image-loader");

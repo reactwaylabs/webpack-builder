@@ -1,6 +1,6 @@
 import webpack from "webpack";
 import webpackCompiler from "./compiler/compiler";
-import ReactwayImagePlugin from "../index";
+import ReactwayImageLoaderPlugin from "../index";
 
 describe("ReactwayImagePlugin displaying stats", () => {
     it("Adding plugin to config", async () => {
@@ -9,13 +9,13 @@ describe("ReactwayImagePlugin displaying stats", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
         ];
 
-        const plugins: webpack.Plugin[] = [new ReactwayImagePlugin()];
+        const plugins: webpack.Plugin[] = [new ReactwayImageLoaderPlugin()];
         const stats = await webpackCompiler("fixture-no-images.js", loader, false, plugins);
         const [{ source }] = stats.toJson().modules;
 
@@ -28,13 +28,13 @@ describe("ReactwayImagePlugin displaying stats", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
         ];
 
-        const plugins: webpack.Plugin[] = [new ReactwayImagePlugin()];
+        const plugins: webpack.Plugin[] = [new ReactwayImageLoaderPlugin()];
         const stats = await webpackCompiler("fixture.js", loader, false, plugins);
         const [{ source }] = stats.toJson().modules;
 
@@ -49,7 +49,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -66,7 +66,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader,
+                        loader: ReactwayImageLoaderPlugin.loader,
                         options: {
                             limit: 10000
                         }
@@ -86,7 +86,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader,
+                        loader: ReactwayImageLoaderPlugin.loader,
                         options: {
                             limit: "10000"
                         }
@@ -106,7 +106,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -122,7 +122,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -139,7 +139,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -156,7 +156,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -172,7 +172,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader,
+                        loader: ReactwayImageLoaderPlugin.loader,
                         options: {
                             optimizeInDev: true
                         }
@@ -191,7 +191,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader,
+                        loader: ReactwayImageLoaderPlugin.loader,
                         options: {
                             outputFolder: "images/"
                         }
@@ -210,7 +210,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader
+                        loader: ReactwayImageLoaderPlugin.loader
                     }
                 ]
             }
@@ -227,7 +227,7 @@ describe("ReactwayImagePlugin loader", () => {
                 test: /\.(png|jpg|gif|svg|webp)$/,
                 use: [
                     {
-                        loader: ReactwayImagePlugin.loader,
+                        loader: ReactwayImageLoaderPlugin.loader,
                         options: {
                             optimization: {
                                 mozjpeg: { quality: 75 },
