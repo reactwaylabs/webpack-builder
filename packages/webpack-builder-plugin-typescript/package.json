@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-typescript",
-  "version": "1.0.0-alpha.12",
+  "version": "1.0.0-alpha.13",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.4.3",
-    "@reactway/webpack-builder": "1.0.0-alpha.12",
+    "@reactway/webpack-builder": "1.0.0-alpha.13",
     "babel-loader": "^8.0.5",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "fork-ts-checker-webpack-plugin": "^1.0.0",
