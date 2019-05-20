@@ -63,6 +63,12 @@
             "versionPolicyName": "WebpackBuilderPolicy",
             "shouldPublish": true
         },
+        {
+            "packageName": "@reactway/image-loader",
+            "projectFolder": "packages/webpack-builder-plugin-image-loader",
+            "versionPolicyName": "WebpackBuilderPolicy",
+            "shouldPublish": true
+        },
         // Example projects,
         // {
         //     "packageName": "web-project",

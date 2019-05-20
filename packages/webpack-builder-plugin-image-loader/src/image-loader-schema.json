@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "outputFolder": {
+            "type": "string"
+        },
+        "limit": {
+            "anyof": [{ "type": "string" }, { "type": "number" }]
+        },
+        "sourceMap": {
+            "type": "boolean"
+        },
+        "optimizeInDev": {
+            "type": "boolean"
+        },
+        "optimization": {
+            "mozjpeg": { "type:": "object" },
+            "optipng": { "type:": "object" },
+            "pngquant": { "type:": "object" },
+            "gifsicle": { "type:": "object" },
+            "svgo": { "type:": "object" },
+            "webp": { "type:": "object" }
+        }
+    },
+    "additionalProperties": false
+}

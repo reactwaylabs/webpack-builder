@@ -1,10 +1,14 @@
+import { ReactwayImageLoaderPlugin } from "@reactway/image-loader";
 __dirname = "TEST_PATH";
+ReactwayImageLoaderPlugin.loader = "./path/to/link";
 
 jest.mock("upath", () => ({
     ...jest.requireActual("upath"),
     resolve: (...pathSegments: string[]) => pathSegments.join("//"),
     join: (...pathSegments: string[]) => pathSegments.join("//")
 }));
+
+jest.mock("@reactway/image-loader");
 
 import { Builder, Configuration } from "@reactway/webpack-builder";
 import upath from "upath";
@@ -34,22 +38,8 @@ it("Adding image plugin to configuration", () => {
 it("Adding image plugin with loader options to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
         .use(ImagesPlugin, {
-            urlLoaderOptions: {
-                limit: 8192
-            }
+            limit: 10000
         })
         .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding image plugin with imagesOutputLocation option to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
-        .use(ImagesPlugin, { imagesOutputLocation: "./" })
-        .toConfig();
-    expect(configuration).toMatchSnapshot();
-});
-
-it("Adding image plugin with publicPath option to configuration", () => {
-    const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION).use(ImagesPlugin, { publicPath: "./" }).toConfig();
     expect(configuration).toMatchSnapshot();
 });

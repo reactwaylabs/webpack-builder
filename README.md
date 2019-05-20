@@ -18,6 +18,8 @@ A tool to create webpack config easier using @reactway/webpack-builder plugins.
 
 [webpack-builder-plugin-images](/packages/webpack-builder-plugin-images)
 
+[webpack-builder-plugin-image-loader](/packages/webpack-builder-plugin-image-loader)
+
 [webpack-builder-plugin-html](/packages/webpack-builder-plugin-html)
 
 ## Documentation
