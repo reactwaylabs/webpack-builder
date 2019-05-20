@@ -71,7 +71,7 @@ interface ImageLoaderOptions {
 
 `optimizeInDev` - enable or disable images optimization in `development` environment.
 
-`optimization` - for images optimization it was used [imagemin](https://www.npmjs.com/package/imagemin) package plugins. Here is the list of them:
+`optimization` - for images optimization it was used [imagemin](https://www.npmjs.com/package/imagemin) package plugins.
 
 -   [imagemin-mozjpeg](https://www.npmjs.com/package/imagemin-mozjpeg)
 -   [imagemin-optipng](https://www.npmjs.com/package/imagemin-optipng)
