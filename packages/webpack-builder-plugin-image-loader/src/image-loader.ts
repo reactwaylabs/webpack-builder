@@ -206,9 +206,14 @@ class ImageLoader {
                     .resize(query.width, query.height)
                     .toBuffer();
 
-                const imageBase64 = ImageLoader.moduleExportImageBase64(options.limit, this.resourcePath, contentBuffer, imageSizeData);
-                if (imageBase64 != null) {
-                    return imageBase64;
+                const resizedImageBase64 = ImageLoader.moduleExportImageBase64(
+                    options.limit,
+                    this.resourcePath,
+                    contentBuffer,
+                    imageSizeData
+                );
+                if (resizedImageBase64 != null) {
+                    return resizedImageBase64;
                 }
             } catch (error) {
                 console.error(error);
