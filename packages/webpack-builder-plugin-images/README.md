@@ -30,12 +30,16 @@ module.exports = new webpackBuilder.Builder(__dirname, {
 Options you can pass:
 
 ```ts
-interface ImagesPluginOptions {
-    imagesOutputLocation?: string;
-    publicPath?: string;
-    urlLoaderOptions?: { [key: string]: any };
+interface ImageLoaderOptions {
+    limit: string | number;
+    sourceMap: boolean;
+    optimizeInDev: boolean;
+    optimization: ImagesOptimization;
+    outputFolder: string;
 }
 ```
+
+More details about `@reactway/image-loader` options you can read [@reactway/image-loader options](https://github.com/reactway/webpack-builder/tree/feature/refactoring-image-plugin/packages/webpack-builder-plugin-image-loader#passing-options).
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");
@@ -49,7 +53,7 @@ module.exports = new webpackBuilder.Builder(__dirname, {
     }
 })
     .use(images, {
-        publicPath: "./",
+        limit:1000
         ...
     })
     .toConfig();
