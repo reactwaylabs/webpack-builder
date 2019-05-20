@@ -1,6 +1,6 @@
 # @reactway/image-loader
 
-A plugin made for a webpack to load, optimize and resize images.
+A plugin made for a webpack to load, optimize and resize images. `image-loader` used at [webpack-builder-plugin-images](/packages/webpack-builder-plugin-images).
 
 ## Getting started
 
@@ -82,11 +82,25 @@ interface ImageLoaderOptions {
 
 Check links to see possible options you can pass for `optimization` field.
 
-`outputFolder` - path where it will output images. Default path: `assets/images/`
+`outputFolder` - path where it will output images in the given `webpack` config output. Default path: `assets/images/`.
 
 ## Documentation
 
-WIP
+If you want use simple image without resizing:
+
+```js
+import sampleImage from "./sample-image.png";
+```
+
+For resizing we used [sharp](https://www.npmjs.com/package/sharp) package. Passing `width` or `height` is optional, images scales by given property. If you want resize image with certain `width` or `height` add query at the end of path of file:
+
+```js
+const sampleImageSmall = require("./sampleImagejpg.jpg?width=200&height=200");
+const sampleImageWidth = require("./sampleImagejpg.jpg?width=200");
+const sampleImageHeight = require("./sampleImagejpg.jpg?height=200");
+```
+
+At the moment we are not supporting multiple queries. If you want to have separate image sizes, re-import them and add different query.
 
 ## Images
 
