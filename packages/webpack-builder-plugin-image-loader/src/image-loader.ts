@@ -65,31 +65,38 @@ class ImageLoader {
         const plugins: imagemin.Plugin[] = [];
 
         if (options.optimization == null) {
+            this.emitFile(`${url}`, content, options.sourceMap);
+            ReactwayImageLoaderPlugin.imagesSizeArray.push({
+                ...imageSizeData,
+                reducedSize: content
+            });
             return;
         }
 
-        if (options.optimization.mozjpeg != null) {
-            plugins.push(imageminMozjpeg(options.optimization.mozjpeg));
+        const optimization = options.optimization;
+
+        if (optimization.mozjpeg != null) {
+            plugins.push(imageminMozjpeg(optimization.mozjpeg));
         }
 
-        if (options.optimization.gifsicle != null) {
-            plugins.push(imageminGifsicle(options.optimization.gifsicle));
+        if (optimization.gifsicle != null) {
+            plugins.push(imageminGifsicle(optimization.gifsicle));
         }
 
-        if (options.optimization.optipng != null) {
-            plugins.push(imageminOptipng(options.optimization.optipng));
+        if (optimization.optipng != null) {
+            plugins.push(imageminOptipng(optimization.optipng));
         }
 
-        if (options.optimization.pngquant != null) {
-            plugins.push(imageminPngquant(options.optimization.pngquant));
+        if (optimization.pngquant != null) {
+            plugins.push(imageminPngquant(optimization.pngquant));
         }
 
-        if (options.optimization.svgo != null) {
-            plugins.push(imageminSvgo(options.optimization.svgo));
+        if (optimization.svgo != null) {
+            plugins.push(imageminSvgo(optimization.svgo));
         }
 
-        if (options.optimization.webp != null) {
-            plugins.push(imageminWebp(options.optimization.webp));
+        if (optimization.webp != null) {
+            plugins.push(imageminWebp(optimization.webp));
         }
 
         try {
