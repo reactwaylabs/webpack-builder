@@ -200,7 +200,7 @@ class ImageLoader {
         });
         const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
 
-        // If 'optimizeInDev' value set to 'true' then every build check if files(images) exists in output dir is skipped.
+        // If 'optimizeImagesInDev' value set to 'true' then every build check if files(images) exists in output dir is skipped.
         if (!options.optimizeImagesInDev) {
             const replacedOutputPath: string = this._compiler.options.output.path.replace(/\\/g, "/");
             const existentFilePath = `${replacedOutputPath}/${url}`;
