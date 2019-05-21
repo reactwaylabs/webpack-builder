@@ -36,7 +36,7 @@ Object {
       Object {
         "loader": "./path/to/link",
         "options": Object {
-          "limit": 10000,
+          "imageSizeLimitInBytes": 10000,
         },
         "test": /\\\\\\.\\(png\\|jpg\\|gif\\|svg\\)\\$/,
       },
