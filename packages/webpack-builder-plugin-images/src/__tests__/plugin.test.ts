@@ -38,7 +38,7 @@ it("Adding image plugin to configuration", () => {
 it("Adding image plugin with loader options to configuration", () => {
     const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION)
         .use(ImagesPlugin, {
-            limit: 10000
+            imageSizeLimitInBytes: 10000
         })
         .toConfig();
     expect(configuration).toMatchSnapshot();

@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "packages\\webpack-builder-plugin-write-file"
+		},
+		{
+			"path": "packages\\webpack-builder-plugin-image-loader"
 		}
 	],
 	"settings": {

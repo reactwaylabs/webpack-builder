@@ -68,7 +68,7 @@ describe("ReactwayImagePlugin loader", () => {
                     {
                         loader: ReactwayImageLoaderPlugin.loader,
                         options: {
-                            limit: 10000
+                            imageSizeLimitInBytes: 10000
                         }
                     }
                 ]
@@ -88,7 +88,7 @@ describe("ReactwayImagePlugin loader", () => {
                     {
                         loader: ReactwayImageLoaderPlugin.loader,
                         options: {
-                            limit: "10000"
+                            imageSizeLimitInBytes: "10000"
                         }
                     }
                 ]
@@ -174,7 +174,7 @@ describe("ReactwayImagePlugin loader", () => {
                     {
                         loader: ReactwayImageLoaderPlugin.loader,
                         options: {
-                            optimizeInDev: true
+                            optimizeImagesInDev: true
                         }
                     }
                 ]
@@ -229,7 +229,7 @@ describe("ReactwayImagePlugin loader", () => {
                     {
                         loader: ReactwayImageLoaderPlugin.loader,
                         options: {
-                            optimization: {
+                            optimizationOptions: {
                                 mozjpeg: { quality: 75 },
                                 gifsicle: { colors: 144 },
                                 svgo: {

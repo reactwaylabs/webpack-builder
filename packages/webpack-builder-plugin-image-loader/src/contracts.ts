@@ -8,14 +8,13 @@ export interface ImageSizeData {
 }
 
 export interface ImageLoaderOptions {
-    limit: string | number;
-    sourceMap: boolean;
-    optimizeInDev: boolean;
-    optimization: ImagesOptimization;
+    imageSizeLimitInBytes: string | number;
+    optimizeImagesInDev: boolean;
+    optimizationOptions: ImagesOptimizationOptions;
     outputFolder: string;
 }
 
-export interface ImagesOptimization {
+export interface ImagesOptimizationOptions {
     /**
      * Check https://github.com/imagemin/imagemin-mozjpeg#imageminmozjpegoptionsbuffer for types.
      */

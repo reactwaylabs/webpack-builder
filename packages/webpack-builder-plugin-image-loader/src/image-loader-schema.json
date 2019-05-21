@@ -4,16 +4,13 @@
         "outputFolder": {
             "type": "string"
         },
-        "limit": {
+        "imageSizeLimitInBytes": {
             "anyof": [{ "type": "string" }, { "type": "number" }]
         },
-        "sourceMap": {
+        "optimizeImagesInDev": {
             "type": "boolean"
         },
-        "optimizeInDev": {
-            "type": "boolean"
-        },
-        "optimization": {
+        "optimizationOptions": {
             "mozjpeg": { "type:": "object" },
             "optipng": { "type:": "object" },
             "pngquant": { "type:": "object" },
