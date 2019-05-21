@@ -8,10 +8,9 @@ export interface ImageSizeData {
 }
 
 export interface ImageLoaderOptions {
-    limit: string | number;
-    sourceMap: boolean;
-    optimizeInDev: boolean;
-    optimization: ImagesOptimization;
+    imageSizeLimitInBytes: string | number;
+    optimizeImagesInDev: boolean;
+    optimizationOptions: ImagesOptimization;
     outputFolder: string;
 }
 

@@ -64,8 +64,8 @@ class ImageLoader {
     ): Promise<void> {
         const plugins: imagemin.Plugin[] = [];
 
-        if (options.optimization == null) {
-            this.emitFile(`${url}`, content, options.sourceMap);
+        if (options.optimizationOptions == null) {
+            this.emitFile(`${url}`, content, undefined);
             ReactwayImageLoaderPlugin.imagesSizeArray.push({
                 ...imageSizeData,
                 reducedSize: content
@@ -73,7 +73,7 @@ class ImageLoader {
             return;
         }
 
-        const optimization = options.optimization;
+        const optimization = options.optimizationOptions;
 
         if (optimization.mozjpeg != null) {
             plugins.push(imageminMozjpeg(optimization.mozjpeg));
@@ -102,7 +102,7 @@ class ImageLoader {
         try {
             const newContent = await imagemin.buffer(content, { plugins: plugins });
             // Outputting file to 'url' location.
-            this.emitFile(`${url}`, newContent, options.sourceMap);
+            this.emitFile(`${url}`, newContent, undefined);
 
             ReactwayImageLoaderPlugin.imagesSizeArray.push({
                 ...imageSizeData,
@@ -166,7 +166,12 @@ class ImageLoader {
             originalSize: contentBuffer
         };
 
-        const imageBase64 = ImageLoader.moduleExportImageBase64(options.limit, this.resourcePath, contentBuffer, imageSizeData);
+        const imageBase64 = ImageLoader.moduleExportImageBase64(
+            options.imageSizeLimitInBytes,
+            this.resourcePath,
+            contentBuffer,
+            imageSizeData
+        );
         if (imageBase64 != null) {
             return imageBase64;
         }
@@ -196,7 +201,7 @@ class ImageLoader {
         const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
 
         // If 'optimizeInDev' value set to 'true' then every build check if files(images) exists in output dir is skipped.
-        if (!options.optimizeInDev) {
+        if (!options.optimizeImagesInDev) {
             const replacedOutputPath: string = this._compiler.options.output.path.replace(/\\/g, "/");
             const existentFilePath = `${replacedOutputPath}/${url}`;
             if (fs.existsSync(existentFilePath)) {
@@ -214,7 +219,7 @@ class ImageLoader {
                     .toBuffer();
 
                 const resizedImageBase64 = ImageLoader.moduleExportImageBase64(
-                    options.limit,
+                    options.imageSizeLimitInBytes,
                     this.resourcePath,
                     contentBuffer,
                     imageSizeData
@@ -229,11 +234,11 @@ class ImageLoader {
             }
         }
 
-        if (this._compiler.options.mode === "production" || options.optimizeInDev === true) {
+        if (this._compiler.options.mode === "production" || options.optimizeImagesInDev === true) {
             ImageLoader.optimizeImage.bind(this)(options, contentBuffer, url, imageSizeData);
         } else {
             ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: contentBuffer });
-            this.emitFile(`${url}`, contentBuffer, options.sourceMap);
+            this.emitFile(`${url}`, contentBuffer, undefined);
         }
 
         return `module.exports = {src: ${path},toString:function(){return ${path}}};`;
