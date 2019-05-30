@@ -110,6 +110,25 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         if (config != null && config.postcssLoaderOptions != null) {
             postcssLoaderOptions = config.postcssLoaderOptions;
         }
+        // Extract post-css options out loader options
+        // Webpack.RuleSetQuery | undefined
+        type PostCssOptions = { [k: string]: any };
+        let postCssOptions: PostCssOptions = {};
+        if (postcssLoaderOptions.options != null) {
+            postCssOptions = postcssLoaderOptions.options;
+        }
+        let postCssPlugins: (...args: unknown[]) => Array<unknown> = postCssOptions.plugins;
+        if (postCssPlugins == null) {
+            postCssPlugins = () => [require("autoprefixer")];
+        } else {
+            postCssPlugins = (...args: unknown[]) => {
+                return [...postCssPlugins(args), require("autoprefixer")];
+            };
+        }
+
+        postcssLoaderOptions.options = {
+            ...postCssOptions
+        };
 
         let sassLoaderOptions: LoaderOptions = {};
         if (config != null && config.sassLoaderOptions != null) {
@@ -129,7 +148,10 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             },
             // // Translates CSS into CommonJS.
             // Autoprefixer
-            { loader: "postcss-loader", ...postcssLoaderOptions },
+            {
+                loader: "postcss-loader",
+                ...postcssLoaderOptions
+            },
             // Compiles Sass to CSS.
             {
                 loader: "sass-loader",
