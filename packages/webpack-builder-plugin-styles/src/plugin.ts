@@ -1,6 +1,7 @@
 import Webpack from "webpack";
 import * as upath from "upath";
 import * as fs from "fs-extra";
+import queryString from "query-string";
 import { Plugin } from "@reactway/webpack-builder";
 import MiniCssExtractPlugin, { PluginOptions as MiniCssExtractPluginOptions } from "mini-css-extract-plugin";
 import OptimizeCSSAssetsPlugin, { Options as OptimizeCSSOptions } from "optimize-css-assets-webpack-plugin";
@@ -11,7 +12,7 @@ const SCSS_EXTENSION: string = ".scss";
 
 // Postcss.config.js
 const POSTCSS_CONFIG_NAME: string = "postcss.config.js";
-const DEFAULT_POSTCSS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${POSTCSS_CONFIG_NAME}`);
+// const DEFAULT_POSTCSS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${POSTCSS_CONFIG_NAME}`);
 
 // Fonts location.
 const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
@@ -20,6 +21,10 @@ const PUBLIC_PATH: string = "./";
 
 type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
 type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
+
+// Webpack.RuleSetQuery | undefined
+type PostCssOptions = { [k: string]: any };
+type PostCssPluginsFn = (...args: unknown[]) => unknown[];
 
 interface StylesPluginOptions {
     fontsOutputLocation?: string;
@@ -34,11 +39,7 @@ interface StylesPluginOptions {
 }
 
 export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
-    try {
-        checkPostCssConfig(projectDirectory);
-    } catch (error) {
-        console.error(`Failed while initiating "${POSTCSS_CONFIG_NAME}".`, error);
-    }
+    checkPostCssConfig(projectDirectory);
 
     return webpack => {
         if (webpack.mode === "production") {
@@ -82,13 +83,15 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         };
 
         if (config != null && config.urlLoaderOptions != null) {
-            const urlOptions = urlLoaderOptions.options;
-            if (urlOptions != null && typeof urlOptions !== "string") {
+            const urlOptions = config.urlLoaderOptions.options;
+            if (typeof urlOptions === "object") {
                 urlLoaderOptions.options = {
                     ...baseUrlLoaderOptions,
                     ...urlOptions
                 };
-            } else {
+            }
+
+            if (typeof urlOptions === "string") {
                 urlLoaderOptions.options = urlOptions;
             }
 
@@ -111,19 +114,34 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             postcssLoaderOptions = config.postcssLoaderOptions;
         }
         // Extract post-css options out loader options
-        // Webpack.RuleSetQuery | undefined
-        type PostCssOptions = { [k: string]: any };
         let postCssOptions: PostCssOptions = {};
         if (postcssLoaderOptions.options != null) {
-            postCssOptions = postcssLoaderOptions.options;
+            let options = postcssLoaderOptions.options;
+            if (typeof options === "object") {
+                postCssOptions = options;
+            }
+
+            if (typeof options === "string") {
+                postCssOptions = queryString.parse(options);
+            }
         }
-        let postCssPlugins: (...args: unknown[]) => Array<unknown> = postCssOptions.plugins;
+
+        let postCssPlugins: PostCssPluginsFn | unknown[] | undefined = postCssOptions.plugins;
+        // Default autoprefixer.
+        const autoprefixerRequire = require("autoprefixer")();
+
         if (postCssPlugins == null) {
-            postCssPlugins = () => [require("autoprefixer")];
+            postCssPlugins = () => [autoprefixerRequire];
         } else {
-            postCssPlugins = (...args: unknown[]) => {
-                return [...postCssPlugins(args), require("autoprefixer")];
-            };
+            const definedPostCssPlugins = postCssPlugins;
+            if (Array.isArray(postCssPlugins)) {
+                postCssPlugins = [...postCssPlugins, autoprefixerRequire];
+            } else {
+                const pluginsFn = definedPostCssPlugins as PostCssPluginsFn;
+                postCssPlugins = (...args: unknown[]) => {
+                    return [...pluginsFn(args), autoprefixerRequire];
+                };
+            }
         }
 
         postcssLoaderOptions.options = {
@@ -216,8 +234,6 @@ export function checkPostCssConfig(projectDirectory: string): void {
     const configLocation = upath.resolve(projectDirectory, POSTCSS_CONFIG_NAME);
 
     if (!fs.pathExistsSync(configLocation)) {
-        console.info(`File "${POSTCSS_CONFIG_NAME}" not found at ${configLocation}. Creating...`);
-        fs.copySync(DEFAULT_POSTCSS_CONFIG_LOCATION, configLocation);
-        console.info("Created.");
+        console.warn(`${POSTCSS_CONFIG_NAME} was not found at project directory.`);
     }
 }
