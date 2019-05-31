@@ -221,6 +221,7 @@ describe("development", () => {
             .use(StylesPlugin, {
                 postcssLoaderOptions: {
                     options: {
+                        sourceMap: "inline",
                         plugins: [require("autoprefixer")()]
                     }
                 }

@@ -17,7 +17,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -79,7 +83,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -138,7 +146,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -197,7 +209,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -257,6 +273,9 @@ Object {
           Object {
             "loader": "postcss-loader",
             "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
               "url": true,
             },
           },
@@ -317,7 +336,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -382,7 +405,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -444,7 +471,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -503,7 +534,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -564,7 +599,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -621,7 +660,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -683,7 +726,9 @@ Object {
             "options": Object {
               "plugins": Array [
                 [Function],
+                [Function],
               ],
+              "sourceMap": "inline",
             },
           },
           Object {
@@ -805,6 +850,9 @@ Object {
           Object {
             "loader": "postcss-loader",
             "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
               "sourceMap": "inline",
             },
           },
@@ -866,6 +914,9 @@ Object {
           Object {
             "loader": "postcss-loader",
             "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
               "sourceMap": "inline",
             },
           },
@@ -927,7 +978,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -1011,7 +1066,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
@@ -1095,7 +1154,11 @@ Object {
           },
           Object {
             "loader": "postcss-loader",
-            "options": Object {},
+            "options": Object {
+              "plugins": Array [
+                [Function],
+              ],
+            },
           },
           Object {
             "loader": "sass-loader",
