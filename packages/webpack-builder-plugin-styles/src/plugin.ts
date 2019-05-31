@@ -12,7 +12,6 @@ const SCSS_EXTENSION: string = ".scss";
 
 // Postcss.config.js
 const POSTCSS_CONFIG_NAME: string = "postcss.config.js";
-// const DEFAULT_POSTCSS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${POSTCSS_CONFIG_NAME}`);
 
 // Fonts location.
 const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
