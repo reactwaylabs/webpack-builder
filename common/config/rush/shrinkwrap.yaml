@@ -60,6 +60,7 @@ dependencies:
   node-sass: 4.12.0
   optimize-css-assets-webpack-plugin: 5.0.1
   postcss-loader: 3.0.0
+  query-string: 6.5.0
   sass-loader: 7.1.0
   schema-utils: 1.0.0
   sharp: 0.22.1
@@ -8448,6 +8449,16 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw==
+  /query-string/6.5.0:
+    dependencies:
+      decode-uri-component: 0.2.0
+      split-on-first: 1.1.0
+      strict-uri-encode: 2.0.0
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-TYC4hDjZSvVxLMEucDMySkuAS9UIzSbAiYGyA9GWCjLKB8fQpviFbjd20fD7uejCDxZS+ftSdBKE6DS+xucJFg==
   /querystring-es3/0.2.1:
     dev: false
     engines:
@@ -9398,6 +9409,12 @@ packages:
       npm: '>=6.0.0'
     resolution:
       integrity: sha512-ot0oEGT/PGUpzf/6uk4AWLqkq+irlqHXkrdbk51oWONh3bxQmBuljxPNl66zlRRcIJStWq0QkLUCPOPjgjvU0Q==
+  /split-on-first/1.1.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==
   /split-string/3.1.0:
     dependencies:
       extend-shallow: 3.0.2
@@ -9518,6 +9535,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM=
+  /strict-uri-encode/2.0.0:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
   /string-length/2.0.0:
     dependencies:
       astral-regex: 1.0.0
@@ -10957,7 +10980,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-clean'
     resolution:
-      integrity: sha512-4m4J5U8QVXM1thkOR78cmvnL/6QUG8874Y7hHO71jCxJDHmTRVcM9jUYUWdsOX7B9StRobKJvzGft86IcDtYgg==
+      integrity: sha512-ujTzfO2aKin3MBcpNxRajDpaYfu/5/OEX04eCwnXr5UcXuJezy5qInchPKoj3Cin4ajZ4UrElu1drFLBSpPf5g==
       tarball: 'file:projects/webpack-builder-plugin-clean.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-html.tgz':
@@ -10980,7 +11003,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-html'
     resolution:
-      integrity: sha512-CPcMN6TQDyTyXsZ6L05vjELgctBzCFKg9VHf3+QgeWFvIggPEWlcvdJ2SFFjIg3CIOhbQ9yaMtsd7UIk88oPtA==
+      integrity: sha512-4hXbEC8SbHEMxtQtln0KELfj0TqVTf1boxWt+oju4v3N88b6hnHN1mjE14RxXr/aXd2v/YorZ0mYtaT0liU4Yw==
       tarball: 'file:projects/webpack-builder-plugin-html.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-images.tgz':
@@ -11000,7 +11023,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-images'
     resolution:
-      integrity: sha512-IlGca7uimH8hpusflGx9+MJOCzx/GVv3SJhlAZj44isCUiTHaJLNJ0PO/iwo44dOC2H6EZhQA8WXsPzICLUrEQ==
+      integrity: sha512-A7EG54+jD1xbN/zq6HOTyfyNuhJ2r0GFygtjEt1L6mqoJZwNs019g//YZFYjrozbuCb2D2pifCWyJLQEHTIlrw==
       tarball: 'file:projects/webpack-builder-plugin-images.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-styles.tgz':
@@ -11022,6 +11045,7 @@ packages:
       node-sass: 4.12.0
       optimize-css-assets-webpack-plugin: 5.0.1
       postcss-loader: 3.0.0
+      query-string: 6.5.0
       sass-loader: 7.1.0
       simplr-tslint: /simplr-tslint/1.0.0-alpha.14/tslint@5.16.0
       style-loader: 0.23.1
@@ -11035,7 +11059,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-styles'
     resolution:
-      integrity: sha512-h4r8ahryVj1F60lNVVIqgEkzbO5xqb25IdsrLnjn9fBXTSxE5nAAhgWFJSuYdXPlSP6mO4e/x0WXf9EVU/UCBA==
+      integrity: sha512-iFGRnST5T4aF9PHcqZAlqsYxaRCR9Z/CadCgMUChCseezoVTgmVkYME5GL2UYWBQy42SCdr2g36ZmYHMHxaCzg==
       tarball: 'file:projects/webpack-builder-plugin-styles.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-typescript.tgz':
@@ -11071,7 +11095,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-typescript'
     resolution:
-      integrity: sha512-BUhXevEI3LV66bg6uEd83HPUUgQ3U0DziU7xaG6VVxVEu8SmhaE/tSxs/Ryf1VdwWcr4r9eRSQy2tDholTUvwA==
+      integrity: sha512-9qjouUGcmSdnQ4quIcX6V2eciJP1aGLSMWJF//bPOynXlJyN9k8vLtIiMqYHXOwohRID3e976P8ldz8WOLvdWg==
       tarball: 'file:projects/webpack-builder-plugin-typescript.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-web-dev.tgz':
@@ -11092,7 +11116,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-web-dev'
     resolution:
-      integrity: sha512-c9sRx07Rx0MNOkW/cWdXcuYK59tB0Ja9N3oDsJy4TkiF1sS9lH2rwgGFbK7ngpfr9KtALusgyPNoG/4AFmJcAQ==
+      integrity: sha512-UsAvcbii5QvSehf1za3oG20KmvtFrE8eTa2rC9V/jgENJVr8SdbolvPlDtrDuMcQs8K7NN1E7VPi11qiEUy2hw==
       tarball: 'file:projects/webpack-builder-plugin-web-dev.tgz'
     version: 0.0.0
   'file:projects/webpack-builder-plugin-write-file.tgz':
@@ -11112,7 +11136,7 @@ packages:
     dev: false
     name: '@rush-temp/webpack-builder-plugin-write-file'
     resolution:
-      integrity: sha512-xEHkUSZ6ezYArdYupY5rcFeMdOh1BmmwIwgaWhjhofbm6EcaCv7qRwvBBi/EBqnYAh9Q/emX891euyCxcNSNCw==
+      integrity: sha512-L0NsggGiUYyAgCaxgJgU2ejeiL4HnA4dMUpqiYwfoMk8rb4Xd/88UY91HRvouFMjQlZq6JwGFFhcN5bdK3CuKg==
       tarball: 'file:projects/webpack-builder-plugin-write-file.tgz'
     version: 0.0.0
   'file:projects/webpack-builder.tgz':
@@ -11203,6 +11227,7 @@ specifiers:
   node-sass: ^4.11.0
   optimize-css-assets-webpack-plugin: ^5.0.1
   postcss-loader: ^3.0.0
+  query-string: ^6.5.0
   sass-loader: ^7.1.0
   schema-utils: ^1.0.0
   sharp: ^0.22.1
