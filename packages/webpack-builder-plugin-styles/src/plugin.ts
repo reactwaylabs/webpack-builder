@@ -128,9 +128,8 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         let postCssPlugins: PostCssPluginsFn | unknown[] | undefined = postCssOptions.plugins;
         // Default autoprefixer.
         const autoprefixerRequire = require("autoprefixer")();
-
         if (postCssPlugins == null) {
-            postCssPlugins = () => [autoprefixerRequire];
+            postCssPlugins = [autoprefixerRequire];
         } else {
             const definedPostCssPlugins = postCssPlugins;
             if (Array.isArray(postCssPlugins)) {
@@ -144,7 +143,8 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         }
 
         postcssLoaderOptions.options = {
-            ...postCssOptions
+            ...postCssOptions,
+            plugins: postCssPlugins
         };
 
         let sassLoaderOptions: LoaderOptions = {};
