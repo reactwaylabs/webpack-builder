@@ -39,6 +39,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -129,6 +130,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -219,6 +221,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -311,6 +314,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -403,6 +407,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -495,6 +500,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -583,6 +589,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -677,6 +684,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -765,6 +773,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -862,6 +871,7 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "compact": true,
               "presets": Array [
                 "@babel/preset-env",
               ],
