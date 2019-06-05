@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-clean",
-  "version": "1.0.0-alpha.17",
+  "version": "1.0.0-alpha.18",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -31,7 +31,7 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.17",
+    "@reactway/webpack-builder": "1.0.0-alpha.18",
     "clean-webpack-plugin": "^2.0.1",
     "webpack": "^4.31.0",
     "tslib": "^1.9.3",
