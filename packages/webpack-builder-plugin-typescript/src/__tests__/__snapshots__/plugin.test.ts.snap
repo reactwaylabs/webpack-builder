@@ -39,7 +39,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -130,7 +134,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -221,7 +229,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -314,7 +326,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -407,7 +423,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -500,7 +520,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -589,7 +613,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -684,7 +712,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -773,7 +805,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],
@@ -871,7 +907,11 @@ Object {
           Object {
             "loader": "babel-loader",
             "options": Object {
+              "babelrc": true,
               "compact": true,
+              "plugins": Array [
+                "syntax-dynamic-import",
+              ],
               "presets": Array [
                 "@babel/preset-env",
               ],

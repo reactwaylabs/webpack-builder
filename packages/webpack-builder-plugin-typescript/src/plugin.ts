@@ -104,6 +104,8 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 {
                     loader: "babel-loader",
                     options: {
+                        babelrc: true,
+                        plugins: ["syntax-dynamic-import"],
                         presets: ["@babel/preset-env"],
                         compact: true
                     }
