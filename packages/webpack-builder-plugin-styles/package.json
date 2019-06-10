@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-styles",
-  "version": "1.0.0-alpha.18",
+  "version": "1.0.0-alpha.19",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -30,7 +30,7 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.18",
+    "@reactway/webpack-builder": "1.0.0-alpha.19",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "mini-css-extract-plugin": "^0.6.0",
     "fs-extra": "^8.0.1",
