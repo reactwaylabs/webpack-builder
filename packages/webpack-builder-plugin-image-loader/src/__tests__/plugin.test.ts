@@ -2,6 +2,9 @@ import webpack from "webpack";
 import webpackCompiler from "./compiler/compiler";
 import { ReactwayImageLoaderPlugin } from "../plugin";
 
+// tslint:disable-next-line:no-any
+(global as any).__webpack_public_path__ = "";
+
 describe("ReactwayImagePlugin displaying stats", () => {
     it("Adding plugin to config", async () => {
         const loader: webpack.RuleSetRule[] = [
