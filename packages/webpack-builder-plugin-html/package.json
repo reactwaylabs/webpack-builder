@@ -1,8 +1,15 @@
 {
     "name": "@reactway/webpack-builder-plugin-html",
-    "version": "1.0.0-alpha.21",
+    "version": "2.0.0",
     "description": "A plugin made for webpack-builder.",
-    "keywords": ["webpack", "webpack-builder", "plugin", "html-plugin", "reactway", "html"],
+    "keywords": [
+        "webpack",
+        "webpack-builder",
+        "plugin",
+        "html-plugin",
+        "reactway",
+        "html"
+    ],
     "authors": [
         "Martynas Žilinskas <martynas@quatrodev.com> (https://github.com/MartynasZilinskas)",
         "Dovydas Navickas <dovydas@quatrodev.com> (https://github.com/DovydasNavickas)",
@@ -19,16 +26,21 @@
         "pretest": "tsc -p . --noEmit && tslint -p .",
         "test": "jest"
     },
-    "files": ["dist", "**/*.md"],
+    "files": [
+        "dist",
+        "**/*.md"
+    ],
     "dependencies": {
-        "@reactway/webpack-builder": "1.0.0-alpha.21",
-        "tslib": "^1.9.3",
+        "@reactway/webpack-builder": "^2.0.0",
         "html-webpack-plugin": "^3.2.0",
         "html-webpack-template": "^6.2.0",
+        "tslib": "^1.9.3",
         "upath": "^1.1.2"
     },
     "devDependencies": {
-        "webpack": "^4.31.0",
+        "@types/html-webpack-plugin": "^3.2.0",
+        "@types/html-webpack-template": "^6.0.3",
+        "@types/jest": "^24.0.11",
         "istanbul-azure-reporter": "^0.1.4",
         "jest": "^24.5.0",
         "jest-junit": "^6.3.0",
@@ -37,19 +49,26 @@
         "tslint": "^5.14.0",
         "tslint-language-service": "^0.9.9",
         "typescript": "^3.3.3333",
-        "@types/jest": "^24.0.11",
-        "@types/html-webpack-plugin": "^3.2.0",
-        "@types/html-webpack-template": "^6.0.3"
+        "webpack": "^4.31.0"
     },
-    "peerDependencies": {},
     "jest": {
         "verbose": true,
         "preset": "ts-jest",
-        "reporters": ["default", "jest-junit"],
+        "reporters": [
+            "default",
+            "jest-junit"
+        ],
         "testEnvironment": "node",
         "collectCoverage": true,
         "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx)$",
-        "collectCoverageFrom": ["src/**/*.{ts,tsx}", "!src/**/__tests__/*", "!src/index.ts"],
-        "coverageReporters": ["cobertura", "istanbul-azure-reporter"]
+        "collectCoverageFrom": [
+            "src/**/*.{ts,tsx}",
+            "!src/**/__tests__/*",
+            "!src/index.ts"
+        ],
+        "coverageReporters": [
+            "cobertura",
+            "istanbul-azure-reporter"
+        ]
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder",
-  "version": "1.0.0-alpha.21",
+  "version": "2.0.0",
   "description": "A tool to create webpack config easier using plugins.",
   "keywords": [
     "webpack",
@@ -51,8 +51,8 @@
   },
   "dependencies": {
     "tslib": "^1.9.3",
-    "webpack": "^4.31.0",
-    "upath": "^1.1.2"
+    "upath": "^1.1.2",
+    "webpack": "^4.31.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

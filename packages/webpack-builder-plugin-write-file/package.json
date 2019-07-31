@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-write-file",
-  "version": "1.0.0-alpha.21",
+  "version": "2.0.0",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -31,12 +31,13 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/webpack-builder": "1.0.0-alpha.21",
+    "@reactway/webpack-builder": "^2.0.0",
     "tslib": "^1.9.3",
-    "write-file-webpack-plugin": "^4.5.0",
-    "upath": "^1.1.2"
+    "upath": "^1.1.2",
+    "write-file-webpack-plugin": "^4.5.0"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "istanbul-azure-reporter": "^0.1.4",
     "jest": "^24.5.0",
     "jest-junit": "^6.3.0",
@@ -44,10 +45,8 @@
     "ts-jest": "^24.0.0",
     "tslint": "^5.14.0",
     "tslint-language-service": "^0.9.9",
-    "typescript": "^3.3.3333",
-    "@types/jest": "^24.0.11"
+    "typescript": "^3.3.3333"
   },
-  "peerDependencies": {},
   "jest": {
     "verbose": true,
     "preset": "ts-jest",
