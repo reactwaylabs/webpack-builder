@@ -52,7 +52,7 @@ describe("development", () => {
         expect(configuration).toMatchSnapshot();
     });
 
-    it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration that tsconfig.json do not have baseURL", () => {
+    it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration that tsconfig.json does not have baseURL", () => {
         const configuration = new Builder(TEST_PROJECT_LOCATION, SAMPLE_CONFIGURATION);
 
         expect(() =>
@@ -61,7 +61,7 @@ describe("development", () => {
                     tsconfigPathsPluginOptions: { configFile: upath.resolve(TEST_PROJECT_LOCATION, "tsconfig.json") }
                 })
                 .toConfig()
-        ).toThrowError("Cannot add tsconfigPathsPluginOptions because baseUrl do not exist at tsconfig.json");
+        ).toThrowError("Cannot add tsconfigPathsPluginOptions because baseUrl does not exist at tsconfig.json");
     });
 
     it("Adding typescript plugin with tsconfigPathsPluginOptions to configuration", () => {
