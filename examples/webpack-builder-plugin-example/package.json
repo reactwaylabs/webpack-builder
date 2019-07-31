@@ -8,13 +8,9 @@
     "scripts": {
         "build": "tsc -p .",
         "watch": "tsc -p . -w",
-        "pretest": "tsc -p . --noEmit && tslint -p .",
-        "test": "jest"
+        "test": "tsc -p . --noEmit && tslint -p ."
     },
-    "files": [
-        "dist",
-        "**/*.md"
-    ],
+    "files": ["dist", "**/*.md"],
     "license": "MIT",
     "dependencies": {},
     "devDependencies": {
@@ -31,20 +27,10 @@
     "jest": {
         "verbose": true,
         "preset": "ts-jest",
-        "reporters": [
-            "default",
-            "jest-junit"
-        ],
+        "reporters": ["default", "jest-junit"],
         "collectCoverage": true,
         "testRegex": "/__tests__/.*\\.(test|spec).(ts|tsx)$",
-        "collectCoverageFrom": [
-            "src/**/*.{ts,tsx}",
-            "!src/**/__tests__/*",
-            "!src/index.ts"
-        ],
-        "coverageReporters": [
-            "cobertura",
-            "istanbul-azure-reporter"
-        ]
+        "collectCoverageFrom": ["src/**/*.{ts,tsx}", "!src/**/__tests__/*", "!src/index.ts"],
+        "coverageReporters": ["cobertura", "istanbul-azure-reporter"]
     }
 }

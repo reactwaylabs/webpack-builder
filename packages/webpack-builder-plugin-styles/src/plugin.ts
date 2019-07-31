@@ -115,7 +115,7 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         // Extract post-css options out loader options
         let postCssOptions: PostCssOptions = {};
         if (postcssLoaderOptions.options != null) {
-            let options = postcssLoaderOptions.options;
+            const options = postcssLoaderOptions.options;
             if (typeof options === "object") {
                 postCssOptions = options;
             }
