@@ -5,9 +5,7 @@
         "build": "lerna run build",
         "test": "lerna run test",
         "bootstrap": "lerna bootstrap",
-        "pack": "lerna exec -- npm pack",
-        "version-bump:canary": "lerna version prerelease --exact --no-push --no-git-tag-version --no-commit-hooks -y",
-        "pack:canary": "run-s version-bump:canary pack"
+        "pack": "lerna exec -- npm pack"
     },
     "devDependencies": {
         "lerna": "3.16.4",
