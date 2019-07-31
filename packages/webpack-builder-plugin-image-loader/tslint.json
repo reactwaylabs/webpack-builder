@@ -1,6 +1,0 @@
-{
-    "extends": "simplr-tslint",
-    "rules": {
-        "backing-field": false
-    }
-}

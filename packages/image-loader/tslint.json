@@ -3,7 +3,6 @@
     "rules": {
         "backing-field": false,
         "no-any": false,
-        "no-require-imports": false,
-        "arrow-return-shorthand": false
+        "no-invalid-this": false
     }
 }
