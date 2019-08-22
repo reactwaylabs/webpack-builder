@@ -1,21 +1,20 @@
 {
     "name": "@reactway/webpack-builder-plugin-example",
-    "version": "1.0.0-alpha",
+    "version": "2.0.0",
+    "private": true,
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc -p .",
         "watch": "tsc -p . -w",
-        "pretest": "tsc -p . --noEmit && tslint -p .",
-        "test": "jest"
+        "test": "tsc -p . --noEmit && tslint -p ."
     },
     "files": [
         "dist",
         "**/*.md"
     ],
     "license": "MIT",
-    "dependencies": {},
     "devDependencies": {
         "istanbul-azure-reporter": "^0.1.4",
         "jest": "^24.5.0",
@@ -26,7 +25,6 @@
         "tslint-language-service": "^0.9.9",
         "typescript": "^3.3.3333"
     },
-    "peerDependencies": {},
     "jest": {
         "verbose": true,
         "preset": "ts-jest",

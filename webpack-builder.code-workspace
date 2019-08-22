@@ -7,9 +7,6 @@
 			"path": "packages\\webpack-builder-plugin-clean"
 		},
 		{
-			"path": "packages\\webpack-builder-plugin-example"
-		},
-		{
 			"path": "packages\\webpack-builder-plugin-html"
 		},
 		{

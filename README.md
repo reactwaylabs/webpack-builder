@@ -1,5 +1,7 @@
 # @reactway/webpack-builder
 
+[![Build Status](https://img.shields.io/azure-devops/build/reactway/reactway/15/master.svg?logo=azuredevops)](https://dev.azure.com/reactway/ReactWay/_build/latest?definitionId=15&branchName=master)
+
 A tool to create webpack config easier using @reactway/webpack-builder plugins.
 
 ## Packages

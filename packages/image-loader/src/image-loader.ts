@@ -247,7 +247,9 @@ class ImageLoader {
 }
 
 const imageLoader: loader.Loader = function(content: string | Buffer): void {
-    this.cacheable && this.cacheable();
+    if (this.cacheable != null) {
+        this.cacheable();
+    }
 
     const callback = this.async();
     if (callback == null) {

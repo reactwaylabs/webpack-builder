@@ -3,12 +3,17 @@ import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin/lib";
 import { Options as TsconfigPathsPluginOptions } from "tsconfig-paths-webpack-plugin/lib/options";
 import { loadTsconfig, Tsconfig } from "tsconfig-paths/lib/tsconfig-loader";
 import upath from "upath";
-import * as fs from "fs-extra";
 import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
 import "ts-loader";
+import { TS_CONFIG_NAME, checkTsConfig, TSLINT_CONFIG_NAME, checkTslintConfig } from "./checkers";
+
+const enum Linter {
+    TsLint = "tslint",
+    EsLint = "eslint"
+}
 
 // Extensions.
 const TS_EXTENSION: string = ".ts";
@@ -16,23 +21,18 @@ const TSX_EXTENSION: string = ".tsx";
 const JS_EXTENSION: string = ".js";
 const JSX_EXTENSION: string = ".jsx";
 
-// Tsconfig.
-export const TS_CONFIG_NAME: string = "tsconfig.json";
-const DEFAULT_TS_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${TS_CONFIG_NAME}`);
-
-// TsLint.
-export const TSLINT_CONFIG_NAME: string = "tslint.json";
-const DEFAULT_TSLINT_CONFIG_LOCATION: string = upath.resolve(__dirname, `../assets/${TSLINT_CONFIG_NAME}`);
-
 interface TypeScriptPluginOptions {
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
     terserPluginOptions?: TerserPluginOptions;
+    linter?: Linter;
 }
 
 export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projectDirectory) => {
     const fullTsconfigLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
     let baseURLExist: boolean = false;
+
+    const linter = config != null && config.linter != null ? config.linter : Linter.EsLint;
 
     try {
         checkTsConfig(projectDirectory);
@@ -40,10 +40,12 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
         console.error(`Failed while initiating "${TS_CONFIG_NAME}".`, error);
     }
 
-    try {
-        checkTslintConfig(projectDirectory);
-    } catch (error) {
-        console.error(`Failed while initiating "${TSLINT_CONFIG_NAME}".`, error);
+    if (linter === Linter.TsLint) {
+        try {
+            checkTslintConfig(projectDirectory);
+        } catch (error) {
+            console.error(`Failed while initiating "${TSLINT_CONFIG_NAME}".`, error);
+        }
     }
 
     const tsConfig: Tsconfig | undefined = loadTsconfig(fullTsconfigLocation);
@@ -63,7 +65,8 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
         webpack.plugins.push(
             new ForkTsCheckerWebpackPlugin({
                 checkSyntacticErrors: true,
-                tslint: true,
+                tslint: linter === Linter.TsLint ? true : undefined,
+                eslint: linter === Linter.EsLint ? true : undefined,
                 ...forkTsConfig
             })
         );
@@ -144,7 +147,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
         }
 
         if (!baseURLExist && config != null && config.tsconfigPathsPluginOptions != null) {
-            throw new Error(`Cannot add tsconfigPathsPluginOptions because baseUrl do not exist at ${TS_CONFIG_NAME}`);
+            throw new Error(`Cannot add tsconfigPathsPluginOptions because baseUrl does not exist at ${TS_CONFIG_NAME}`);
         }
 
         if (webpack.resolve.extensions == null) {
@@ -209,23 +212,3 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
         return webpack;
     };
 };
-
-export function checkTsConfig(projectDirectory: string): void {
-    const configLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
-
-    if (!fs.pathExistsSync(configLocation)) {
-        console.info(`File "${TS_CONFIG_NAME}" not found at ${configLocation}. Creating...`);
-        fs.copySync(DEFAULT_TS_CONFIG_LOCATION, configLocation);
-        console.info("Created.");
-    }
-}
-
-export function checkTslintConfig(projectDirectory: string): void {
-    const configLocation = upath.resolve(projectDirectory, TSLINT_CONFIG_NAME);
-
-    if (!fs.pathExistsSync(configLocation)) {
-        console.info(`File "${TSLINT_CONFIG_NAME}" not found at ${configLocation}. Creating...`);
-        fs.copySync(DEFAULT_TSLINT_CONFIG_LOCATION, configLocation);
-        console.info("Created.");
-    }
-}
