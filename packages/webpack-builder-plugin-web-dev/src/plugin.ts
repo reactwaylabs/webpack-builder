@@ -17,12 +17,14 @@ export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirecto
     }
 
     let webDevServer: WebpackDevServer.Configuration | undefined = {
-        contentBase: upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION),
         compress: true,
         host: HOST,
         quiet: false,
         port: DEFAULT_PORT,
-        historyApiFallback: true
+        historyApiFallback: true,
+        proxy: {
+            "*": upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION)
+        }
     };
 
     if (config != null) {
