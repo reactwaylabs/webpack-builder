@@ -236,7 +236,7 @@ describe("development", () => {
             .use(StylesPlugin, {
                 postcssLoaderOptions: {
                     options: {
-                        plugins: (options: unknown) => [require("autoprefixer")({ ...options })]
+                        plugins: (options: object = {}) => [require("autoprefixer")({ ...options })]
                     }
                 }
             })

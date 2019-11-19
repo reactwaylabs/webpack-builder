@@ -345,10 +345,30 @@ Object {
           Object {
             "loader": "sass-loader",
             "options": Object {
+              "implementation": Object {
+                "info": "dart-sass	1.23.6	(Sass Compiler)	[Dart]
+dart2js	2.6.1	(Dart Compiler)	[Dart]",
+                "render": [Function],
+                "renderSync": [Function],
+                "run_": [Function],
+                "types": Object {
+                  "Boolean": [Function],
+                  "Color": [Function],
+                  "Error": [Function],
+                  "List": [Function],
+                  "Map": [Function],
+                  "Null": [Function],
+                  "Number": [Function],
+                  "String": [Function],
+                },
+              },
               "includePaths": Array [
                 "absolute/path/a",
                 "absolute/path/b",
               ],
+              "sassOptions": Object {
+                "fiber": true,
+              },
             },
           },
         ],

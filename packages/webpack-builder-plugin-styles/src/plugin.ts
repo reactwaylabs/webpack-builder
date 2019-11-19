@@ -64,10 +64,8 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             };
         }
 
-        const fontsOutputLocation: string =
-            config != null && config.fontsOutputLocation != null ? config.fontsOutputLocation : FONTS_OUTPUT_LOCATION;
-
-        const fontsPublicPath: string = config != null && config.fontsPublicPath != null ? config.fontsPublicPath : PUBLIC_PATH;
+        const fontsOutputLocation: string = config?.fontsOutputLocation ?? FONTS_OUTPUT_LOCATION;
+        const fontsPublicPath: string = config?.fontsPublicPath ?? PUBLIC_PATH;
 
         const baseUrlLoaderOptions = {
             name: `${fontsOutputLocation}/[name].[ext]`,
@@ -81,7 +79,7 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             }
         };
 
-        if (config != null && config.urlLoaderOptions != null) {
+        if (config?.urlLoaderOptions != null) {
             const urlOptions = config.urlLoaderOptions.options;
             if (typeof urlOptions === "object") {
                 urlLoaderOptions.options = {
@@ -147,9 +145,14 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
             plugins: postCssPlugins
         };
 
-        let sassLoaderOptions: LoaderOptions = {};
-        if (config != null && config.sassLoaderOptions != null) {
-            sassLoaderOptions = config.sassLoaderOptions;
+        const sassLoaderOptions: LoaderOptions = config?.sassLoaderOptions ?? {};
+        if (sassLoaderOptions.options != null) {
+            // SASS: Use Dart Sass implementation with fiber.
+            const options = sassLoaderOptions.options as { [key: string]: any };
+            options.implementation = require("sass");
+            options.sassOptions = {
+                fiber: true
+            };
         }
 
         const webpackRulesSet: Webpack.RuleSetUse = [
