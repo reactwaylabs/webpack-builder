@@ -43,7 +43,8 @@
         "style-loader": "^0.23.1",
         "tslib": "^1.9.3",
         "upath": "^1.1.2",
-        "url-loader": "^1.1.2"
+        "url-loader": "^1.1.2",
+        "fibers": "^4.0.2"
     },
     "devDependencies": {
         "@types/fs-extra": "^7.0.0",
@@ -55,16 +56,16 @@
         "istanbul-azure-reporter": "^0.1.4",
         "jest": "^24.5.0",
         "jest-junit": "^6.3.0",
-        "node-sass": "^4.11.0",
+        "sass": "^1.23.6",
         "simplr-tslint": "^1.0.0-alpha.14",
         "ts-jest": "^24.0.0",
         "tslint": "^5.14.0",
         "tslint-language-service": "^0.9.9",
-        "typescript": "^3.3.3333",
+        "typescript": "^3.7.2",
         "webpack": "^4.31.0"
     },
     "peerDependencies": {
-        "node-sass": "^4.11.0"
+        "sass": "^1.23.6"
     },
     "jest": {
         "verbose": true,
