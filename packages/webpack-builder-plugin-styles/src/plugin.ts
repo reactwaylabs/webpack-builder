@@ -147,7 +147,7 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
 
         const sassLoaderOptions: LoaderOptions = config?.sassLoaderOptions ?? {};
         if (sassLoaderOptions.options != null) {
-            // SASS: Use Dat Sass implementation with fiber.
+            // SASS: Use Dart Sass implementation with fiber.
             const options = sassLoaderOptions.options as { [key: string]: any };
             options.implementation = require("sass");
             options.sassOptions = {
