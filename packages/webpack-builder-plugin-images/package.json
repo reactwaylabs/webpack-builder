@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-images",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -30,8 +30,8 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/image-loader": "^2.0.1",
-    "@reactway/webpack-builder": "^2.0.1",
+    "@reactway/image-loader": "^2.0.2",
+    "@reactway/webpack-builder": "^2.0.2",
     "tslib": "^1.9.3",
     "upath": "^1.1.2",
     "url-loader": "^1.1.2"

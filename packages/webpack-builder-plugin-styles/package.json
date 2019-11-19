@@ -1,6 +1,6 @@
 {
     "name": "@reactway/webpack-builder-plugin-styles",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A plugin made for webpack-builder.",
     "keywords": [
         "webpack",
@@ -30,9 +30,10 @@
         "**/*.md"
     ],
     "dependencies": {
-        "@reactway/webpack-builder": "^2.0.1",
+        "@reactway/webpack-builder": "^2.0.2",
         "autoprefixer": "^9.5.0",
         "css-loader": "^2.1.1",
+        "fibers": "^4.0.2",
         "file-loader": "^3.0.1",
         "fs-extra": "^8.0.1",
         "mini-css-extract-plugin": "^0.6.0",
@@ -43,8 +44,7 @@
         "style-loader": "^0.23.1",
         "tslib": "^1.9.3",
         "upath": "^1.1.2",
-        "url-loader": "^1.1.2",
-        "fibers": "^4.0.2"
+        "url-loader": "^1.1.2"
     },
     "devDependencies": {
         "@types/fs-extra": "^7.0.0",
