@@ -8,6 +8,7 @@ import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
 import "ts-loader";
+import { LoaderOptions as TsLoaderOptions } from "ts-loader/dist/types/interfaces";
 import { TS_CONFIG_NAME, checkTsConfig, TSLINT_CONFIG_NAME, checkTslintConfig } from "./checkers";
 
 const enum Linter {
@@ -22,6 +23,7 @@ const JS_EXTENSION: string = ".js";
 const JSX_EXTENSION: string = ".jsx";
 
 interface TypeScriptPluginOptions {
+    tsLoaderOptions?: Omit<Partial<TsLoaderOptions>, "happyPackMode" | "transpileOnly">;
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
     terserPluginOptions?: TerserPluginOptions;
@@ -91,6 +93,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
                 {
                     loader: "ts-loader",
                     options: {
+                        ...config?.tsLoaderOptions,
                         // disable type checker - we will use it in fork plugin
                         // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
                         happyPackMode: true,
