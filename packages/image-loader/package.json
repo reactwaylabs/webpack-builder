@@ -1,6 +1,6 @@
 {
     "name": "@reactway/image-loader",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A plugin made for webpack to load images, optimize and resize.",
     "keywords": [
         "webpack",
@@ -71,7 +71,7 @@
         "ts-jest": "^24.0.0",
         "tslint": "^5.14.0",
         "tslint-language-service": "^0.9.9",
-        "typescript": "^3.3.3333",
+        "typescript": "^3.7.2",
         "webpack": "^4.31.0"
     },
     "jest": {
