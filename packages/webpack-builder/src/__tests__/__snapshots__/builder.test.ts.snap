@@ -91,7 +91,7 @@ Object {
         "vendors": Object {
           "chunks": "all",
           "name": "vendor",
-          "test": /\\[\\\\\\\\\\\\/\\]node_modules\\[\\\\\\\\\\\\/\\]/,
+          "test": /\\[\\\\\\\\/\\]node_modules\\[\\\\\\\\/\\]/,
         },
       },
     },

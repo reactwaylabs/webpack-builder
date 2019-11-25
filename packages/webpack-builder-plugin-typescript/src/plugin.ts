@@ -8,7 +8,7 @@ import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
 import "ts-loader";
-import { LoaderOptions as TsLoaderOptions } from "ts-loader/dist/types/interfaces";
+import { LoaderOptions as TsLoaderOptions } from "ts-loader/dist/interfaces";
 import { TS_CONFIG_NAME, checkTsConfig, TSLINT_CONFIG_NAME, checkTslintConfig } from "./checkers";
 
 const enum Linter {

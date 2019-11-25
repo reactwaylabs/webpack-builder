@@ -1,4 +1,4 @@
-import CleanWebpackPlugin from "clean-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import { Plugin } from "@reactway/webpack-builder";
 import { Options } from "./plugin-options";
 
