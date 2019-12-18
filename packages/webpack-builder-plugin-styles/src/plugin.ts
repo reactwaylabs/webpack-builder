@@ -18,14 +18,14 @@ const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
 // Public path
 const PUBLIC_PATH: string = "./";
 
-type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
-type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
+export type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
+export type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
 
 // Webpack.RuleSetQuery | undefined
-type PostCssOptions = { [k: string]: any };
-type PostCssPluginsFn = (...args: unknown[]) => unknown[];
+export type PostCssOptions = { [k: string]: any };
+export type PostCssPluginsFn = (...args: unknown[]) => unknown[];
 
-interface StylesPluginOptions {
+export interface StylesPluginOptions {
     fontsOutputLocation?: string;
     fontsPublicPath?: string;
     urlLoaderOptions?: LoaderOptions;
