@@ -8,7 +8,7 @@ const DEFAULT_PORT: number = 3000;
 const DEFAULT_OUTPUT_LOCATION: string = "./dist";
 
 // tslint:disable-next-line:no-empty-interface
-interface WebDevServerOptions extends WebpackDevServer.Configuration {}
+export interface WebDevServerOptions extends WebpackDevServer.Configuration {}
 
 export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirectory) => _webpack => {
     const webpackWithDevServer: Configuration & { devServer?: WebpackDevServer.Configuration } = _webpack;

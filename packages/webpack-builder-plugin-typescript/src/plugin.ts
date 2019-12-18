@@ -22,7 +22,7 @@ const TSX_EXTENSION: string = ".tsx";
 const JS_EXTENSION: string = ".js";
 const JSX_EXTENSION: string = ".jsx";
 
-interface TypeScriptPluginOptions {
+export interface TypeScriptPluginOptions {
     tsLoaderOptions?: Omit<Partial<TsLoaderOptions>, "happyPackMode" | "transpileOnly">;
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;

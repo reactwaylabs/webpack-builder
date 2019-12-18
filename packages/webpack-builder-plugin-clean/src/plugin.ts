@@ -2,7 +2,7 @@ import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import { Plugin } from "@reactway/webpack-builder";
 import { Options } from "./plugin-options";
 
-interface CleanPluginOptions extends Partial<Options> {}
+export interface CleanPluginOptions extends Partial<Options> {}
 
 export const CleanPlugin: Plugin<CleanPluginOptions> = (config, projectDirectory) => webpack => {
     if (webpack.plugins == null) {
