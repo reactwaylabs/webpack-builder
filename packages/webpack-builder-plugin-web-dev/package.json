@@ -1,6 +1,6 @@
 {
   "name": "@reactway/webpack-builder-plugin-web-dev",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A plugin made for webpack-builder.",
   "keywords": [
     "webpack",
@@ -31,7 +31,7 @@
     "**/*.md"
   ],
   "dependencies": {
-    "@reactway/webpack-builder": "^2.0.2",
+    "@reactway/webpack-builder": "^2.0.3",
     "tslib": "^1.10.0",
     "upath": "^1.2.0"
   },

@@ -1,6 +1,6 @@
 {
     "name": "@reactway/webpack-builder-plugin-styles",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "A plugin made for webpack-builder.",
     "keywords": [
         "webpack",
@@ -30,7 +30,7 @@
         "**/*.md"
     ],
     "dependencies": {
-        "@reactway/webpack-builder": "^2.0.2",
+        "@reactway/webpack-builder": "^2.0.3",
         "autoprefixer": "^9.7.2",
         "css-loader": "^3.2.0",
         "fibers": "^4.0.2",
