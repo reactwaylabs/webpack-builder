@@ -199,7 +199,7 @@ class ImageLoader {
             content: contentBuffer
         });
 
-        const path = `${JSON.stringify(url)}`;
+        const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
 
         // If 'optimizeImagesInDev' value set to 'true' then every build check if files(images) exists in output dir is skipped.
         if (!options.optimizeImagesInDev) {
