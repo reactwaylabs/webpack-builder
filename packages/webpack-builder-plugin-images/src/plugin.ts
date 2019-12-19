@@ -3,7 +3,7 @@ import { ReactwayImageLoaderPlugin, ImageLoaderOptions } from "@reactway/image-l
 
 export interface ImagesPluginOptions extends Partial<ImageLoaderOptions> {}
 
-export const ImagesPlugin: Plugin<ImagesPluginOptions> = (config: ImagesPluginOptions, projectDirectory: string) => (
+export const ImagesPlugin: Plugin<ImagesPluginOptions> = (config: ImagesPluginOptions | undefined, projectDirectory: string) => (
     webpack: Configuration
 ) => {
     if (webpack.module == null) {

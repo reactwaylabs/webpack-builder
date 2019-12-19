@@ -37,7 +37,7 @@ export interface StylesPluginOptions {
     miniCssExtractPluginOptions?: MiniCssExtractPluginOptions;
 }
 
-export const StylesPlugin: Plugin<StylesPluginOptions> = (config: StylesPluginOptions, projectDirectory: string) => {
+export const StylesPlugin: Plugin<StylesPluginOptions> = (config: StylesPluginOptions | undefined, projectDirectory: string) => {
     checkPostCssConfig(projectDirectory);
 
     return (webpack: Configuration) => {

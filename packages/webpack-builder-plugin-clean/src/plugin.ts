@@ -4,7 +4,7 @@ import { Options } from "./plugin-options";
 
 export interface CleanPluginOptions extends Partial<Options> {}
 
-export const CleanPlugin: Plugin<CleanPluginOptions> = (config: CleanPluginOptions, projectDirectory: string) => (
+export const CleanPlugin: Plugin<CleanPluginOptions> = (config: CleanPluginOptions | undefined, projectDirectory: string) => (
     webpack: Configuration
 ) => {
     if (webpack.plugins == null) {

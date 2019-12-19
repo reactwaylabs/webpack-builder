@@ -30,7 +30,10 @@ export interface TypeScriptPluginOptions {
     linter?: Linter;
 }
 
-export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config: TypeScriptPluginOptions, projectDirectory: string) => {
+export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (
+    config: TypeScriptPluginOptions | undefined,
+    projectDirectory: string
+) => {
     const fullTsconfigLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
     let baseURLExist: boolean = false;
 

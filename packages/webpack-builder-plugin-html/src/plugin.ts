@@ -5,7 +5,9 @@ import { Plugin, Configuration } from "@reactway/webpack-builder";
 // tslint:disable-next-line:no-empty-interface
 export interface HtmlPluginOptions extends HtmlWebpackPlugin.Options {}
 
-export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config: HtmlPluginOptions, projectDirectory: string) => (webpack: Configuration) => {
+export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config: HtmlPluginOptions | undefined, projectDirectory: string) => (
+    webpack: Configuration
+) => {
     if (webpack.plugins == null) {
         webpack.plugins = [];
     }
