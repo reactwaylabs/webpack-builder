@@ -199,19 +199,7 @@ class ImageLoader {
             content: contentBuffer
         });
 
-        const path = `__webpack_public_path__ + ${JSON.stringify(url)}`;
-
-        // If 'optimizeImagesInDev' value set to 'true' then every build check if files(images) exists in output dir is skipped.
-        if (!options.optimizeImagesInDev) {
-            const replacedOutputPath: string = this._compiler.options.output.path.replace(/\\/g, "/");
-            const existentFilePath = `${replacedOutputPath}/${url}`;
-            if (fs.existsSync(existentFilePath)) {
-                const fileContent = fs.readFileSync(existentFilePath);
-                ReactwayImageLoaderPlugin.imagesSizeArray.push({ ...imageSizeData, reducedSize: fileContent });
-
-                return `module.exports = {src: ${path},toString:function(){return ${path}}};`;
-            }
-        }
+        const path = "__webpack_public_path__ +" + JSON.stringify(url);
 
         if (query != null) {
             try {
