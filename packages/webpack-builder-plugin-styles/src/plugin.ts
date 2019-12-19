@@ -2,7 +2,7 @@ import Webpack from "webpack";
 import * as upath from "upath";
 import * as fs from "fs-extra";
 import queryString from "query-string";
-import { Plugin } from "@reactway/webpack-builder";
+import { Plugin, Configuration } from "@reactway/webpack-builder";
 import MiniCssExtractPlugin, { PluginOptions as MiniCssExtractPluginOptions } from "mini-css-extract-plugin";
 import OptimizeCSSAssetsPlugin, { Options as OptimizeCSSOptions } from "optimize-css-assets-webpack-plugin";
 
@@ -37,10 +37,10 @@ export interface StylesPluginOptions {
     miniCssExtractPluginOptions?: MiniCssExtractPluginOptions;
 }
 
-export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
+export const StylesPlugin: Plugin<StylesPluginOptions> = (config: StylesPluginOptions, projectDirectory: string) => {
     checkPostCssConfig(projectDirectory);
 
-    return webpack => {
+    return (webpack: Configuration) => {
         if (webpack.mode === "production") {
             if (webpack.plugins == null) {
                 webpack.plugins = [];

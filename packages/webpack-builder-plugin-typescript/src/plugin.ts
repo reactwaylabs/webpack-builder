@@ -1,9 +1,9 @@
+import { Plugin, Configuration } from "@reactway/webpack-builder";
+import upath from "upath";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin/lib";
 import { Options as TsconfigPathsPluginOptions } from "tsconfig-paths-webpack-plugin/lib/options";
 import { loadTsconfig, Tsconfig } from "tsconfig-paths/lib/tsconfig-loader";
-import upath from "upath";
-import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
@@ -30,7 +30,7 @@ export interface TypeScriptPluginOptions {
     linter?: Linter;
 }
 
-export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projectDirectory) => {
+export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config: TypeScriptPluginOptions, projectDirectory: string) => {
     const fullTsconfigLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
     let baseURLExist: boolean = false;
 
@@ -52,7 +52,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
 
     const tsConfig: Tsconfig | undefined = loadTsconfig(fullTsconfigLocation);
 
-    return webpack => {
+    return (webpack: Configuration) => {
         if (webpack.plugins == null) {
             webpack.plugins = [];
         }

@@ -10,7 +10,9 @@ const DEFAULT_OUTPUT_LOCATION: string = "./dist";
 // tslint:disable-next-line:no-empty-interface
 export interface WebDevServerOptions extends WebpackDevServer.Configuration {}
 
-export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirectory) => _webpack => {
+export const WebDevPlugin: Plugin<WebDevServerOptions> = (config: WebDevServerOptions, projectDirectory: string) => (
+    _webpack: Configuration
+) => {
     const webpackWithDevServer: Configuration & { devServer?: WebpackDevServer.Configuration } = _webpack;
     if (webpackWithDevServer.devServer == null) {
         webpackWithDevServer.devServer = {};
