@@ -198,7 +198,7 @@ class ImageLoader {
             content: contentBuffer
         });
 
-        const path = "__webpack_public_path__ +" + JSON.stringify(url);
+        const path = "__webpack_public_path__ + " + JSON.stringify(url);
 
         if (query != null) {
             try {
