@@ -146,12 +146,18 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         };
 
         const sassLoaderOptions: LoaderOptions = config?.sassLoaderOptions ?? {};
+
         if (sassLoaderOptions.options != null) {
             // SASS: Use Dart Sass implementation with fiber.
             const options = sassLoaderOptions.options as { [key: string]: any };
             options.implementation = require("sass");
+
+            const sassOptions = typeof options.sassOptions === "function" ? options.sassOptions(webpack) : options.sassOptions;
+
             options.sassOptions = {
-                fiber: true
+                // FIXME: issue while building, fix when `fibers` starts working properly.
+                // fiber: true
+                ...sassOptions
             };
         }
 

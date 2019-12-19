@@ -22,9 +22,8 @@ export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirecto
         quiet: false,
         port: DEFAULT_PORT,
         historyApiFallback: true,
-        proxy: {
-            "*": upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION)
-        }
+        // Seems no more warning of deprecation. Remove when it appears again.
+        contentBase: upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION)
     };
 
     if (config != null) {
