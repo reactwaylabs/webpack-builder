@@ -2,7 +2,7 @@ import Webpack from "webpack";
 import * as upath from "upath";
 import * as fs from "fs-extra";
 import queryString from "query-string";
-import { Plugin } from "@reactway/webpack-builder";
+import { Plugin, Configuration } from "@reactway/webpack-builder";
 import MiniCssExtractPlugin, { PluginOptions as MiniCssExtractPluginOptions } from "mini-css-extract-plugin";
 import OptimizeCSSAssetsPlugin, { Options as OptimizeCSSOptions } from "optimize-css-assets-webpack-plugin";
 
@@ -37,10 +37,10 @@ export interface StylesPluginOptions {
     miniCssExtractPluginOptions?: MiniCssExtractPluginOptions;
 }
 
-export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
+export const StylesPlugin: Plugin<StylesPluginOptions> = (config: StylesPluginOptions | undefined, projectDirectory: string) => {
     checkPostCssConfig(projectDirectory);
 
-    return webpack => {
+    return (webpack: Configuration) => {
         if (webpack.mode === "production") {
             if (webpack.plugins == null) {
                 webpack.plugins = [];
@@ -146,12 +146,18 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         };
 
         const sassLoaderOptions: LoaderOptions = config?.sassLoaderOptions ?? {};
+
         if (sassLoaderOptions.options != null) {
             // SASS: Use Dart Sass implementation with fiber.
             const options = sassLoaderOptions.options as { [key: string]: any };
             options.implementation = require("sass");
+
+            const sassOptions = typeof options.sassOptions === "function" ? options.sassOptions(webpack) : options.sassOptions;
+
             options.sassOptions = {
-                fiber: true
+                // FIXME: issue while building, fix when `fibers` starts working properly.
+                // fiber: true
+                ...sassOptions
             };
         }
 

@@ -6,7 +6,10 @@ export interface WriteFilePluginOptions {
     [key: string]: any;
 }
 
-export const WriteFilePlugin: Plugin<WriteFilePluginOptions> = (config, projectDirectory) => webpack => {
+export const WriteFilePlugin: Plugin<WriteFilePluginOptions> = (
+    config: WriteFilePluginOptions | undefined,
+    projectDirectory
+) => webpack => {
     if (webpack.plugins == null) {
         webpack.plugins = [];
     }

@@ -10,7 +10,9 @@ const DEFAULT_OUTPUT_LOCATION: string = "./dist";
 // tslint:disable-next-line:no-empty-interface
 export interface WebDevServerOptions extends WebpackDevServer.Configuration {}
 
-export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirectory) => _webpack => {
+export const WebDevPlugin: Plugin<WebDevServerOptions> = (config: WebDevServerOptions | undefined, projectDirectory: string) => (
+    _webpack: Configuration
+) => {
     const webpackWithDevServer: Configuration & { devServer?: WebpackDevServer.Configuration } = _webpack;
     if (webpackWithDevServer.devServer == null) {
         webpackWithDevServer.devServer = {};
@@ -22,9 +24,8 @@ export const WebDevPlugin: Plugin<WebDevServerOptions> = (config, projectDirecto
         quiet: false,
         port: DEFAULT_PORT,
         historyApiFallback: true,
-        proxy: {
-            "*": upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION)
-        }
+        // Seems no more warning of deprecation. Remove when it appears again.
+        contentBase: upath.resolve(projectDirectory, DEFAULT_OUTPUT_LOCATION)
     };
 
     if (config != null) {

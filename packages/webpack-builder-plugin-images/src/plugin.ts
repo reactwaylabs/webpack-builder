@@ -1,9 +1,11 @@
-import { Plugin } from "@reactway/webpack-builder";
+import { Plugin, Configuration } from "@reactway/webpack-builder";
 import { ReactwayImageLoaderPlugin, ImageLoaderOptions } from "@reactway/image-loader";
 
 export interface ImagesPluginOptions extends Partial<ImageLoaderOptions> {}
 
-export const ImagesPlugin: Plugin<ImagesPluginOptions> = (config, projectDirectory) => webpack => {
+export const ImagesPlugin: Plugin<ImagesPluginOptions> = (config: ImagesPluginOptions | undefined, projectDirectory: string) => (
+    webpack: Configuration
+) => {
     if (webpack.module == null) {
         webpack.module = {
             rules: []
