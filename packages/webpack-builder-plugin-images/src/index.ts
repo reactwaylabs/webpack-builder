@@ -1,2 +1,1 @@
-import { ImagesPlugin } from "./plugin";
-export = ImagesPlugin;
+export * from "./plugin";

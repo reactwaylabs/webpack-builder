@@ -1,2 +1,2 @@
-import { CleanPlugin } from "./plugin";
-export = CleanPlugin;
+export * from "./plugin";
+export * from "./plugin-options";
