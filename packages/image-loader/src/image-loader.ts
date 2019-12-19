@@ -1,5 +1,4 @@
 import { loader } from "webpack";
-import fs from "fs-extra";
 // Utils
 import { getOptions, interpolateName, parseQuery, OptionObject, getHashDigest } from "loader-utils";
 import validateOptions from "schema-utils";
