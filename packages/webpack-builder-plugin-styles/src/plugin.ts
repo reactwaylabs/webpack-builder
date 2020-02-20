@@ -2,7 +2,7 @@ import Webpack from "webpack";
 import * as upath from "upath";
 import * as fs from "fs-extra";
 import queryString from "query-string";
-import { Plugin } from "@reactway/webpack-builder";
+import { Plugin, Configuration } from "@reactway/webpack-builder";
 import MiniCssExtractPlugin, { PluginOptions as MiniCssExtractPluginOptions } from "mini-css-extract-plugin";
 import OptimizeCSSAssetsPlugin, { Options as OptimizeCSSOptions } from "optimize-css-assets-webpack-plugin";
 
@@ -18,14 +18,14 @@ const FONTS_OUTPUT_LOCATION: string = "./assets/fonts";
 // Public path
 const PUBLIC_PATH: string = "./";
 
-type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
-type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
+export type Omit<TType, TKey extends keyof TType> = Pick<TType, Exclude<keyof TType, TKey>>;
+export type LoaderOptions = Omit<Webpack.RuleSetLoader, "loader">;
 
 // Webpack.RuleSetQuery | undefined
-type PostCssOptions = { [k: string]: any };
-type PostCssPluginsFn = (...args: unknown[]) => unknown[];
+export type PostCssOptions = { [k: string]: any };
+export type PostCssPluginsFn = (...args: unknown[]) => unknown[];
 
-interface StylesPluginOptions {
+export interface StylesPluginOptions {
     fontsOutputLocation?: string;
     fontsPublicPath?: string;
     urlLoaderOptions?: LoaderOptions;
@@ -37,10 +37,10 @@ interface StylesPluginOptions {
     miniCssExtractPluginOptions?: MiniCssExtractPluginOptions;
 }
 
-export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirectory) => {
+export const StylesPlugin: Plugin<StylesPluginOptions> = (config: StylesPluginOptions | undefined, projectDirectory: string) => {
     checkPostCssConfig(projectDirectory);
 
-    return webpack => {
+    return (webpack: Configuration) => {
         if (webpack.mode === "production") {
             if (webpack.plugins == null) {
                 webpack.plugins = [];
@@ -146,12 +146,18 @@ export const StylesPlugin: Plugin<StylesPluginOptions> = (config, projectDirecto
         };
 
         const sassLoaderOptions: LoaderOptions = config?.sassLoaderOptions ?? {};
+
         if (sassLoaderOptions.options != null) {
             // SASS: Use Dart Sass implementation with fiber.
             const options = sassLoaderOptions.options as { [key: string]: any };
             options.implementation = require("sass");
+
+            const sassOptions = typeof options.sassOptions === "function" ? options.sassOptions(webpack) : options.sassOptions;
+
             options.sassOptions = {
-                fiber: true
+                // FIXME: issue while building, fix when `fibers` starts working properly.
+                // fiber: true
+                ...sassOptions
             };
         }
 

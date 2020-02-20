@@ -39,7 +39,7 @@ interface ImageLoaderOptions {
 }
 ```
 
-More details about `@reactway/image-loader` options you can read [@reactway/image-loader options](https://github.com/reactway/webpack-builder/tree/feature/refactoring-image-plugin/packages/webpack-builder-plugin-image-loader#passing-options).
+More details about `@reactway/image-loader` options you can read [@reactway/image-loader options](https://github.com/reactway/webpack-builder/tree/dev/packages/image-loader#passing-options).
 
 ```js
 const webpackBuilder = require("@reactway/webpack-builder");

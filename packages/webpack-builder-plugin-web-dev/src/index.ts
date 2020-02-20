@@ -1,2 +1,1 @@
-import { WebDevPlugin } from "./plugin";
-export = WebDevPlugin;
+export * from "./plugin";

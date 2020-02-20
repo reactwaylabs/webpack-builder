@@ -1,11 +1,13 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import HtmlWebpackTemplate from "html-webpack-template";
-import { Plugin } from "@reactway/webpack-builder";
+import { Plugin, Configuration } from "@reactway/webpack-builder";
 
 // tslint:disable-next-line:no-empty-interface
-interface HtmlPluginOptions extends HtmlWebpackPlugin.Options {}
+export interface HtmlPluginOptions extends HtmlWebpackPlugin.Options {}
 
-export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config, projectDirectory) => webpack => {
+export const HtmlPlugin: Plugin<HtmlPluginOptions> = (config: HtmlPluginOptions | undefined, projectDirectory: string) => (
+    webpack: Configuration
+) => {
     if (webpack.plugins == null) {
         webpack.plugins = [];
     }

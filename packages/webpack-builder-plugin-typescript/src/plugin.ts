@@ -1,14 +1,14 @@
+import { Plugin, Configuration } from "@reactway/webpack-builder";
+import upath from "upath";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin/lib";
 import { Options as TsconfigPathsPluginOptions } from "tsconfig-paths-webpack-plugin/lib/options";
 import { loadTsconfig, Tsconfig } from "tsconfig-paths/lib/tsconfig-loader";
-import upath from "upath";
-import { Plugin } from "@reactway/webpack-builder";
 import { ForkTsCheckerWebpackPluginOptions } from "./plugin-options";
 import TerserPlugin, { TerserPluginOptions } from "terser-webpack-plugin";
 
 import "ts-loader";
-import { LoaderOptions as TsLoaderOptions } from "ts-loader/dist/types/interfaces";
+import { LoaderOptions as TsLoaderOptions } from "ts-loader/dist/interfaces";
 import { TS_CONFIG_NAME, checkTsConfig, TSLINT_CONFIG_NAME, checkTslintConfig } from "./checkers";
 
 const enum Linter {
@@ -22,15 +22,20 @@ const TSX_EXTENSION: string = ".tsx";
 const JS_EXTENSION: string = ".js";
 const JSX_EXTENSION: string = ".jsx";
 
-interface TypeScriptPluginOptions {
+export interface TypeScriptPluginOptions {
     tsLoaderOptions?: Omit<Partial<TsLoaderOptions>, "happyPackMode" | "transpileOnly">;
     forkTsCheckerOptions?: Partial<ForkTsCheckerWebpackPluginOptions>;
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
     terserPluginOptions?: TerserPluginOptions;
     linter?: Linter;
+    isEnvProduction?: boolean;
+    shouldUseSourceMap?: boolean;
 }
 
-export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projectDirectory) => {
+export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (
+    config: TypeScriptPluginOptions | undefined,
+    projectDirectory: string
+) => {
     const fullTsconfigLocation = upath.resolve(projectDirectory, TS_CONFIG_NAME);
     let baseURLExist: boolean = false;
 
@@ -52,7 +57,7 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
 
     const tsConfig: Tsconfig | undefined = loadTsconfig(fullTsconfigLocation);
 
-    return webpack => {
+    return (webpack: Configuration) => {
         if (webpack.plugins == null) {
             webpack.plugins = [];
         }
@@ -179,38 +184,56 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (config, projec
             webpack.resolve.extensions.push(JS_EXTENSION);
         }
 
-        if (webpack.mode === "production") {
-            if (webpack.optimization == null) {
-                webpack.optimization = {};
-            }
-
-            if (webpack.optimization.minimizer == null) {
-                webpack.optimization.minimizer = [];
-            }
-
-            let terserOptions: TerserPluginOptions = {
-                cache: true,
-                parallel: true,
-                terserOptions: {
-                    compress: {
-                        dead_code: true,
-                        conditionals: true,
-                        booleans: true
-                    },
-                    module: false,
-                    output: {
-                        comments: false,
-                        beautify: false
-                    }
-                }
-            };
-
-            if (config != null && config.terserPluginOptions != null) {
-                terserOptions = config.terserPluginOptions;
-            }
-
-            webpack.optimization.minimizer.push(new TerserPlugin(terserOptions) as Plugin);
+        if (webpack.optimization == null) {
+            webpack.optimization = {};
         }
+
+        webpack.optimization.minimize = config?.isEnvProduction ?? webpack.mode === "production";
+
+        if (webpack.optimization.minimizer == null) {
+            webpack.optimization.minimizer = [];
+        }
+
+        let terserOptions: TerserPluginOptions = {
+            cache: true,
+            parallel: true,
+            terserOptions: {
+                parse: {
+                    // We want terser to parse ecma 8 code. However, we don't want it
+                    // to apply any minification steps that turns valid ecma 5 code
+                    // into invalid ecma 5 code. This is why the 'compress' and 'output'
+                    // sections only apply transformations that are ecma 5 safe
+                    // https://github.com/facebook/create-react-app/pull/4234
+                    ecma: 8
+                },
+                compress: {
+                    ecma: 5,
+                    warnings: false,
+                    dead_code: true,
+                    conditionals: true,
+                    booleans: true
+                },
+                mangle: {
+                    safari10: true
+                },
+                module: false,
+                output: {
+                    ecma: 5,
+                    comments: false,
+                    // Turned on because emoji and regex is not minified properly using default
+                    // https://github.com/facebook/create-react-app/issues/2488
+                    ascii_only: true,
+                    beautify: false
+                }
+            },
+            sourceMap: config?.shouldUseSourceMap
+        };
+
+        if (config != null && config.terserPluginOptions != null) {
+            terserOptions = config.terserPluginOptions;
+        }
+
+        webpack.optimization.minimizer.push(new TerserPlugin(terserOptions) as Plugin);
 
         return webpack;
     };
