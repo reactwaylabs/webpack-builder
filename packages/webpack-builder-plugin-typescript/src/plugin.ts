@@ -28,6 +28,8 @@ export interface TypeScriptPluginOptions {
     tsconfigPathsPluginOptions?: Partial<TsconfigPathsPluginOptions>;
     terserPluginOptions?: TerserPluginOptions;
     linter?: Linter;
+    isEnvProduction?: boolean;
+    shouldUseSourceMap?: boolean;
 }
 
 export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (
@@ -182,38 +184,56 @@ export const TypeScriptPlugin: Plugin<TypeScriptPluginOptions> = (
             webpack.resolve.extensions.push(JS_EXTENSION);
         }
 
-        if (webpack.mode === "production") {
-            if (webpack.optimization == null) {
-                webpack.optimization = {};
-            }
-
-            if (webpack.optimization.minimizer == null) {
-                webpack.optimization.minimizer = [];
-            }
-
-            let terserOptions: TerserPluginOptions = {
-                cache: true,
-                parallel: true,
-                terserOptions: {
-                    compress: {
-                        dead_code: true,
-                        conditionals: true,
-                        booleans: true
-                    },
-                    module: false,
-                    output: {
-                        comments: false,
-                        beautify: false
-                    }
-                }
-            };
-
-            if (config != null && config.terserPluginOptions != null) {
-                terserOptions = config.terserPluginOptions;
-            }
-
-            webpack.optimization.minimizer.push(new TerserPlugin(terserOptions) as Plugin);
+        if (webpack.optimization == null) {
+            webpack.optimization = {};
         }
+
+        webpack.optimization.minimize = config?.isEnvProduction ?? webpack.mode === "production";
+
+        if (webpack.optimization.minimizer == null) {
+            webpack.optimization.minimizer = [];
+        }
+
+        let terserOptions: TerserPluginOptions = {
+            cache: true,
+            parallel: true,
+            terserOptions: {
+                parse: {
+                    // We want terser to parse ecma 8 code. However, we don't want it
+                    // to apply any minification steps that turns valid ecma 5 code
+                    // into invalid ecma 5 code. This is why the 'compress' and 'output'
+                    // sections only apply transformations that are ecma 5 safe
+                    // https://github.com/facebook/create-react-app/pull/4234
+                    ecma: 8
+                },
+                compress: {
+                    ecma: 5,
+                    warnings: false,
+                    dead_code: true,
+                    conditionals: true,
+                    booleans: true
+                },
+                mangle: {
+                    safari10: true
+                },
+                module: false,
+                output: {
+                    ecma: 5,
+                    comments: false,
+                    // Turned on because emoji and regex is not minified properly using default
+                    // https://github.com/facebook/create-react-app/issues/2488
+                    ascii_only: true,
+                    beautify: false
+                }
+            },
+            sourceMap: config?.shouldUseSourceMap
+        };
+
+        if (config != null && config.terserPluginOptions != null) {
+            terserOptions = config.terserPluginOptions;
+        }
+
+        webpack.optimization.minimizer.push(new TerserPlugin(terserOptions) as Plugin);
 
         return webpack;
     };

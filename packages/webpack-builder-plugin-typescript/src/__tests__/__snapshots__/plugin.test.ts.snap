@@ -58,6 +58,14 @@ Object {
     "net": "empty",
     "tls": "empty",
   },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
@@ -156,6 +164,14 @@ Object {
     "net": "empty",
     "tls": "empty",
   },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
@@ -253,6 +269,14 @@ Object {
     "fs": "empty",
     "net": "empty",
     "tls": "empty",
+  },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
   },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
@@ -354,6 +378,14 @@ Object {
     "net": "empty",
     "tls": "empty",
   },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
@@ -453,6 +485,14 @@ Object {
     "fs": "empty",
     "net": "empty",
     "tls": "empty",
+  },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
   },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
@@ -554,6 +594,14 @@ Object {
     "net": "empty",
     "tls": "empty",
   },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
@@ -649,6 +697,14 @@ Object {
     "fs": "empty",
     "net": "empty",
     "tls": "empty",
+  },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
   },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
@@ -752,6 +808,14 @@ Object {
     "net": "empty",
     "tls": "empty",
   },
+  "optimization": Object {
+    "minimize": false,
+    "minimizer": Array [
+      TerserPlugin {
+        "apply": [MockFunction],
+      },
+    ],
+  },
   "output": Object {
     "chunkFilename": "[name].bundle.js",
     "filename": "[name].bundle.js",
@@ -849,6 +913,7 @@ Object {
     "tls": "empty",
   },
   "optimization": Object {
+    "minimize": true,
     "minimizer": Array [
       TerserPlugin {
         "apply": [MockFunction],
@@ -954,6 +1019,7 @@ Object {
     "tls": "empty",
   },
   "optimization": Object {
+    "minimize": true,
     "minimizer": Array [
       TerserPlugin {
         "apply": [MockFunction],
